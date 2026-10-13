@@ -1,0 +1,396 @@
+<title>Bible des assets de l'Archipel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600..800,100&family=Lexend:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Mise en page : colonne unique de 1080 px max sur fond abysse ; mode d'emploi en haut, puis fiches d'assets en grille 2 colonnes (1 sur mobile) groupées par catégorie, filtres collants. Un seul thème assumé, nuit marine. */
+:root{
+  --abyss:#0b2230; --deep:#0f3446; --panel:#12303f; --line:rgba(243,213,140,.18);
+  --foam:#e9f3ee; --mist:#a9c2c5; --parch:#f4e8cc; --ink:#2a1c12; --ink-2:#6b5440;
+  --brass:#c9973f; --brass-hi:#f3d58c; --lagoon:#5fb3a8; --wax:#e0644f; --kelp:#5cbf86;
+  --f-d:'Fraunces',Georgia,serif; --f-u:'Lexend',system-ui,-apple-system,sans-serif; --f-m:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--abyss);color:var(--foam);font-family:var(--f-u);font-size:15px;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 80px}
+h1,h2,h3{font-family:var(--f-d);font-variation-settings:'SOFT' 100;font-weight:700;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.02}
+h2{font-size:clamp(24px,3.6vw,30px);line-height:1.1}
+h3{font-size:18px;line-height:1.2}
+p{margin:0}
+.eyebrow{font:600 12px var(--f-u);letter-spacing:.24em;text-transform:uppercase;color:var(--brass-hi)}
+.lead{color:var(--mist);font-size:17px;max-width:66ch;margin-top:12px}
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.meter{min-width:240px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.meter b{font-family:var(--f-d);font-size:30px;font-variant-numeric:tabular-nums;color:var(--brass-hi)}
+.meter span{color:var(--mist);font-size:13px}
+.bar{height:8px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brass),var(--brass-hi));transition:width .3s}
+.meter .sub{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:12.5px;color:var(--mist)}
+section{margin-top:44px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:18px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.step .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--brass-hi);color:var(--abyss);font:700 13px var(--f-u)}
+.step p{color:#d3e2e1;font-size:14px}
+.step b{color:#fff}
+code,.mono{font-family:var(--f-m);font-size:.9em}
+code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px;color:var(--brass-hi)}
+.style-box{margin-top:18px;background:var(--parch);color:var(--ink);border-radius:18px;padding:18px 18px 14px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.style-box pre{margin:8px 0 12px;white-space:pre-wrap;word-break:break-word;font:500 13.5px/1.55 var(--f-m);color:var(--ink)}
+.style-box .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:12px;border:0;cursor:pointer;font:600 13.5px var(--f-u);color:#2a1a07;background:linear-gradient(#f7dc93,#c9973f);box-shadow:0 3px 0 #6e4c18}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #6e4c18}
+.btn.ghost{background:rgba(42,28,18,.08);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(42,28,18,.25)}
+.btn.done{background:linear-gradient(#a6e3bf,#5cbf86);box-shadow:0 3px 0 #2b7a4d}
+:focus-visible{outline:2px solid var(--brass-hi);outline-offset:2px}
+.bgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
+.bgc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.bgc h3{font-size:16px}
+.bgc p{color:var(--mist);font-size:13.5px;margin-top:4px}
+.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(11,34,48,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:12px 0;margin-top:24px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;height:34px;padding:0 13px;border-radius:17px;border:1px solid var(--line);background:transparent;color:var(--mist);font:600 13px var(--f-u);cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--brass-hi);color:var(--abyss);border-color:var(--brass-hi)}
+.cat{margin-top:34px}
+.cat-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.cat-h p{color:var(--mist);font-size:14px;margin-top:4px;max-width:70ch}
+.cat-h .count{font:600 13px var(--f-u);color:var(--brass-hi);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px 16px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card.is-done{border-color:rgba(92,191,134,.55);background:linear-gradient(var(--panel),var(--panel)) padding-box}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card .id{font:600 13px var(--f-m);color:var(--brass-hi);word-break:break-all}
+.card h3{margin-top:2px}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:600 11.5px var(--f-u);padding:3px 8px;border-radius:8px;background:rgba(255,255,255,.07);color:#cfe0df;white-space:nowrap}
+.tag.p1{background:var(--brass-hi);color:#3a2408}
+.tag.p2{background:rgba(95,179,168,.22);color:#bfe8e1}
+.tag.p3{background:rgba(255,255,255,.06);color:var(--mist)}
+.use{color:#d3e2e1;font-size:14px}
+.anim{font-size:13px;color:var(--lagoon)}
+.anim::before{content:"Animation · ";font-weight:600}
+.subject{font:500 12.5px/1.5 var(--f-m);color:#c4d6d6;background:rgba(0,0,0,.22);border-radius:12px;padding:10px 12px;word-break:break-word}
+.card-bot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:2px;flex-wrap:wrap}
+.check{display:flex;align-items:center;gap:8px;font:600 13px var(--f-u);color:var(--mist);cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--kelp)}
+.cbtn{height:36px;padding:0 13px;border-radius:11px;border:1px solid rgba(243,213,140,.4);background:rgba(243,213,140,.1);color:var(--brass-hi);font:600 13px var(--f-u);cursor:pointer}
+.cbtn.ok{border-color:var(--kelp);color:#a6e3bf;background:rgba(92,191,134,.12)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.box ul{margin:8px 0 0;padding-left:18px;color:#d3e2e1;font-size:14px}
+.box li+li{margin-top:4px}
+.empty{color:var(--mist);margin-top:20px}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.grid,.two{grid-template-columns:1fr}.meter{min-width:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="eyebrow">L’Archipel des Nombres · production visuelle</div>
+      <h1>Bible des assets</h1>
+      <p class="lead">Tout ce qu’il faut générer pour construire l’appli, avec un prompt prêt à copier pour chaque élément. Les textes, chiffres, boutons et animations restent en code : je m’en occupe.</p>
+    </div>
+    <div class="meter" aria-live="polite">
+      <div><b id="m-p1">0 / 0</b> <span>indispensables</span></div>
+      <div class="bar"><i id="m-bar"></i></div>
+      <div class="sub"><span id="m-all">0 / 0 au total</span><span>coche au fur et à mesure</span></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Mode d’emploi</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><p><b>Une seule conversation</b> dans ton générateur pour tout l’archipel. Joins la planche <code>premium-1-monde.png</code> comme référence de style, puis colle le bloc de style ci-dessous.</p></div>
+      <div class="step"><span class="n">2</span><p><b>Trois tests d’abord</b> : <code>ship-player-3</code>, <code>isle-canons</code>, <code>crew-perroquet</code>. Envoie-les-moi : je valide la cohérence avant que tu lances la série.</p></div>
+      <div class="step"><span class="n">3</span><p><b>Copie le prompt de chaque fiche</b> : il contient déjà le style, le sujet, le fond et le format. Commence par les fiches <b>Indispensable</b>.</p></div>
+      <div class="step"><span class="n">4</span><p><b>Fond transparent</b> : demande un PNG transparent. Si l’outil ne sait pas, il doit mettre un fond magenta uni <code>#FF00FF</code>, je le découpe moi-même.</p></div>
+      <div class="step"><span class="n">5</span><p><b>Nomme chaque fichier</b> avec son identifiant (<code>isle-canons.png</code>), en plus grande taille possible. Je redimensionne et je compresse.</p></div>
+      <div class="step"><span class="n">6</span><p><b>Dépose tout dans un dossier Google Drive</b> et donne-moi le lien, ou joins les images dans notre conversation.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bloc de style</h2>
+    <p class="lead" style="margin-top:6px">À coller une fois au début de la conversation. Il est aussi inclus dans chaque prompt copié, pour que chaque image reste cohérente même si tu changes de conversation.</p>
+    <div class="style-box">
+      <div class="row"><span class="eyebrow" style="color:var(--ink-2)">Style commun</span><button class="btn" type="button" id="copy-style">Copier le bloc de style</button></div>
+      <pre id="style-text"></pre>
+    </div>
+    <div class="bgs">
+      <div class="bgc"><h3>Objet détouré</h3><p>Navires, îles, personnages, objets, effets. Un seul sujet, fond transparent ou magenta uni.</p></div>
+      <div class="bgc"><h3>Scène pleine</h3><p>Fonds d’écran et en-têtes. Image complète, jamais de texte, zone calme laissée pour l’interface.</p></div>
+      <div class="bgc"><h3>Texture raccordable</h3><p>Papier, bois, océan. Les bords se raccordent pour pouvoir la répéter à l’infini.</p></div>
+    </div>
+  </section>
+
+  <div class="filters" role="toolbar" aria-label="Filtres">
+    <div class="chips" id="f-prio"></div>
+    <div class="chips" id="f-cat"></div>
+  </div>
+
+  <div id="list"></div>
+  <p class="empty" id="empty" hidden>Aucune fiche pour ce filtre.</p>
+
+  <section>
+    <h2>Ce que je fais en code</h2>
+    <div class="two">
+      <div class="box"><h3>À ne pas générer</h3>
+        <ul>
+          <li>Tous les textes et chiffres : les générateurs d’images les déforment.</li>
+          <li>Boutons, clavier, barres de vie, étoiles, icônes d’interface.</li>
+          <li>Les valeurs sur les pièces et billets, les graduations de la droite.</li>
+          <li>La découpe de la pizza en parts, les cubes comptés dans la mine.</li>
+          <li>Le symbole du pavillon dessiné sur le drapeau vierge.</li>
+        </ul></div>
+      <div class="box"><h3>Animations</h3>
+        <ul>
+          <li>L’eau qui ondule et scintille, à partir de la texture d’océan.</li>
+          <li>Le brouillard et les nuages qui dérivent en parallaxe.</li>
+          <li>Le navire qui tangue, le drapeau qui flotte, les créatures qui respirent.</li>
+          <li>Boulets, explosions, fumée, pièces qui jaillissent : particules animées.</li>
+          <li>Le coffre qui s’ouvre avec sa lumière, les passages entre écrans.</li>
+        </ul>
+        <p style="color:var(--mist);font-size:13.5px;margin-top:10px">J’évite les GIF : 256 couleurs, bords crénelés sur fond transparent et fichiers lourds. Des images fixes animées en code donnent un rendu plus net et plus fluide. Si ton outil fait de la vidéo, la catégorie « Boucles vidéo » liste trois options.</p></div>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+const STYLE = `STYLE: premium painterly illustration for a high-end mobile game, stylized and clean (not photorealistic, not childish, not flat vector). Golden-hour light with soft warm rim light, consistent light source from the upper left. Palette: deep teal ocean tones (#0B2230, #1D6B74, #5FB3A8) balanced with warm parchment, brass and wax-red accents (#F4E8CC, #C9973F, #B8382A). Soft volumetric lighting, subtle hand-painted texture, crisp readable silhouettes, gentle shapes suitable for an 8-year-old. Original designs only, not based on any existing franchise. No text, no letters, no numbers, no logo, no watermark, no frame, no user interface.`;
+const BG = {
+  alpha: `BACKGROUND: one isolated subject, fully transparent background (PNG with alpha). If transparency is not possible, use a perfectly flat solid magenta background #FF00FF, with no ground shadow and no magenta in the subject.`,
+  scene: `BACKGROUND: complete full-bleed scene, no border, no vignette.`,
+  tile: `BACKGROUND: seamless tileable texture. The left/right and top/bottom edges must wrap perfectly. Even lighting, no vignette, no focal point.`,
+  video: `FORMAT: short seamless video loop of 5 to 6 seconds, the last frame matches the first exactly, slow and calm motion.`,
+};
+const BGLABEL = { alpha: 'Détouré PNG', scene: 'Scène pleine', tile: 'Texture raccordable', video: 'Boucle vidéo' };
+const RATIO = { '1:1': 'ASPECT RATIO: square 1:1.', '2:3': 'ASPECT RATIO: portrait 2:3.', '3:2': 'ASPECT RATIO: landscape 3:2.' };
+const ISLE = `Small tropical island seen from above at a high three-quarter angle (about 60 degrees, the same angle for every island of the set), golden sandy beach and a ring of luminous turquoise shallow water around it,`;
+const CREW = `Creature mascot for a pirate crew, cute but cool, chunky readable silhouette, big expressive eyes, full body, three-quarter view,`;
+const ISO = `Isometric view, same angle and same lighting as the other blocks of the set,`;
+
+const CATS = [
+  ['base', 'Fondations', 'Icône de l’appli, textures de matières et brouillard. Ils servent sur tous les écrans.'],
+  ['map', 'Carte du monde', 'Les îles vues du dessus, posées sur l’océan. Même angle pour toutes, sinon la carte paraîtra bricolée.'],
+  ['scene', 'Décors', 'Fonds d’écran et en-têtes d’îles. Toujours une zone calme pour poser le texte.'],
+  ['ships', 'Navires', 'Le navire du joueur grandit en trois étapes. Les ennemis regardent vers la gauche, le joueur vers la droite.'],
+  ['chars', 'Personnages', 'Le capitaine, les 12 équipiers à collectionner et les boss des îles. Gardez la même conversation pour qu’ils aient un air de famille.'],
+  ['loot', 'Butin et objets', 'Coffres, doublons, avis de recherche vierge. Aucun texte dessus : je l’ajoute en code.'],
+  ['games', 'Mini-jeux', 'Objets propres à chaque jeu. Pièces et billets vierges : j’écris les valeurs moi-même.'],
+  ['fx', 'Effets', 'Images fixes que j’anime en code (échelle, rotation, fondu, particules).'],
+  ['video', 'Boucles vidéo', 'Optionnel, seulement si ton outil sait faire de la vidéo. Sinon je les anime en code.'],
+];
+
+const A = [
+  // Fondations
+  { id: 'app-icon', c: 'base', p: 1, bg: 'scene', r: '1:1', n: 'Icône de l’appli', u: 'Icône sur l’écran d’accueil de l’iPhone.', s: 'App icon artwork: a small galleon with scarlet sails cresting a wave in front of a large glowing golden sun disc, deep teal sea and sky. Bold, simple, centered composition that stays readable at very small sizes. Fills the whole square edge to edge, no rounded corners.' },
+  { id: 'tex-parchment', c: 'base', p: 1, bg: 'tile', r: '1:1', n: 'Papier parchemin', u: 'Fond des cartes de mission, des questions, des avis de recherche.', s: 'Aged parchment paper surface, warm cream (#F4E8CC) with soft fibers, faint tea stains and very subtle creases. Low contrast so dark text stays perfectly readable on top.' },
+  { id: 'tex-wood', c: 'base', p: 1, bg: 'tile', r: '1:1', n: 'Bois sombre', u: 'Mur de l’avis de recherche, pont du navire.', s: 'Dark weathered ship deck planks, vertical boards, deep brown with subtle grain and a few iron nails. Low contrast.' },
+  { id: 'tex-ocean', c: 'base', p: 1, bg: 'tile', r: '1:1', n: 'Océan vu du dessus', u: 'Fond de la carte du monde.', a: 'Je le fais onduler et scintiller en code.', s: 'Ocean water seen from directly above, deep teal (#11475F to #0B2A3A) with gentle wave patterns and soft light caustics. Calm and low contrast so islands placed on top stand out.' },
+  { id: 'fx-fog-a', c: 'base', p: 1, bg: 'alpha', r: '3:2', n: 'Banc de brouillard', u: 'Cache les îles pas encore découvertes.', a: 'Dérive lente en parallaxe, se dissipe quand une île est révélée.', s: 'A soft bank of white sea fog and low clouds, wispy edges fading to full transparency, slightly blue-tinted shadows.' },
+  { id: 'fx-fog-b', c: 'base', p: 2, bg: 'alpha', r: '3:2', n: 'Brume légère', u: 'Deuxième couche de brouillard pour la profondeur.', a: 'Dérive à une autre vitesse que la première couche.', s: 'Thin drifting sea mist, long horizontal wisps, very soft and semi-transparent.' },
+  { id: 'deco-compass', c: 'base', p: 2, bg: 'alpha', r: '1:1', n: 'Rose des vents', u: 'Décor de la carte, chargement.', a: 'Tourne lentement pendant les chargements.', s: 'An ornate engraved compass rose in brass and dark ink, antique nautical map style, 16 points, fine line engraving.' },
+
+  // Carte
+  { id: 'isle-canons', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Île des Canons', u: 'Carte du monde. Tables de multiplication.', s: `${ISLE} with a sturdy stone fort tower, a few cannons pointing at the sea, a small red flag and palm trees.` },
+  { id: 'isle-stade', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Stade des Vagues', u: 'Carte du monde. Calcul mental.', s: `${ISLE} with a small open-air football stadium carved into the rock, bright green pitch with white lines, two little goals and flags around the stands.` },
+  { id: 'isle-mine', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Mine aux Blocs', u: 'Carte du monde. Nombres jusqu’à 10 000.', s: `${ISLE} rocky mountain with a mine entrance held by wooden beams, rails and a mine cart, big cube-shaped crystals in gold, teal and emerald sticking out of the rock.` },
+  { id: 'isle-jungle', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Jungle des Créatures', u: 'Carte du monde. Droite graduée.', s: `${ISLE} covered with dense jungle and tall palm trees, a small waterfall, a few pairs of curious glowing eyes peeking from the foliage.` },
+  { id: 'isle-marche', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Marché du Port', u: 'Carte du monde. Monnaie.', s: `${ISLE} with a harbor market of colorful striped tents (red and cream, teal and cream), a wooden pier, crates, barrels and a moored rowboat.` },
+  { id: 'isle-cuisine', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Cuisine du Navire', u: 'Carte du monde. Fractions.', s: `${ISLE} with a cosy wooden galley-restaurant hut, chimney smoke, a giant cooking pot over a fire, fruit trees and hanging fish.` },
+  { id: 'isle-port', c: 'map', p: 2, bg: 'alpha', r: '1:1', n: 'Port d’attache', u: 'Point de départ et de retour sur la carte.', s: `${ISLE} a welcoming harbor town with small colorful houses, a stone quay, warm lanterns and empty docks waiting for a ship.` },
+  { id: 'isle-kraken', c: 'map', p: 2, bg: 'alpha', r: '1:1', n: 'Repaire du Kraken', u: 'Île du boss, cachée dans le brouillard au début.', s: `${ISLE} dark volcanic rock wrapped by enormous purple kraken tentacles, greenish shallow water, ominous but not frightening for children.` },
+  { id: 'isle-phare', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Phare des Énigmes', u: 'Future île : problèmes.', s: `${ISLE} rocky, with a tall red-and-white striped lighthouse, foam around the rocks and seagulls.` },
+  { id: 'isle-horloge', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Tour de l’Horloge', u: 'Future île : heures et durées.', s: `${ISLE} with an old stone clock tower whose round clock face has hands but no numbers, and a sundial garden.` },
+  { id: 'isle-chantier', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Chantier Naval', u: 'Future île : longueurs et masses.', s: `${ISLE} with a shipyard: a ship hull under construction on slipways, wooden cranes, stacks of timber and coils of rope.` },
+
+  // Décors
+  { id: 'bg-sea-golden', c: 'scene', p: 1, bg: 'scene', r: '3:2', n: 'Mer à l’heure dorée', u: 'Fond des combats et de plusieurs écrans.', a: 'Nuages et reflets animés en code.', s: 'Open sea at golden hour seen from sea level, horizon at the lower third, low sun with a glowing reflection on the water, soft pink and orange clouds. Empty scene with no ships and no islands, to leave room for game elements.' },
+  { id: 'fg-waves', c: 'scene', p: 1, bg: 'alpha', r: '3:2', n: 'Vagues de premier plan', u: 'Couche devant les navires, donne la profondeur.', a: 'Glisse doucement en parallaxe.', s: 'A foreground band of stylized ocean wave crests along the bottom of the image, deep teal with foam highlights. The upper two thirds of the image are fully transparent.' },
+  { id: 'hero-canons', c: 'scene', p: 1, bg: 'scene', r: '3:2', n: 'En-tête Île des Canons', u: 'Haut de l’écran de l’île.', s: 'An island seen from the sea at sunset: a hill with a stone fort tower and cannons, palm trees, warm backlight, calm sea in the foreground. Keep the lower third darker and calm for a title overlay.' },
+  { id: 'hero-stade', c: 'scene', p: 2, bg: 'scene', r: '3:2', n: 'En-tête Stade des Vagues', u: 'Haut de l’écran de l’île.', s: 'A cliff-top football stadium on an island seen from the sea at sunset, flags in the wind, palm trees, warm backlight. Keep the lower third darker and calm for a title overlay.' },
+  { id: 'hero-mine', c: 'scene', p: 2, bg: 'scene', r: '3:2', n: 'En-tête Mine aux Blocs', u: 'Haut de l’écran de l’île.', s: 'A rocky mountain island at sunset with a glowing mine entrance, wooden scaffolding, rails and giant colorful cube crystals catching the light. Keep the lower third darker and calm for a title overlay.' },
+  { id: 'hero-jungle', c: 'scene', p: 2, bg: 'scene', r: '3:2', n: 'En-tête Jungle', u: 'Haut de l’écran de l’île.', s: 'The edge of a lush jungle island at dusk, huge leaves, a waterfall, fireflies and glowing curious eyes among the plants. Keep the lower third darker and calm for a title overlay.' },
+  { id: 'hero-marche', c: 'scene', p: 2, bg: 'scene', r: '3:2', n: 'En-tête Marché du Port', u: 'Haut de l’écran de l’île.', s: 'A lively harbor market at sunset seen from the water, striped tents, lanterns, barrels and crates on a wooden pier. Keep the lower third darker and calm for a title overlay.' },
+  { id: 'hero-cuisine', c: 'scene', p: 2, bg: 'scene', r: '3:2', n: 'En-tête Cuisine', u: 'Haut de l’écran de l’île.', s: 'A cosy island galley-restaurant at sunset, smoke from the chimney, a giant pot over the fire, hanging lanterns and fruit trees. Keep the lower third darker and calm for a title overlay.' },
+  { id: 'bg-storm', c: 'scene', p: 2, bg: 'scene', r: '3:2', n: 'Tempête (boss)', u: 'Fond des combats de boss.', a: 'Éclairs et pluie en code.', s: 'Stormy night sea at sea level, dark purple clouds, a distant lightning flash, heavy waves. Dramatic but kid-friendly. No ships.' },
+  { id: 'bg-port-dusk', c: 'scene', p: 2, bg: 'scene', r: '2:3', n: 'Retour au port', u: 'Écran de fin de session (après 5 minutes).', s: 'A cosy pirate harbor at dusk, warm lanterns, wooden docks, calm water reflections, a moored galleon with furled scarlet sails. Peaceful end-of-day mood. Keep the top third calm for text.' },
+  { id: 'bg-title', c: 'scene', p: 2, bg: 'scene', r: '2:3', n: 'Écran titre', u: 'Ouverture de l’appli.', s: 'Epic title illustration: a lush archipelago seen from a cliff at dawn, a galleon with scarlet sails heading out to sea, mist between distant islands, strong sense of adventure. Keep the top third calm and empty for the title.' },
+  { id: 'hero-kraken', c: 'scene', p: 3, bg: 'scene', r: '3:2', n: 'En-tête Repaire du Kraken', u: 'Haut de l’écran de l’île boss.', s: 'A dark volcanic island at night under a stormy sky, giant tentacles rising from the water around it, eerie green glow. Exciting rather than scary. Keep the lower third darker and calm for a title overlay.' },
+
+  // Navires
+  { id: 'ship-player-3', c: 'ships', p: 1, bg: 'alpha', r: '3:2', n: 'Galion du joueur', u: 'Navire du joueur au niveau 3 : combat, écran navire.', a: 'Tangue en code.', s: 'Side view of a handsome three-masted galleon facing right, scarlet sails, dark wood hull with golden trim and gunports, a black flag showing a white skull above two crossed bones forming an X like a multiplication sign. Whole ship visible down to the waterline, no water.' },
+  { id: 'ship-player-top', c: 'ships', p: 1, bg: 'alpha', r: '1:1', n: 'Galion vu du dessus', u: 'Pion du joueur sur la carte.', a: 'Avance sur la route en code.', s: 'The same galleon with scarlet sails seen from directly above, compact, readable as a small map token, with a short white wake trailing behind it.' },
+  { id: 'ship-player-1', c: 'ships', p: 2, bg: 'alpha', r: '3:2', n: 'Petit sloop', u: 'Navire du joueur au début.', s: 'Side view of a small single-mast sloop facing right, patched cream sail, light wood hull, a plucky beginner pirate boat. Whole boat visible, no water.' },
+  { id: 'ship-player-2', c: 'ships', p: 2, bg: 'alpha', r: '3:2', n: 'Brigantin', u: 'Navire du joueur au niveau 2.', s: 'Side view of a two-masted brigantine facing right, cream sails with one red stripe, warm wood hull with a few brass details. Whole ship visible, no water.' },
+  { id: 'ship-requin', c: 'ships', p: 1, bg: 'alpha', r: '3:2', n: 'Le Requin Noir', u: 'Premier ennemi des combats.', s: 'Side view of a menacing pirate ship facing left, black tattered sails, dark hull, a carved shark figurehead, a grey flag with a shark fin. Villainous but cartoon-friendly. Whole ship visible, no water.' },
+  { id: 'ship-requin-hit', c: 'ships', p: 2, bg: 'alpha', r: '3:2', n: 'Requin Noir touché', u: 'Fin de combat, le navire ennemi coule.', s: 'The same black-sailed shark ship facing left, now damaged: tilted, a broken mast, holes in the hull, smoke rising. Funny defeat rather than violent. No water.' },
+  { id: 'ship-meduse', c: 'ships', p: 2, bg: 'alpha', r: '3:2', n: 'La Méduse', u: 'Deuxième ennemi.', s: 'Side view of a pirate ship facing left with violet sails decorated with jellyfish patterns and glowing pink lanterns. Whole ship visible, no water.' },
+  { id: 'ship-fantome', c: 'ships', p: 3, bg: 'alpha', r: '3:2', n: 'Navire fantôme', u: 'Ennemi rare.', s: 'Side view of a translucent ghost ship facing left, glowing teal sails, eerie but friendly. Whole ship visible, no water.' },
+  { id: 'fig-dragon', c: 'ships', p: 2, bg: 'alpha', r: '1:1', n: 'Proue dragon', u: 'Amélioration du navire.', s: 'A carved wooden ship figurehead shaped like a dragon with gilded details, isolated object.' },
+  { id: 'fig-sirene', c: 'ships', p: 2, bg: 'alpha', r: '1:1', n: 'Proue sirène', u: 'Amélioration du navire.', s: 'A carved wooden ship figurehead shaped like a mermaid holding a star, painted wood with gold leaf, isolated object.' },
+  { id: 'fig-lion', c: 'ships', p: 3, bg: 'alpha', r: '1:1', n: 'Proue lion de mer', u: 'Amélioration du navire.', s: 'A carved wooden ship figurehead shaped like a roaring sea lion with a fish tail, gilded mane, isolated object.' },
+  { id: 'cannon-gold', c: 'ships', p: 2, bg: 'alpha', r: '1:1', n: 'Canon doré', u: 'Amélioration du navire.', s: 'A polished golden ship cannon on a wooden carriage, side view facing right, isolated object.' },
+  { id: 'flag-blank', c: 'ships', p: 2, bg: 'alpha', r: '3:2', n: 'Drapeau vierge', u: 'Pavillon personnalisé : je dessine le symbole par-dessus.', a: 'Flotte au vent en code.', s: 'A waving black pirate flag with no symbol at all, soft fabric folds, seen from the front, not attached to a pole.' },
+
+  // Personnages
+  { id: 'capt-a', c: 'chars', p: 1, bg: 'alpha', r: '1:1', n: 'Capitaine (portrait A)', u: 'Avatar et avis de recherche.', s: 'Bust portrait of an original pirate captain who is an 8-year-old kid, confident adventurous grin, big tricorne hat, short dark hair, light skin, navy coat with brass buttons, three-quarter view facing slightly right.' },
+  { id: 'capt-b', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Capitaine (portrait B)', u: 'Autre avatar au choix.', s: 'Same art style and framing as the previous captain portrait: an 8-year-old kid pirate captain with curly black hair and dark brown skin, bright smile, tricorne hat with a feather, teal coat.' },
+  { id: 'capt-c', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Capitaine (portrait C)', u: 'Autre avatar au choix.', s: 'Same art style and framing as the previous captain portraits: an 8-year-old kid pirate captain with red hair and freckles, mischievous grin, bandana under a tricorne hat, burgundy coat.' },
+  { id: 'capt-d', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Capitaine (portrait D)', u: 'Autre avatar au choix.', s: 'Same art style and framing as the previous captain portraits: an 8-year-old kid pirate captain with tan skin and a long dark braid, determined look, tricorne hat, golden coat.' },
+  { id: 'capt-victory', c: 'chars', p: 2, bg: 'alpha', r: '2:3', n: 'Capitaine victorieux', u: 'Écran de victoire.', s: 'Full body of the same kid captain as portrait A, jumping with joy and raising a spyglass, coat flying.' },
+  { id: 'crew-perroquet', c: 'chars', p: 1, bg: 'alpha', r: '1:1', n: 'Perroquet Pi', u: 'Équipier (pouvoir : indice). Aussi le guide de l’appli.', s: `${CREW} a clever green-and-red parrot wearing a tiny navigator bicorne hat, holding a rolled map in one claw.` },
+  { id: 'crew-tortue', c: 'chars', p: 1, bg: 'alpha', r: '1:1', n: 'Tortue Total', u: 'Équipier (pouvoir : +10 secondes).', s: `${CREW} a calm sea turtle whose shell is patterned like a compass, wearing a small sand-timer pendant.` },
+  { id: 'crew-calmar', c: 'chars', p: 1, bg: 'alpha', r: '1:1', n: 'Calmar Calcul', u: 'Équipier rare (pouvoir : double butin).', s: `${CREW} a playful blue squid with curling arms each holding a different small object (a coin, a quill, a spyglass), round brass goggles.` },
+  { id: 'crew-crabe', c: 'chars', p: 1, bg: 'alpha', r: '1:1', n: 'Crabe Compteur', u: 'Équipier (pouvoir : relance).', s: `${CREW} a cheerful orange crab wearing a belt of colorful counting beads, proudly raising one claw.` },
+  { id: 'crew-poisson', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Poisson Fraction', u: 'Équipier.', s: `${CREW} a round pufferfish whose body is split into colored quarter sections like a pie, surprised face.` },
+  { id: 'crew-phoque', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Phoque Facteur', u: 'Équipier.', s: `${CREW} a chubby seal in a striped sailor shirt balancing a ball on its nose.` },
+  { id: 'crew-grenouille', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Grenouille Retenue', u: 'Équipier.', s: `${CREW} a small tree frog wearing a tiny backpack and holding a pencil.` },
+  { id: 'crew-pieuvre', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Pieuvre Produit', u: 'Équipier rare.', s: `${CREW} a purple octopus juggling shells, wearing a striped bandana.` },
+  { id: 'crew-requin', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Requin Rapido', u: 'Équipier rare.', s: `${CREW} a speedy, friendly young shark wearing racing goggles, leaning forward as if about to dash.` },
+  { id: 'crew-croco', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Croco Comparo', u: 'Équipier rare.', s: `${CREW} a smug crocodile with a monocle, holding a small balance scale.` },
+  { id: 'crew-baleine', c: 'chars', p: 3, bg: 'alpha', r: '1:1', n: 'Baleine Dix-Mille', u: 'Équipier légendaire.', s: `${CREW} a majestic small whale with constellation-like freckles and a glowing water spout.` },
+  { id: 'crew-dragon', c: 'chars', p: 3, bg: 'alpha', r: '1:1', n: 'Dragon des Dizaines', u: 'Équipier légendaire.', s: `${CREW} a small sea dragon with emerald scales and fin-shaped wings, proud pose.` },
+  { id: 'boss-kraken', c: 'chars', p: 1, bg: 'alpha', r: '1:1', n: 'Le Kraken des Tables', u: 'Boss de l’Île des Canons, teaser dans le brouillard.', s: 'A giant purple kraken emerging from the sea, huge expressive eyes, tentacles raised, wearing a battered captain hat. Imposing but kid-friendly, not frightening.' },
+  { id: 'boss-crabe', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Le Crabe Gardien', u: 'Boss du Stade des Vagues.', s: 'An enormous armored crab goalkeeper wearing goalkeeper gloves on its claws, crouched and ready to dive.' },
+  { id: 'boss-golem', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Le Golem des Blocs', u: 'Boss de la Mine aux Blocs.', s: 'A friendly-menacing stone golem built from colorful cubes (gold, teal, emerald and grey stone), glowing eyes.' },
+  { id: 'boss-serpent', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Le Serpent Mesureur', u: 'Boss de la Jungle (droite graduée).', s: 'A long jungle sea serpent coiled around a wooden measuring pole, mischievous grin.' },
+  { id: 'boss-marchand', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Le Marchand Fantôme', u: 'Boss du Marché (monnaie).', s: 'A ghostly old merchant with a lantern and a thick ledger, translucent teal glow, sly smile.' },
+  { id: 'boss-chef', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Le Chef Pieuvre', u: 'Boss de la Cuisine (fractions).', s: 'An octopus chef with a tall chef hat, each tentacle holding a different kitchen tool or a pie.' },
+  { id: 'guide-perroquet-bravo', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Perroquet : bravo', u: 'Guide, après une réussite.', s: 'The same parrot as crew-perroquet, cheering with wings wide open, beak open in a happy shout.' },
+  { id: 'guide-perroquet-hmm', c: 'chars', p: 2, bg: 'alpha', r: '1:1', n: 'Perroquet : réfléchit', u: 'Guide, quand il explique une erreur.', s: 'The same parrot as crew-perroquet, thinking, one wing under the beak, kind encouraging look.' },
+
+  // Butin
+  { id: 'chest-closed', c: 'loot', p: 1, bg: 'alpha', r: '1:1', n: 'Coffre fermé', u: 'Récompense avant ouverture.', a: 'Tremble avant de s’ouvrir.', s: 'A sturdy wooden treasure chest with brass bands and a lock, closed, three-quarter view.' },
+  { id: 'chest-open', c: 'loot', p: 1, bg: 'alpha', r: '1:1', n: 'Coffre ouvert', u: 'Écran de victoire.', a: 'Lumière et pièces jaillissantes en code.', s: 'The same treasure chest, wide open, overflowing with golden coins and a few gems, warm golden light shining from inside.' },
+  { id: 'chest-gold-closed', c: 'loot', p: 3, bg: 'alpha', r: '1:1', n: 'Grand coffre fermé', u: 'Coffre de fin de marée ou de boss.', s: 'A larger ornate golden treasure chest with gems set in the lid, closed, three-quarter view.' },
+  { id: 'chest-gold-open', c: 'loot', p: 3, bg: 'alpha', r: '1:1', n: 'Grand coffre ouvert', u: 'Coffre de fin de marée ou de boss.', s: 'The same ornate golden chest wide open, glowing light, coins, gems and a rolled map inside.' },
+  { id: 'coin-doublon', c: 'loot', p: 1, bg: 'alpha', r: '1:1', n: 'Doublon', u: 'Monnaie du jeu, compteur de prime.', a: 'Tourne sur lui-même en code.', s: 'A single gold doubloon coin seen from the front, embossed anchor emblem, worn edges, slight shine. No letters or numbers.' },
+  { id: 'coin-pile', c: 'loot', p: 2, bg: 'alpha', r: '1:1', n: 'Tas de doublons', u: 'Boutique du navire, butin.', s: 'A heap of gold doubloons with a few colorful gems.' },
+  { id: 'poster-blank', c: 'loot', p: 1, bg: 'alpha', r: '2:3', n: 'Avis de recherche vierge', u: 'Je place la photo, le nom et la prime par-dessus.', s: 'A blank aged wanted poster on parchment, torn and slightly curled edges, a pin hole at the top, a few stains. Completely empty: no text, no picture. Straight front view.' },
+  { id: 'wax-seal', c: 'loot', p: 2, bg: 'alpha', r: '1:1', n: 'Cachet de cire vierge', u: 'Tampons, badges de niveau.', s: 'A blank glossy red wax seal with an irregular edge, top view, empty center.' },
+  { id: 'cannonball', c: 'loot', p: 2, bg: 'alpha', r: '1:1', n: 'Boulet', u: 'Projectile des combats.', s: 'A single black iron cannonball with a soft highlight.' },
+
+  // Mini-jeux
+  { id: 'foot-ball', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Ballon', u: 'Tirs au but (calcul mental).', a: 'Trajectoire et rotation en code.', s: 'A vintage brown leather football with stitched panels and slight scuffs.' },
+  { id: 'foot-goal', c: 'games', p: 2, bg: 'alpha', r: '3:2', n: 'But de plage', u: 'Tirs au but.', s: 'Front view of a wooden beach football goal with a rope net and driftwood posts, centered.' },
+  { id: 'block-1000', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Bloc millier', u: 'Mine aux Blocs : vaut 1 000.', s: `${ISO} a large cube of solid gold, subtly divided into a 10 by 10 by 10 grid of smaller cubes.` },
+  { id: 'block-100', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Plaque centaine', u: 'Mine aux Blocs : vaut 100.', s: `${ISO} a flat square plate of teal crystal, one cube thick, divided into a 10 by 10 grid.` },
+  { id: 'block-10', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Barre dizaine', u: 'Mine aux Blocs : vaut 10.', s: `${ISO} a long emerald bar made of exactly 10 small cubes in a single row.` },
+  { id: 'block-1', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Cube unité', u: 'Mine aux Blocs : vaut 1.', s: `${ISO} a single small grey stone cube.` },
+  { id: 'jungle-frame', c: 'games', p: 2, bg: 'alpha', r: '3:2', n: 'Cadre de feuillage', u: 'Chasse sur la droite graduée.', a: 'Les feuilles bougent légèrement.', s: 'Foreground jungle leaves framing the left and right edges and the bottom corners. The center of the image is fully transparent.' },
+  { id: 'jungle-eyes', c: 'games', p: 3, bg: 'alpha', r: '1:1', n: 'Yeux dans les feuilles', u: 'Créature cachée sur la droite graduée.', a: 'Clignent en code.', s: 'A pair of glowing, curious creature eyes peeking through dark leaves.' },
+  { id: 'coin-copper', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Pièce cuivre vierge', u: 'Marché : 1, 2 et 5 centimes (j’écris la valeur).', s: 'A blank copper coin seen from the front, raised rim, smooth empty center, no engraving.' },
+  { id: 'coin-gold', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Pièce dorée vierge', u: 'Marché : 10, 20 et 50 centimes.', s: 'A blank brass-gold coin seen from the front, raised rim, smooth empty center, no engraving.' },
+  { id: 'coin-bimetal', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Pièce bimétal vierge', u: 'Marché : 1 et 2 euros.', s: 'A blank bimetallic coin seen from the front, silver outer ring and gold center, no engraving.' },
+  { id: 'bill-green', c: 'games', p: 2, bg: 'alpha', r: '3:2', n: 'Billet vert vierge', u: 'Marché : 5 euros (j’écris la valeur).', s: 'A blank stylized banknote in soft green tones with an ornate border pattern and an empty center. No numbers, no letters, no faces, not resembling any real currency.' },
+  { id: 'bill-red', c: 'games', p: 2, bg: 'alpha', r: '3:2', n: 'Billet rouge vierge', u: 'Marché : 10 euros.', s: 'A blank stylized banknote in soft red tones with an ornate border pattern and an empty center. No numbers, no letters, no faces, not resembling any real currency.' },
+  { id: 'bill-blue', c: 'games', p: 2, bg: 'alpha', r: '3:2', n: 'Billet bleu vierge', u: 'Marché : 20 euros.', s: 'A blank stylized banknote in soft blue tones with an ornate border pattern and an empty center. No numbers, no letters, no faces, not resembling any real currency.' },
+  { id: 'market-items', c: 'games', p: 3, bg: 'alpha', r: '3:2', n: 'Planche d’objets du marché', u: 'Objets à acheter. Je découpe la planche en 10 images.', s: 'A sprite sheet of 10 separate objects arranged in a 5 by 2 grid with generous even spacing, each object centered in its cell and not touching the others: a coil of rope, a fish, a compass, a spyglass, a rolled treasure map, a small barrel, a bunch of bananas, a folded sail, a pirate flag, a sack of rice.' },
+  { id: 'market-stall', c: 'games', p: 3, bg: 'alpha', r: '3:2', n: 'Étal du marchand', u: 'Décor du jeu de la monnaie.', s: 'Front view of a wooden market stall with a red-and-cream striped awning, empty counter, centered.' },
+  { id: 'food-pizza', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Pizza vue du dessus', u: 'Fractions : je la découpe en parts en code.', s: 'A whole round pizza seen from directly above, a perfect circle centered in the frame, cheese and tomato with a few toppings spread evenly. Not sliced.' },
+  { id: 'food-cake', c: 'games', p: 2, bg: 'alpha', r: '1:1', n: 'Gâteau vu du dessus', u: 'Fractions.', s: 'A whole round layered cake seen from directly above, a perfect circle centered in the frame, cream frosting with berries evenly around the edge. Not sliced.' },
+  { id: 'food-tart', c: 'games', p: 3, bg: 'alpha', r: '1:1', n: 'Tarte vue du dessus', u: 'Fractions.', s: 'A whole round fruit tart seen from directly above, a perfect circle centered in the frame, fruit arranged evenly. Not sliced.' },
+
+  // Effets
+  { id: 'fx-explosion', c: 'fx', p: 1, bg: 'alpha', r: '1:1', n: 'Impact de boulet', u: 'Bonne réponse au combat.', a: 'Apparaît en grossissant puis s’efface (0,4 s).', s: 'A stylized cartoon cannon-hit explosion with a bright yellow-orange core, red edges and a few sparks. No smoke.' },
+  { id: 'fx-smoke', c: 'fx', p: 1, bg: 'alpha', r: '1:1', n: 'Fumée', u: 'Après chaque tir.', a: 'Monte et se dissipe.', s: 'A soft puff of grey-white cannon smoke, stylized rounded billows.' },
+  { id: 'fx-splash', c: 'fx', p: 1, bg: 'alpha', r: '1:1', n: 'Gerbe d’eau', u: 'Tir manqué (mauvaise réponse).', a: 'Jaillit puis retombe.', s: 'A stylized water splash from a cannonball hitting the sea, teal and white droplets.' },
+  { id: 'fx-sparkle', c: 'fx', p: 2, bg: 'alpha', r: '1:1', n: 'Étincelle', u: 'Récompenses, étoiles.', a: 'Scintille, utilisée en particules.', s: 'A single four-pointed golden sparkle with a soft glow.' },
+  { id: 'fx-coins', c: 'fx', p: 2, bg: 'alpha', r: '1:1', n: 'Gerbe de doublons', u: 'Gain de butin.', s: 'A burst of gold coins flying outward from the center, light motion blur.' },
+
+  // Vidéo
+  { id: 'loop-ocean', c: 'video', p: 3, bg: 'video', r: '1:1', n: 'Boucle océan', u: 'Remplace la texture d’océan animée en code.', s: 'Top-down ocean water with the same look as tex-ocean, gentle waves and moving light caustics.' },
+  { id: 'loop-sky', c: 'video', p: 3, bg: 'video', r: '3:2', n: 'Boucle ciel doré', u: 'Fond des combats.', s: 'The golden-hour sea scene of bg-sea-golden with clouds drifting slowly and the sun reflection shimmering.' },
+  { id: 'loop-fog', c: 'video', p: 3, bg: 'video', r: '3:2', n: 'Boucle brouillard', u: 'Brouillard de la carte.', s: 'White sea fog drifting slowly from left to right over a pure black background.' },
+];
+
+const PRIO = { 1: 'Indispensable', 2: 'Important', 3: 'Plus tard' };
+const KEY = 'archipel-assets-done';
+let done = new Set();
+try { done = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...done])); } catch (e) {} };
+let fP = 0, fC = 'all';
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const full = a => [STYLE, `SUBJECT: ${a.s}`, BG[a.bg], RATIO[a.r]].join('\n\n');
+
+document.getElementById('style-text').textContent = STYLE;
+
+function copy(text, btn, label) {
+  const ok = () => { btn.textContent = 'Copié'; btn.classList.add('ok', 'done'); setTimeout(() => { btn.textContent = label; btn.classList.remove('ok', 'done'); }, 1600); };
+  const fallback = () => {
+    const t = document.createElement('textarea'); t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select();
+    try { document.execCommand('copy'); ok(); } catch (e) { btn.textContent = 'Sélectionne et copie'; }
+    t.remove();
+  };
+  try { navigator.clipboard.writeText(text).then(ok, fallback); } catch (e) { fallback(); }
+}
+document.getElementById('copy-style').addEventListener('click', e => copy(STYLE, e.currentTarget, 'Copier le bloc de style'));
+
+function chips() {
+  const pr = [[0, 'Toutes priorités'], [1, 'Indispensable'], [2, 'Important'], [3, 'Plus tard']];
+  document.getElementById('f-prio').innerHTML = pr.map(([v, l]) => {
+    const n = v ? A.filter(a => a.p === v).length : A.length;
+    return `<button class="chip" type="button" data-p="${v}" aria-pressed="${fP === v}">${l} · ${n}</button>`;
+  }).join('');
+  document.getElementById('f-cat').innerHTML = [['all', 'Toutes les catégories'], ...CATS.map(c => [c[0], c[1]])].map(([v, l]) =>
+    `<button class="chip" type="button" data-c="${v}" aria-pressed="${fC === v}">${l}</button>`).join('');
+}
+
+function render() {
+  const list = document.getElementById('list'); let shown = 0;
+  list.innerHTML = CATS.map(([cid, name, desc]) => {
+    if (fC !== 'all' && fC !== cid) return '';
+    const items = A.filter(a => a.c === cid && (!fP || a.p === fP));
+    if (!items.length) return '';
+    shown += items.length;
+    const dn = items.filter(a => done.has(a.id)).length;
+    return `<section class="cat" id="cat-${cid}"><div class="cat-h"><div><h2>${name}</h2><p>${desc}</p></div><span class="count">${dn} / ${items.length} générés</span></div>
+      <div class="grid">${items.map(a => `
+        <article class="card${done.has(a.id) ? ' is-done' : ''}">
+          <div class="card-top"><div style="min-width:0"><div class="id">${a.id}.png</div><h3>${esc(a.n)}</h3></div><span class="tag p${a.p}">${PRIO[a.p]}</span></div>
+          <div class="meta"><span class="tag">${BGLABEL[a.bg]}</span><span class="tag">${a.r === '1:1' ? 'Carré 1:1' : a.r === '2:3' ? 'Portrait 2:3' : 'Paysage 3:2'}</span></div>
+          <p class="use">${esc(a.u)}</p>
+          ${a.a ? `<p class="anim">${esc(a.a)}</p>` : ''}
+          <div class="subject">${esc(a.s)}</div>
+          <div class="card-bot">
+            <label class="check"><input type="checkbox" id="done-${a.id}" data-done="${a.id}" ${done.has(a.id) ? 'checked' : ''}>Généré</label>
+            <button class="cbtn" type="button" data-copy="${a.id}">Copier le prompt</button>
+          </div>
+        </article>`).join('')}</div></section>`;
+  }).join('');
+  document.getElementById('empty').hidden = shown > 0;
+  meter();
+}
+
+function meter() {
+  const p1 = A.filter(a => a.p === 1), d1 = p1.filter(a => done.has(a.id)).length;
+  document.getElementById('m-p1').textContent = `${d1} / ${p1.length}`;
+  document.getElementById('m-bar').style.width = `${p1.length ? d1 / p1.length * 100 : 0}%`;
+  document.getElementById('m-all').textContent = `${A.filter(a => done.has(a.id)).length} / ${A.length} au total`;
+}
+
+document.addEventListener('click', e => {
+  const p = e.target.closest('[data-p]'), c = e.target.closest('[data-c]'), cp = e.target.closest('[data-copy]');
+  if (p) { fP = +p.dataset.p; chips(); render(); }
+  else if (c) { fC = c.dataset.c; chips(); render(); }
+  else if (cp) { const a = A.find(x => x.id === cp.dataset.copy); copy(full(a), cp, 'Copier le prompt'); }
+});
+document.addEventListener('change', e => {
+  const id = e.target.dataset && e.target.dataset.done; if (!id) return;
+  e.target.checked ? done.add(id) : done.delete(id); save();
+  const card = e.target.closest('.card'); card && card.classList.toggle('is-done', e.target.checked);
+  const sec = e.target.closest('.cat'); if (sec) { const boxes = sec.querySelectorAll('[data-done]'); sec.querySelector('.count').textContent = `${[...boxes].filter(b => b.checked).length} / ${boxes.length} générés`; }
+  meter();
+});
+
+chips(); render();
+window.__assets = A;
+})();
+</script>
