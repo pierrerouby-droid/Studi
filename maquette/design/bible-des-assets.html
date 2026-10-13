@@ -103,8 +103,8 @@ code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px;color:va
   <section>
     <h2>Mode d’emploi</h2>
     <div class="steps">
-      <div class="step"><span class="n">1</span><p><b>Une seule conversation</b> dans ton générateur pour tout l’archipel. Joins la planche <code>premium-1-monde.png</code> comme référence de style, puis colle le bloc de style ci-dessous.</p></div>
-      <div class="step"><span class="n">2</span><p><b>Trois tests d’abord</b> : <code>ship-player-3</code>, <code>isle-canons</code>, <code>crew-perroquet</code>. Envoie-les-moi : je valide la cohérence avant que tu lances la série.</p></div>
+      <div class="step"><span class="n">1</span><p><b>Une seule conversation</b> dans ton générateur pour tout l’archipel. Colle le bloc de style, puis joins les images validées comme références : <code>crew-perroquet</code> pour les personnages, <code>ship-player-3</code> pour les navires, la nouvelle <code>isle-canons</code> pour les îles.</p></div>
+      <div class="step"><span class="n">2</span><p><b>Tests validés</b> : <code>ship-player-3</code> et <code>crew-perroquet</code> sont bons. <code>isle-canons</code> est à refaire <b>sans l’anneau d’eau</b> autour : le prompt est mis à jour. Envoie-la-moi avant de faire les autres îles.</p></div>
       <div class="step"><span class="n">3</span><p><b>Copie le prompt de chaque fiche</b> : il contient déjà le style, le sujet, le fond et le format. Commence par les fiches <b>Indispensable</b>.</p></div>
       <div class="step"><span class="n">4</span><p><b>Fond transparent</b> : demande un PNG transparent. Si l’outil ne sait pas, il doit mettre un fond magenta uni <code>#FF00FF</code>, je le découpe moi-même.</p></div>
       <div class="step"><span class="n">5</span><p><b>Nomme chaque fichier</b> avec son identifiant (<code>isle-canons.png</code>), en plus grande taille possible. Je redimensionne et je compresse.</p></div>
@@ -169,8 +169,8 @@ const BG = {
 };
 const BGLABEL = { alpha: 'Détouré PNG', scene: 'Scène pleine', tile: 'Texture raccordable', video: 'Boucle vidéo' };
 const RATIO = { '1:1': 'ASPECT RATIO: square 1:1.', '2:3': 'ASPECT RATIO: portrait 2:3.', '3:2': 'ASPECT RATIO: landscape 3:2.' };
-const ISLE = `Small tropical island seen from above at a high three-quarter angle (about 60 degrees, the same angle for every island of the set), golden sandy beach and a ring of luminous turquoise shallow water around it,`;
-const CREW = `Creature mascot for a pirate crew, cute but cool, chunky readable silhouette, big expressive eyes, full body, three-quarter view,`;
+const ISLE = `Small tropical island seen from above at a three-quarter isometric angle (about 45 degrees, the same angle as the reference island isle-canons). The island ends at its golden sandy beach and shoreline rocks: NO surrounding sea, no turquoise water ring, no base or platform, nothing beyond the beach (the ocean is added separately). On the island:`;
+const CREW = `Creature mascot for a pirate crew, matching the reference parrot (crew-perroquet) in rendering: same level of detail, same soft golden lighting, same proportions with a big head and big expressive eyes. Cute but cool, chunky readable silhouette, full body, three-quarter view:`;
 const ISO = `Isometric view, same angle and same lighting as the other blocks of the set,`;
 
 const CATS = [
@@ -196,17 +196,17 @@ const A = [
   { id: 'deco-compass', c: 'base', p: 2, bg: 'alpha', r: '1:1', n: 'Rose des vents', u: 'Décor de la carte, chargement.', a: 'Tourne lentement pendant les chargements.', s: 'An ornate engraved compass rose in brass and dark ink, antique nautical map style, 16 points, fine line engraving.' },
 
   // Carte
-  { id: 'isle-canons', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Île des Canons', u: 'Carte du monde. Tables de multiplication.', s: `${ISLE} with a sturdy stone fort tower, a few cannons pointing at the sea, a small red flag and palm trees.` },
-  { id: 'isle-stade', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Stade des Vagues', u: 'Carte du monde. Calcul mental.', s: `${ISLE} with a small open-air football stadium carved into the rock, bright green pitch with white lines, two little goals and flags around the stands.` },
-  { id: 'isle-mine', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Mine aux Blocs', u: 'Carte du monde. Nombres jusqu’à 10 000.', s: `${ISLE} rocky mountain with a mine entrance held by wooden beams, rails and a mine cart, big cube-shaped crystals in gold, teal and emerald sticking out of the rock.` },
-  { id: 'isle-jungle', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Jungle des Créatures', u: 'Carte du monde. Droite graduée.', s: `${ISLE} covered with dense jungle and tall palm trees, a small waterfall, a few pairs of curious glowing eyes peeking from the foliage.` },
-  { id: 'isle-marche', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Marché du Port', u: 'Carte du monde. Monnaie.', s: `${ISLE} with a harbor market of colorful striped tents (red and cream, teal and cream), a wooden pier, crates, barrels and a moored rowboat.` },
-  { id: 'isle-cuisine', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Cuisine du Navire', u: 'Carte du monde. Fractions.', s: `${ISLE} with a cosy wooden galley-restaurant hut, chimney smoke, a giant cooking pot over a fire, fruit trees and hanging fish.` },
+  { id: 'isle-canons', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Île des Canons', u: 'Carte du monde. Tables de multiplication.', s: `${ISLE} a sturdy stone fort tower, a few cannons pointing at the sea, a small red flag and palm trees.` },
+  { id: 'isle-stade', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Stade des Vagues', u: 'Carte du monde. Calcul mental.', s: `${ISLE} a small open-air football stadium carved into the rock, bright green pitch with white lines, two little goals and flags around the stands.` },
+  { id: 'isle-mine', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Mine aux Blocs', u: 'Carte du monde. Nombres jusqu’à 10 000.', s: `${ISLE} a rocky mountain with a mine entrance held by wooden beams, rails and a mine cart, big cube-shaped crystals in gold, teal and emerald sticking out of the rock.` },
+  { id: 'isle-jungle', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Jungle des Créatures', u: 'Carte du monde. Droite graduée.', s: `${ISLE} dense jungle and tall palm trees, a small waterfall, a few pairs of curious glowing eyes peeking from the foliage.` },
+  { id: 'isle-marche', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Marché du Port', u: 'Carte du monde. Monnaie.', s: `${ISLE} a harbor market of colorful striped tents (red and cream, teal and cream), a wooden pier, crates, barrels and a moored rowboat.` },
+  { id: 'isle-cuisine', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Cuisine du Navire', u: 'Carte du monde. Fractions.', s: `${ISLE} a cosy wooden galley-restaurant hut, chimney smoke, a giant cooking pot over a fire, fruit trees and hanging fish.` },
   { id: 'isle-port', c: 'map', p: 2, bg: 'alpha', r: '1:1', n: 'Port d’attache', u: 'Point de départ et de retour sur la carte.', s: `${ISLE} a welcoming harbor town with small colorful houses, a stone quay, warm lanterns and empty docks waiting for a ship.` },
-  { id: 'isle-kraken', c: 'map', p: 2, bg: 'alpha', r: '1:1', n: 'Repaire du Kraken', u: 'Île du boss, cachée dans le brouillard au début.', s: `${ISLE} dark volcanic rock wrapped by enormous purple kraken tentacles, greenish shallow water, ominous but not frightening for children.` },
-  { id: 'isle-phare', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Phare des Énigmes', u: 'Future île : problèmes.', s: `${ISLE} rocky, with a tall red-and-white striped lighthouse, foam around the rocks and seagulls.` },
-  { id: 'isle-horloge', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Tour de l’Horloge', u: 'Future île : heures et durées.', s: `${ISLE} with an old stone clock tower whose round clock face has hands but no numbers, and a sundial garden.` },
-  { id: 'isle-chantier', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Chantier Naval', u: 'Future île : longueurs et masses.', s: `${ISLE} with a shipyard: a ship hull under construction on slipways, wooden cranes, stacks of timber and coils of rope.` },
+  { id: 'isle-kraken', c: 'map', p: 2, bg: 'alpha', r: '1:1', n: 'Repaire du Kraken', u: 'Île du boss, cachée dans le brouillard au début.', s: `${ISLE} dark volcanic rock wrapped by enormous purple kraken tentacles, ominous but not frightening for children.` },
+  { id: 'isle-phare', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Phare des Énigmes', u: 'Future île : problèmes.', s: `${ISLE} shoreline rocks and a tall red-and-white striped lighthouse, foam around the rocks and seagulls.` },
+  { id: 'isle-horloge', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Tour de l’Horloge', u: 'Future île : heures et durées.', s: `${ISLE} an old stone clock tower whose round clock face has hands but no numbers, and a sundial garden.` },
+  { id: 'isle-chantier', c: 'map', p: 3, bg: 'alpha', r: '1:1', n: 'Chantier Naval', u: 'Future île : longueurs et masses.', s: `${ISLE} a shipyard: a ship hull under construction on slipways, wooden cranes, stacks of timber and coils of rope.` },
 
   // Décors
   { id: 'bg-sea-golden', c: 'scene', p: 1, bg: 'scene', r: '3:2', n: 'Mer à l’heure dorée', u: 'Fond des combats et de plusieurs écrans.', a: 'Nuages et reflets animés en code.', s: 'Open sea at golden hour seen from sea level, horizon at the lower third, low sun with a glowing reflection on the water, soft pink and orange clouds. Empty scene with no ships and no islands, to leave room for game elements.' },
