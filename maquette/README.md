@@ -1,7 +1,18 @@
-# L'Archipel des Nombres (maquette)
+# L'Archipel des Nombres
 
-Maquette jouable d'une appli de mathématiques pour un enfant de CE2, pensée pour l'iPhone (au doigt ou au clavier).
-Un seul fichier : `index.html`. On l'ouvre dans un navigateur, sans installation.
+Appli de mathématiques pour un enfant de CE2, pensée pour l'iPhone (au doigt ou au clavier).
+`index.html` + le dossier `assets/` (illustrations générées, en WebP). On l'ouvre dans un navigateur, sans installation.
+
+## Version 2 (direction B premium)
+
+- **Carte du monde** peinte : océan animé, lagons, six îles, brouillard sur les îles à découvrir, Kraken en ombre.
+- **Marée du jour** : un seul bouton lance trois escales choisies selon ses points faibles (environ 5 minutes), puis retour au port.
+- **Chaque île** a une route de 10 niveaux : coffre au niveau 5 (nouvel équipier), boss au niveau 10.
+- **Combat naval** pour les tables : boulets, explosions, barre de vie du Requin Noir ou du Kraken.
+- **Récompenses** : doublons, coffre à ouvrir, équipiers avec pouvoirs (indice, relance, double butin), surnoms, avis de recherche.
+- **Espace parents** : maintenir la roue crantée 2 secondes.
+
+La suite de ce document décrit la première maquette (version 1).
 
 ## Principe
 
