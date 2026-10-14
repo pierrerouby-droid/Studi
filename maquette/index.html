@@ -6,7 +6,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Archipel">
-<meta name="theme-color" content="#1479c4">
+<meta name="theme-color" content="#0B2230">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 <title>L'Archipel des Nombres</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -148,6 +152,11 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none;pointer-events:none}
 @keyframes hit{30%{transform:translateX(6px) rotate(3deg)}}
 .ship.foe.sunk{animation:none;transform:translateY(60%) rotate(14deg);opacity:0}
 .ship.foe.boss{width:56%;bottom:8%}
+.bossfig{position:absolute;left:50%;bottom:10%;width:min(66%,320px);transform:translateX(-50%);z-index:3;filter:drop-shadow(0 14px 14px rgba(0,0,0,.45));animation:bossb 3.2s ease-in-out infinite;transition:transform 1.1s ease-in,opacity 1.1s}
+@keyframes bossb{50%{transform:translateX(-50%) translateY(-6px) rotate(-1.5deg)}}
+.bossfig.hit{animation:bosshit .5s}
+@keyframes bosshit{30%{transform:translateX(-46%) rotate(4deg);filter:drop-shadow(0 14px 14px rgba(0,0,0,.45)) brightness(1.6)}}
+.bossfig.sunk{animation:none;transform:translateX(-50%) translateY(50%) scale(.6) rotate(-12deg);opacity:0}
 .ball{position:absolute;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#666,#111);z-index:5;opacity:0;pointer-events:none}
 .fx{position:absolute;pointer-events:none;z-index:6}
 .fx.boom{animation:boom .7s ease-out forwards}
@@ -165,6 +174,7 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none;pointer-events:none}
 .combo{height:42px;border-radius:21px;display:flex;align-items:center;gap:4px;padding:0 12px 0 10px;color:#ffcf7a;font:800 16px var(--f-u)}
 .combo svg{width:18px;height:18px;color:#ff9d3c}
 .hpbox{position:absolute;right:12px;top:calc(var(--st) + 60px);width:190px;border-radius:16px;padding:8px 12px 10px;z-index:10}
+.hpbox>div:first-child{gap:8px;align-items:baseline}.hpbox #hpt{white-space:nowrap}
 .hpbox .bar{height:10px;border-radius:5px;background:rgba(0,0,0,.45);box-shadow:inset 0 0 0 1px rgba(243,213,140,.35);overflow:hidden;margin-top:6px}
 .hpbox .bar i{display:block;height:100%;background:linear-gradient(90deg,#b8382a,#ef7a4a);border-radius:5px;transition:width .5s}
 .powers{position:absolute;left:12px;top:calc(var(--st) + 62px);display:flex;flex-direction:column;align-items:flex-start;gap:6px;z-index:8}
@@ -298,7 +308,9 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none;pointer-events:none}
 .mystery div{aspect-ratio:1;border-radius:16px;display:grid;place-items:center;font:800 24px var(--f-d);color:#4d6a70;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--glass-line)}
 .showship{position:relative;border-radius:24px;overflow:hidden;height:200px;margin-bottom:16px}
 .showship img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.8)}
-.showship img.sh{position:absolute;left:50%;bottom:10px;width:82%;transform:translateX(-50%);animation:shipr 3.4s ease-in-out infinite}
+.showship img.sh{position:absolute;right:-2%;bottom:8px;width:64%;animation:shipr 3.4s ease-in-out infinite}
+.showship::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,26,36,.55),transparent 55%);pointer-events:none}
+.showship .cap{z-index:2;max-width:52%}
 .showship .cap{position:absolute;left:14px;top:12px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
 .wood{background:#3b2617 url(assets/tex-wood.webp) center/320px}
 .poster{position:relative;width:min(330px,88%);aspect-ratio:2/3;margin:0 auto;background:url(assets/poster-blank.webp) center/100% 100% no-repeat;filter:drop-shadow(0 20px 26px rgba(0,0,0,.55));transform:rotate(-1.2deg);color:var(--ink);text-align:center}
@@ -323,7 +335,9 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none;pointer-events:none}
 .eps button[aria-pressed="true"]{background:var(--brass-hi);color:#2a1a07}
 
 /* ---------- Port, onboarding, parents ---------- */
-.port img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(1.1)}
+.port img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.port::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,26,36,.55),transparent 32%,transparent 55%,rgba(8,26,36,.6))}
+.port>div{z-index:2}
 .port .shipw{position:absolute;left:50%;top:38%;width:78%;transform:translateX(-50%);animation:shipr 4s ease-in-out infinite}
 .port .card{position:absolute;left:16px;right:16px;bottom:calc(var(--sbm) + 18px);border-radius:24px;padding:18px 16px 16px}
 .modal{position:absolute;inset:0;z-index:100;display:grid;place-items:center;padding:16px;background:rgba(6,20,28,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
@@ -332,6 +346,15 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none;pointer-events:none}
 .parents{position:absolute;inset:0;z-index:90;background:#0b2230;overflow-y:auto;padding:calc(var(--st) + 16px) 16px calc(var(--sbm) + 30px)}
 .pcard{border-radius:20px;padding:14px 16px;margin-top:14px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--glass-line)}
 .pcard h3{margin:0 0 8px;font:700 16px var(--f-u)}
+.pcard p.note{margin:0 0 10px;color:var(--mist);font-size:13.5px;line-height:1.45}
+.pcard .gap{display:flex;flex-direction:column;gap:8px}
+.fbq{display:block;margin-top:16px}.fbq>span{display:block;font-size:13.5px;color:#cfe0df;margin-bottom:6px;font-weight:600}
+.fld{width:100%;border:0;border-radius:12px;padding:11px 12px;font:500 16px var(--f-u);color:var(--foam);background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px var(--glass-line);resize:vertical}
+.fld:focus{outline:2px solid var(--brass-hi);outline-offset:1px}
+textarea.fld{min-height:76px}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13.5px;color:#cfe0df;line-height:1.4}.chk input{width:20px;height:20px;margin:0;flex:none;accent-color:#d9a74a}
+.vers{font-size:12px;color:#5f7f86;text-align:center;margin-top:18px}
+.a2hs{font-size:12.5px;line-height:1.45;color:var(--ink-2);background:rgba(201,151,63,.14);border-radius:12px;padding:9px 11px;text-align:left}
 .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .kpi{border-radius:14px;padding:10px 12px;background:rgba(255,255,255,.05)}
 .kpi b{display:block;font-family:var(--f-d);font-weight:800;font-size:26px;color:var(--brass-hi)}
@@ -413,6 +436,14 @@ const DEF = () => ({ name: '', epithet: '', eps: [], gold: 0, sound: true, limit
 let S;
 try { S = Object.assign(DEF(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = DEF(); }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const VERSION = '0.3 bêta · octobre 2026';
+try { navigator.storage && navigator.storage.persist && navigator.storage.persist().catch(() => {}); } catch (e) {}
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent), standalone = !!(navigator.standalone || (window.matchMedia && matchMedia('(display-mode: standalone)').matches));
+function copyText(text) {
+  const fb = () => { const t = document.createElement('textarea'); t.value = text; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(t); t.select(); let ok = false; try { ok = document.execCommand('copy'); } catch (e) {} t.remove(); return ok; };
+  try { if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).then(() => true, fb); } catch (e) {}
+  return Promise.resolve(fb());
+}
 const IS = id => S.isl[id] || (S.isl[id] = { node: 1, stars: {}, ok: 0, tot: 0, ms: 0, fails: 0, best: 0 });
 
 /* ================= Sons ================= */
@@ -447,19 +478,29 @@ const CREW = [
   { id: 'perroquet', n: 'Perroquet Pi', r: 'Guide', p: 'Indice : il t’explique la question', how: 'Déjà à bord' },
   { id: 'crabe', n: 'Crabe Compteur', r: 'Commun', p: 'Relance : change de question sans perdre', how: 'Gagne ta première escale' },
   { id: 'tortue', n: 'Tortue Total', r: 'Commun', p: 'Calme : le bonus éclair dure plus longtemps', how: 'Ouvre le coffre de l’Île des Canons' },
-  { id: 'calmar', n: 'Calmar Calcul', r: 'Rare', p: 'Double butin sur une escale', how: 'Ouvre un coffre sur une autre île' },
+  { id: 'calmar', n: 'Calmar Calcul', r: 'Rare', p: 'Double butin sur une escale', how: 'Ouvre le coffre du Marché du Port' },
+  { id: 'phoque', n: 'Phoque Facteur', r: 'Commun', p: 'Série : ton combo rapporte jusqu’à +8 au lieu de +5', how: 'Ouvre le coffre du Stade des Vagues' },
+  { id: 'grenouille', n: 'Grenouille Retenue', r: 'Commun', p: 'Seconde chance : ta première erreur ne casse pas ton combo', how: 'Ouvre le coffre de la Mine aux Blocs' },
+  { id: 'croco', n: 'Croco Comparo', r: 'Rare', p: '+10 doublons à chaque escale gagnée', how: 'Ouvre le coffre de la Jungle' },
+  { id: 'poisson', n: 'Poisson Fraction', r: 'Rare', p: 'Étoile bonus : 5 bonnes réponses sur 6 donnent 3 étoiles', how: 'Ouvre le coffre de la Cuisine' },
+  { id: 'requin', n: 'Requin Rapido', r: 'Rare', p: 'Éclair : le bonus de rapidité rapporte le double', how: 'Bats le Kraken des Tables' },
+  { id: 'pieuvre', n: 'Pieuvre Produit', r: 'Épique', p: 'Prime de boss doublée : +300 au lieu de +150', how: 'Bats un boss sur une autre île' },
 ];
+const has = id => S.crew.includes(id);
+const SHIPS = [[0, 'ship-player-1', 'sloop'], [5, 'ship-player-2', 'brigantin'], [15, 'ship-player-3', 'galion']];
+const shipLv = (w = S.wins) => { let k = 0; SHIPS.forEach((x, j) => { if (w >= x[0]) k = j; }); return k; };
+const shipImg = () => SHIPS[shipLv()][1];
 const EPITHETS = [
   ['Calcul-Éclair', '5 bonnes réponses de suite en moins de 5 s'], ['Canonnier d’Élite', '6 sur 6 à l’Île des Canons'], ['Tête Froide', '6 sur 6 au Stade des Vagues'],
   ['Bâtisseur', '6 sur 6 à la Mine aux Blocs'], ['Œil-de-Lynx', '6 sur 6 dans la Jungle'], ['Main-d’Or', '6 sur 6 au Marché du Port'], ['Fine Lame', '6 sur 6 à la Cuisine'], ['Vainqueur du Kraken', 'Bats le boss de l’Île des Canons'],
 ];
 const ISLES = [
-  { id: 'canons', art: 'l’Île des Canons', n: 'Île des Canons', notion: 'Tables de multiplication', img: 'isle-canons', lag: 'lagoon-round', x: 28, y: 1450, gen: genCanon, ep: 'Canonnier d’Élite', unlock: 0, sfx: ['BOUM !', 'TOUCHÉ !', 'EN PLEIN DANS LE MILLE !'] },
-  { id: 'stade', art: 'le Stade des Vagues', n: 'Stade des Vagues', notion: 'Calcul mental', img: 'isle-stade', lag: 'lagoon-oval', x: 72, y: 1230, gen: genFoot, ep: 'Tête Froide', unlock: 0, sfx: ['BUUUT !', 'LUCARNE !', 'GOLAZO !'] },
-  { id: 'mine', art: 'la Mine aux Blocs', n: 'Mine aux Blocs', notion: 'Nombres jusqu’à 10 000', img: 'isle-mine', lag: 'lagoon-rocks', x: 28, y: 1010, gen: genMine, ep: 'Bâtisseur', unlock: 0, sfx: ['CONSTRUIT !', 'BLOC PARFAIT !'] },
-  { id: 'jungle', art: 'la Jungle des Créatures', n: 'Jungle des Créatures', notion: 'Droite graduée', img: 'isle-jungle', lag: 'lagoon-oval', x: 72, y: 790, gen: genChasse, ep: 'Œil-de-Lynx', unlock: 3, sfx: ['ATTRAPÉ !', 'TROUVÉ !'] },
-  { id: 'marche', art: 'le Marché du Port', n: 'Marché du Port', notion: 'Monnaie et euros', img: 'isle-marche', lag: 'lagoon-round', x: 28, y: 570, gen: genMarche, ep: 'Main-d’Or', unlock: 6, sfx: ['VENDU !', 'PILE LE COMPTE !'] },
-  { id: 'cuisine', art: 'la Cuisine du Navire', n: 'Cuisine du Navire', notion: 'Fractions', img: 'isle-cuisine', lag: 'lagoon-rocks', x: 72, y: 350, gen: genCuisine, ep: 'Fine Lame', unlock: 9, sfx: ['MIAM !', 'PARFAIT, CHEF !'] },
+  { id: 'canons', hero: 'hero-canons', boss: { img: 'boss-kraken', n: 'Le Kraken des Tables' }, chestCrew: 'tortue', art: 'l’Île des Canons', n: 'Île des Canons', notion: 'Tables de multiplication', img: 'isle-canons', lag: 'lagoon-round', x: 28, y: 1450, gen: genCanon, ep: 'Canonnier d’Élite', unlock: 0, sfx: ['BOUM !', 'TOUCHÉ !', 'EN PLEIN DANS LE MILLE !'] },
+  { id: 'stade', hero: 'hero-stade', boss: { img: 'boss-crabe', n: 'Le Crabe Gardien' }, chestCrew: 'phoque', art: 'le Stade des Vagues', n: 'Stade des Vagues', notion: 'Calcul mental', img: 'isle-stade', lag: 'lagoon-oval', x: 72, y: 1230, gen: genFoot, ep: 'Tête Froide', unlock: 0, sfx: ['BUUUT !', 'LUCARNE !', 'GOLAZO !'] },
+  { id: 'mine', hero: 'hero-mine', boss: { img: 'boss-golem', n: 'Le Golem des Blocs' }, chestCrew: 'grenouille', art: 'la Mine aux Blocs', n: 'Mine aux Blocs', notion: 'Nombres jusqu’à 10 000', img: 'isle-mine', lag: 'lagoon-rocks', x: 28, y: 1010, gen: genMine, ep: 'Bâtisseur', unlock: 0, sfx: ['CONSTRUIT !', 'BLOC PARFAIT !'] },
+  { id: 'jungle', hero: 'hero-jungle', boss: { img: 'boss-serpent', n: 'Le Serpent Mesureur' }, chestCrew: 'croco', art: 'la Jungle des Créatures', n: 'Jungle des Créatures', notion: 'Droite graduée', img: 'isle-jungle', lag: 'lagoon-oval', x: 72, y: 790, gen: genChasse, ep: 'Œil-de-Lynx', unlock: 3, sfx: ['ATTRAPÉ !', 'TROUVÉ !'] },
+  { id: 'marche', hero: 'hero-marche', boss: { img: 'boss-marchand', n: 'Le Marchand Fantôme' }, chestCrew: 'calmar', art: 'le Marché du Port', n: 'Marché du Port', notion: 'Monnaie et euros', img: 'isle-marche', lag: 'lagoon-round', x: 28, y: 570, gen: genMarche, ep: 'Main-d’Or', unlock: 6, sfx: ['VENDU !', 'PILE LE COMPTE !'] },
+  { id: 'cuisine', hero: 'hero-cuisine', boss: { img: 'boss-chef', n: 'Le Chef Pieuvre' }, chestCrew: 'poisson', art: 'la Cuisine du Navire', n: 'Cuisine du Navire', notion: 'Fractions', img: 'isle-cuisine', lag: 'lagoon-rocks', x: 72, y: 350, gen: genCuisine, ep: 'Fine Lame', unlock: 9, sfx: ['MIAM !', 'PARFAIT, CHEF !'] },
 ];
 const isleById = id => ISLES.find(i => i.id === id);
 const unlocked = i => S.wins >= i.unlock;
@@ -654,17 +695,17 @@ function renderIsle(id) {
   const nodes = range(1, NODES).map(k => {
     const x = xs(k), y = ys(k), st = s.stars[k] || 0, isDone = k < s.node, isCur = k === node && s.node <= NODES;
     let cls = 'lock', inner = ico('iLock');
-    if (k === BOSS) { cls = 'boss' + (k > s.node ? ' lockimg' : ''); inner = `<img src="${IMG(i.id === 'canons' ? 'boss-kraken' : 'ship-requin')}" alt="">`; }
+    if (k === BOSS) { cls = 'boss' + (k > s.node ? ' lockimg' : ''); inner = `<img src="${IMG(i.boss.img)}" alt="">`; }
     else if (k === CHEST) { cls = 'chest' + (k > s.node ? ' lockimg' : ''); inner = `<img src="${IMG(isDone ? 'chest-open' : 'chest-closed')}" alt="" style="width:46px">`; }
     else if (isDone) { cls = 'done'; inner = k; } else if (isCur) { cls = 'cur'; inner = k; }
     if (isCur && k !== BOSS && k !== CHEST) cls = 'cur';
-    const lab = isCur ? `<div class="rlab" style="left:${x < W / 2 ? x + 48 : x - 200}px;top:${y - 18}px;${x < W / 2 ? '' : 'text-align:right;width:150px'}"><b>${k === BOSS ? (i.id === 'canons' ? 'Le Kraken des Tables' : 'Le Requin Noir') : k === CHEST ? 'Le coffre de l’île' : 'Niveau ' + k}</b>${k === BOSS ? 'Combat de boss · 8 tirs' : k === CHEST ? 'Gagne pour l’ouvrir' : 'Difficulté ' + nodeDiff(k, s.fails) + ' sur 5'}</div>` : '';
+    const lab = isCur ? `<div class="rlab" style="left:${x < W / 2 ? x + 48 : x - 200}px;top:${y - 18}px;${x < W / 2 ? '' : 'text-align:right;width:150px'}"><b>${k === BOSS ? i.boss.n : k === CHEST ? 'Le coffre de l’île' : 'Niveau ' + k}</b>${k === BOSS ? 'Combat de boss · 8 tirs' : k === CHEST ? 'Gagne pour l’ouvrir' : 'Difficulté ' + nodeDiff(k, s.fails) + ' sur 5'}</div>` : '';
     const stars = isDone && k !== CHEST ? `<div class="rstars" style="left:${x}px;top:${y + 30}px">${'★'.repeat(st)}<span style="opacity:.25">${'★'.repeat(3 - st)}</span></div>` : '';
     const play = isDone || isCur;
     return `<button class="rnode ${cls}" style="left:${x}px;top:${y}px" ${play ? `data-a="play" data-i="${id}" data-n="${k}"` : 'disabled'} aria-label="Niveau ${k}">${inner}</button>${stars}${lab}`;
   }).join('');
   const path = range(1, NODES).map(k => `${k > 1 ? 'L' : 'M'}${xs(k)},${ys(k)}`).join(' ');
-  const hero = i.id === 'canons' ? `<img class="bg" src="${IMG('hero-canons')}" alt="">` : `<img class="bg" src="${IMG('bg-sea-golden')}" alt=""><img class="isl-on" src="${IMG(i.img)}" alt="">`;
+  const hero = `<img class="bg" src="${IMG(i.hero)}" alt="">`;
   app.innerHTML = `<div class="screen"><div class="hero">${hero}
       <div class="tt"><div class="smallcaps" style="color:#ffd9a0">${i.notion}</div><div class="disp">${i.n}</div></div></div>
     <div class="topbar"><button class="round glass" data-a="home" aria-label="Retour à la carte">${ico('iBack')}</button><span class="chip glass" style="height:40px;border-radius:20px;color:#ffe2a6">${s.node > CHEST ? 'Coffre ouvert' : 'Coffre au niveau 5'}</span></div>
@@ -694,12 +735,17 @@ function sceneHTML() {
   const { i, boss } = R;
   if (i.id === 'canons') {
     return `<div class="g-scene" id="scene"><img class="bg" src="${IMG('bg-sea-golden')}" alt="">
-      <img class="ship me" src="${IMG('ship-player-3')}" alt="Ton navire">
+      <img class="ship me" src="${IMG(shipImg())}" alt="Ton navire">
       <img class="ship foe${boss ? ' boss' : ''}" id="foe" src="${IMG(boss ? 'boss-kraken' : 'ship-requin')}" alt="${boss ? 'Le Kraken' : 'Le Requin Noir'}">
       <div class="waves"></div>
       <div class="hpbox glass"><div style="display:flex;justify-content:space-between"><span class="smallcaps" style="color:#ffd9a0;letter-spacing:.12em">${boss ? 'Le Kraken' : 'Le Requin Noir'}</span><span style="font:600 12px var(--f-u);color:var(--mist)" id="hpt">${R.hp} %</span></div><div class="bar"><i id="hp" style="width:${R.hp}%"></i></div></div>
       ${powersHTML()}</div>`;
   }
+  if (boss) return `<div class="g-scene" id="scene"><img class="bg" src="${IMG(i.hero)}" alt="">
+    <img class="bossfig" id="foe" src="${IMG(i.boss.img)}" alt="${i.boss.n}">
+    <div class="waves"></div>
+    <div class="hpbox glass"><div style="display:flex;justify-content:space-between"><span class="smallcaps" style="color:#ffd9a0;letter-spacing:.12em">${i.boss.n}</span><span style="font:600 12px var(--f-u);color:var(--mist)" id="hpt">${R.hp} %</span></div><div class="bar"><i id="hp" style="width:${R.hp}%"></i></div></div>
+    ${powersHTML()}</div>`;
   return `<div class="g-scene" id="scene"><img class="bg" src="${IMG('bg-sea-golden')}" alt="">
     <img src="${IMG(i.img)}" alt="" style="position:absolute;left:50%;top:52%;width:min(62%,300px);transform:translate(-50%,-50%);filter:drop-shadow(0 14px 12px rgba(0,0,0,.4));animation:bob 3.4s ease-in-out infinite">
     <div class="waves"></div>${powersHTML()}</div>`;
@@ -789,15 +835,16 @@ function answer(ok, givenText, btn) {
   if (btn) btn.classList.add(ok ? 'right' : 'wrong');
   if (ok) {
     R.ok++; R.combo++; R.best = Math.max(R.best, R.combo); s.best = Math.max(s.best || 0, R.combo);
-    const fastLimit = S.crew.includes('tortue') ? 8000 : 6000, fast = ms < fastLimit;
+    const fastLimit = has('tortue') ? 8000 : 6000, fast = ms < fastLimit;
     S.fastStreak = ms < 5000 ? (S.fastStreak || 0) + 1 : 0;
     if (S.fastStreak >= 5) grantEp('Calcul-Éclair');
-    const gain = 4 * R.d + (fast ? 4 : 0) + Math.min(R.combo, 5);
+    const gain = 4 * R.d + (fast ? (has('requin') ? 8 : 4) : 0) + Math.min(R.combo, has('phoque') ? 8 : 5);
     R.gold += gain; S.gold += gain; save();
     celebrate(fast, gain);
     setTimeout(() => { R.k++; nextQ(); }, R.i.id === 'canons' ? 1500 : 1150);
   } else {
-    R.combo = 0; S.fastStreak = 0; SND.ko();
+    if (has('grenouille') && !R.used.grenouille) R.used.grenouille = true; else R.combo = 0;
+    S.fastStreak = 0; SND.ko();
     S.errors.unshift({ t: Date.now(), g: R.i.id, q: R.q.log, a: givenText, c: R.q.answerText }); S.errors = S.errors.slice(0, 40); save();
     if (R.i.id === 'canons') missFx();
     setTimeout(() => {
@@ -820,31 +867,38 @@ function celebrate(fast, gain) {
   if (R.i.id === 'canons') {
     shoot(true);
     setTimeout(() => { boom(.6, .6); fx('boom', 'fx-explosion', 74, 58, 170); fx('smoke', 'fx-smoke', 76, 50, 150);
-      const f = $('#foe'); if (f) { f.classList.remove('hit'); void f.offsetWidth; f.classList.add('hit'); }
-      R.hp = Math.max(0, Math.round(100 - R.ok / R.n * 100)); const hp = $('#hp'), ht = $('#hpt'); if (hp) hp.style.width = R.hp + '%'; if (ht) ht.textContent = R.hp + ' %'; }, 520);
-  } else if (R.i.id === 'marche') SND.coin();
+      hitFoe(); }, 520);
+  } else if (R.boss) { boom(.4, .4); fx('boom', 'fx-explosion', 62, 48, 150); hitFoe(); }
+  else if (R.i.id === 'marche') SND.coin();
   const b = document.createElement('div'); b.className = 'burst';
   b.innerHTML = `<span class="w">${pick(R.i.sfx)}</span><span class="g"><img src="${IMG('coin-doublon')}" alt="">+${gain}${fast ? ' · éclair !' : ''}</span>`;
   setTimeout(() => { const sc = $('#scene'); sc && sc.appendChild(b); setTimeout(() => b.remove(), 1100); }, R.i.id === 'canons' ? 560 : 0);
+}
+function hitFoe() {
+  const f = $('#foe'); if (f) { f.classList.remove('hit'); void f.offsetWidth; f.classList.add('hit'); }
+  R.hp = Math.max(0, Math.round(100 - R.ok / R.n * 100)); const hp = $('#hp'), ht = $('#hpt'); if (hp) hp.style.width = R.hp + '%'; if (ht) ht.textContent = R.hp + ' %';
+  if (f && R.i.id === 'canons' && !R.boss && R.hp <= 50 && !f.src.includes('requin-hit')) f.src = IMG('ship-requin-hit');
 }
 function missFx() { shoot(false); setTimeout(() => { SND.splash(); fx('splash', 'fx-splash', 66, 72, 140); }, 520); }
 
 function grantEp(name) { if (!S.eps.includes(name)) { S.eps.push(name); if (!S.epithet) S.epithet = name; R && (R.newEp = R.newEp || name); save(); } }
 function endEscale() {
   R.done = true; const s = IS(R.i.id), need = R.boss ? 6 : 4, win = R.ok >= need;
-  const stars = R.ok >= R.n ? 3 : R.ok >= R.n - 1 ? 2 : win ? 1 : 0;
+  const stars = R.ok >= R.n || (has('poisson') && R.ok >= R.n - 1) ? 3 : R.ok >= R.n - 1 ? 2 : win ? 1 : 0;
   S.rounds++; const rewards = [];
   if (R.used.calmar) { S.gold += R.gold; rewards.push({ img: 'crew-calmar', b: `Double butin : +${R.gold}`, s: 'Pouvoir du Calmar Calcul', tag: 'Pouvoir' }); R.gold *= 2; }
   if (win) {
-    S.wins++; s.fails = 0; s.stars[R.node] = Math.max(s.stars[R.node] || 0, stars);
-    const bonus = stars * 10 + (R.boss ? 150 : 0); S.gold += bonus; R.gold += bonus;
-    if (R.node === s.node) { s.node++; if (s.node > NODES) rewards.push({ img: R.i.img, b: 'Île terminée !', s: 'Tu as conquis toute la route', tag: 'Route' }); else rewards.push({ img: s.node === CHEST ? 'chest-closed' : s.node === BOSS ? (R.i.id === 'canons' ? 'boss-kraken' : 'ship-requin') : R.i.img, b: s.node > NODES ? 'Île terminée !' : `Niveau ${s.node} débloqué`, s: s.node === BOSS ? 'Le boss t’attend' : s.node === CHEST ? 'Le coffre de l’île' : `Difficulté ${nodeDiff(s.node, 0)} sur 5`, tag: 'Route' }); }
+    const lvBefore = shipLv(); S.wins++; s.fails = 0; s.stars[R.node] = Math.max(s.stars[R.node] || 0, stars);
+    const bonus = stars * 10 + (R.boss ? (has('pieuvre') ? 300 : 150) : 0) + (has('croco') ? 10 : 0); S.gold += bonus; R.gold += bonus;
+    if (shipLv() > lvBefore) rewards.push({ img: shipImg(), b: `Ton navire devient un ${SHIPS[shipLv()][2]} !`, s: 'Le Fier Calcul s’agrandit', tag: 'Navire' });
+    const join = id => { if (!has(id)) { S.crew.push(id); const c = CREW.find(c => c.id === id); rewards.push({ img: 'crew-' + id, b: `${c.n} rejoint l’équipage`, s: c.p, tag: c.r }); } };
+    if (R.node === s.node) { s.node++; if (s.node > NODES) rewards.push({ img: R.i.img, b: 'Île terminée !', s: 'Tu as conquis toute la route', tag: 'Route' }); else rewards.push({ img: s.node === CHEST ? 'chest-closed' : s.node === BOSS ? R.i.boss.img : R.i.img, b: s.node > NODES ? 'Île terminée !' : `Niveau ${s.node} débloqué`, s: s.node === BOSS ? 'Le boss t’attend' : s.node === CHEST ? 'Le coffre de l’île' : `Difficulté ${nodeDiff(s.node, 0)} sur 5`, tag: 'Route' }); }
     if (R.node === CHEST) {
       S.gold += 80; R.gold += 80; rewards.push({ img: 'chest-open', b: 'Coffre de l’île : +80', s: 'Trésor caché du niveau 5', tag: 'Coffre' });
-      const want = R.i.id === 'canons' ? 'tortue' : 'calmar';
-      if (!S.crew.includes(want)) { S.crew.push(want); const c = CREW.find(c => c.id === want); rewards.push({ img: 'crew-' + want, b: `${c.n} rejoint l’équipage`, s: c.p, tag: c.r }); }
+      join(R.i.chestCrew);
     }
-    if (!S.crew.includes('crabe')) { S.crew.push('crabe'); rewards.push({ img: 'crew-crabe', b: 'Crabe Compteur rejoint l’équipage', s: 'Pouvoir : relance une question', tag: 'Commun' }); }
+    if (R.boss) { rewards.push({ img: R.i.boss.img, b: `${R.i.boss.n} est vaincu !`, s: `Prime de boss : +${has('pieuvre') ? 300 : 150} doublons`, tag: 'Boss' }); join(R.i.id === 'canons' ? 'requin' : 'pieuvre'); }
+    join('crabe');
     if (R.ok === R.n) grantEp(R.i.ep);
     if (R.boss && R.i.id === 'canons') grantEp('Vainqueur du Kraken');
     ISLES.forEach(i => { if (i.unlock && S.wins === i.unlock) rewards.push({ img: i.img, b: `${i.n} sort du brouillard`, s: `Nouvelle île : ${i.notion}`, tag: 'Carte' }); });
@@ -856,12 +910,13 @@ function endEscale() {
   let tideNext = null;
   if (R.fromTide && S.tide && !S.tide.done) { S.tide.gold += R.gold; S.tide.i++; if (S.tide.i >= 3) S.tide.done = true; else tideNext = isleById(S.tide.stops[S.tide.i]); }
   save();
-  if (R.i.id === 'canons' && win) { const f = $('#foe'); if (f) f.classList.add('sunk'); }
-  setTimeout(() => renderResult(win, stars, rewards, tideNext), R.i.id === 'canons' && win ? 900 : 200);
+  const sinks = win && (R.i.id === 'canons' || R.boss);
+  if (sinks) { const f = $('#foe'); if (f) { if (R.i.id === 'canons' && !R.boss) f.src = IMG('ship-requin-hit'); setTimeout(() => f.classList.add('sunk'), 250); } }
+  setTimeout(() => renderResult(win, stars, rewards, tideNext), sinks ? 1300 : 200);
 }
 function renderResult(win, stars, rewards, tideNext) {
   SND.fanfare();
-  const title = win ? (R.i.id === 'canons' ? (R.boss ? 'Le Kraken plonge au fond des mers !' : 'Le Requin Noir a coulé !') : R.ok === R.n ? 'Escale parfaite !' : 'Escale réussie !') : 'Presque ! On réessaie ?';
+  const title = win ? (R.boss ? (R.i.id === 'canons' ? 'Le Kraken plonge au fond des mers !' : `${R.i.boss.n} est vaincu !`) : R.i.id === 'canons' ? 'Le Requin Noir a coulé !' : R.ok === R.n ? 'Escale parfaite !' : 'Escale réussie !') : 'Presque ! On réessaie ?';
   const over = sessionOver(), tideDone = R.fromTide && S.tide && S.tide.done;
   const primary = over || tideDone ? `<button class="brass-btn" data-a="port">Retour au port</button>`
     : tideNext ? `<button class="brass-btn" data-a="tidenext">Escale suivante <small>· ${tideNext.notion}</small></button>`
@@ -890,7 +945,7 @@ function openChest() {
 /* ================= Port (fin de session) ================= */
 function renderPort() {
   R = null; const t = S.tide || {}; const nextI = ISLES.filter(unlocked).sort((a, b) => IS(a.id).node - IS(b.id).node)[0];
-  app.innerHTML = `<div class="screen port"><img class="bg" src="${IMG('bg-sea-golden')}" alt=""><img class="shipw" src="${IMG('ship-player-3')}" alt="">
+  app.innerHTML = `<div class="screen port"><img class="bg" src="${IMG('bg-port-dusk')}" alt="">
     <div style="position:absolute;left:0;right:0;top:calc(var(--st) + 60px);text-align:center;padding:0 20px"><div class="smallcaps" style="color:#ffd9a0">Fin de la marée</div><div class="disp" style="font-size:36px;color:#fffaf0;margin-top:6px;text-shadow:0 3px 14px rgba(0,0,0,.45)">Retour au port</div></div>
     <div class="card paper"><div class="disp" style="font-size:20px">Belle navigation, ${esc(S.name || 'Capitaine')} !</div>
       <p style="margin:8px 0 12px;color:var(--ink-2)">${t.gold ? `Tu as gagné <b style="color:var(--ink)">${t.gold} doublons</b> pendant la marée. ` : ''}L’équipage se repose. Demain : ${nextI ? `cap sur ${nextI.n}, niveau ${Math.min(IS(nextI.id).node, NODES)}` : 'une nouvelle marée'}${S.wins < 3 ? ', et une nouvelle île pourrait sortir du brouillard' : ''}.</p>
@@ -900,13 +955,13 @@ function renderPort() {
 /* ================= Onglets ================= */
 function renderCrew() {
   app.innerHTML = `<div class="screen" style="background:radial-gradient(ellipse at 50% 0%,#16384a,#0b2230 60%)">${hudHTML()}<div class="tabpage">
-    <div class="showship"><img class="bg" src="${IMG('bg-sea-golden')}" alt=""><img class="sh" src="${IMG('ship-player-3')}" alt=""><div class="cap"><div class="smallcaps" style="color:#ffd9a0">Ton navire</div><div class="disp" style="font-size:26px">Le Fier Calcul</div></div></div>
+    <div class="showship"><img class="bg" src="${IMG('bg-sea-golden')}" alt=""><img class="sh" src="${IMG(shipImg())}" alt=""><div class="cap"><div class="smallcaps" style="color:#ffd9a0">Ton navire · ${SHIPS[shipLv()][2]}</div><div class="disp" style="font-size:26px">Le Fier Calcul</div>${SHIPS[shipLv() + 1] ? `<div style="font-size:12.5px;margin-top:2px">Encore ${SHIPS[shipLv() + 1][0] - S.wins} victoire${SHIPS[shipLv() + 1][0] - S.wins > 1 ? 's' : ''} pour le ${SHIPS[shipLv() + 1][2]}</div>` : ''}</div></div>
     <h1>Équipage</h1><p class="sub">${S.crew.length} équipiers sur 12. Chacun apporte un pouvoir pendant les escales.</p>
     <div class="crew-grid">${CREW.map(c => S.crew.includes(c.id)
       ? `<div class="crew-card paper"><span class="rar">${c.r}</span><img src="${IMG('crew-' + c.id)}" alt=""><b>${c.n}</b><span>${c.p}</span></div>`
       : `<div class="crew-card lock"><span class="rar" style="background:rgba(255,255,255,.08);color:var(--mist)">${c.r}</span><img src="${IMG('crew-' + c.id)}" alt=""><b>???</b><span>${c.how}</span></div>`).join('')}</div>
-    <p class="sub" style="margin-top:18px">Encore 8 créatures cachées dans l’archipel…</p>
-    <div class="mystery">${range(1, 8).map(() => '<div>?</div>').join('')}</div></div>${dockHTML()}</div>`;
+    <p class="sub" style="margin-top:18px">Encore ${12 - CREW.length} créatures légendaires cachées dans l’archipel…</p>
+    <div class="mystery">${range(1, 12 - CREW.length).map(() => '<div>?</div>').join('')}</div></div>${dockHTML()}</div>`;
   bindCog();
 }
 function renderPrime() {
@@ -940,13 +995,60 @@ function openParents() {
       return `<div class="prow"><img src="${IMG(i.img)}" alt=""><div><b>${i.notion}${badge}</b><span>Niveau ${Math.min(s.node, NODES)}/10 · ${s.tot} questions${s.tot ? ` · ${(s.ms / s.tot / 1000).toFixed(1).replace('.', ',')} s par réponse` : ''}</span></div><span class="pct">${p == null ? '–' : p + ' %'}</span></div>`; }).join('')}</div>
     <div class="pcard"><h3>Minutes de jeu, 7 derniers jours</h3><div class="days">${last7.map(([x, s]) => `<div class="day"><span>${s ? Math.round(s / 60) : ''}</span><i style="height:${Math.max(2, s / maxS * 70)}px"></i><span>${x.toLocaleDateString('fr-FR', { weekday: 'short' }).slice(0, 3)}</span></div>`).join('')}</div></div>
     <div class="pcard"><h3>Dernières erreurs</h3>${S.errors.length ? `<ul class="errs">${S.errors.slice(0, 12).map(e => `<li><b>${esc(e.q)}</b> · a répondu <span style="color:#ffb9ad">${esc(e.a)}</span>, bonne réponse <span style="color:#a6e3bf">${esc(e.c)}</span></li>`).join('')}</ul>` : '<p style="margin:0;color:var(--mist)">Aucune erreur enregistrée.</p>'}</div>
+    <div class="pcard"><h3>Bêta-test</h3><p class="note">Merci de tester l’Archipel ! Votre avis, même court, aide à améliorer le jeu.</p>
+      <div class="gap"><button class="brass-btn" data-a="fb" style="min-height:50px;font-size:16px">Donner mon avis</button><button class="ghost-btn" data-a="guide">Guide pour les parents</button></div></div>
+    <div class="pcard"><h3>Sauvegarde de la progression</h3><p class="note">Sur iPhone, Safari peut effacer les données d’un site peu utilisé. Gardez un code de sauvegarde (dans vos notes, par exemple) : il permet de tout retrouver, même sur un autre appareil.</p>
+      <div class="gap"><button class="ghost-btn" data-a="bkcopy">Copier le code de sauvegarde</button><button class="ghost-btn" data-a="bkrestore">Restaurer depuis un code</button></div><div id="bkbox"></div></div>
     <div class="pcard"><h3>Réglages</h3>
       <div style="margin-bottom:12px"><div style="font-size:13px;color:var(--mist);margin-bottom:6px">Durée d’une session</div><div class="seg">${[5, 10, 15, 0].map(m => `<button data-a="limit" data-v="${m}" aria-pressed="${S.limit === m}">${m ? m + ' min' : 'Sans limite'}</button>`).join('')}</div>
         ${S.limit ? `<div style="font-size:12.5px;color:var(--mist);margin-top:6px">Utilisé : ${Math.floor(sessionMs / 60000)} min ${Math.floor(sessionMs / 1000) % 60} s</div><button class="ghost-btn" data-a="extend" style="margin-top:8px">Accorder 5 minutes de plus</button>` : ''}</div>
       <div style="margin-bottom:12px"><div style="font-size:13px;color:var(--mist);margin-bottom:6px">Son</div><div class="seg"><button data-a="snd" data-v="1" aria-pressed="${S.sound}">Activé</button><button data-a="snd" data-v="0" aria-pressed="${!S.sound}">Coupé</button></div></div>
       <div id="resetbox"><button class="ghost-btn" data-a="reset1" style="color:#ffb9ad">Tout effacer…</button></div>
-      <p style="font-size:12.5px;color:var(--mist);margin:10px 0 0">Les données restent dans le navigateur de cet appareil. Aucune publicité, aucun compte.</p></div>`;
+      <p style="font-size:12.5px;color:var(--mist);margin:10px 0 0">Les données restent dans le navigateur de cet appareil. Aucune publicité, aucun compte.</p></div>
+    <div class="vers">L’Archipel des Nombres · version ${VERSION}</div>`;
   app.appendChild(el);
+}
+
+const FB = {};
+const FBQ = [['note', 'Note globale', ['1', '2', '3', '4', '5']], ['envie', 'Votre enfant a-t-il envie d’y rejouer ?', ['Oui, beaucoup', 'Un peu', 'Pas vraiment']], ['niveau', 'La difficulté', ['Trop facile', 'Juste bien', 'Trop difficile']]];
+function openFeedback() {
+  const el = document.createElement('div'); el.className = 'parents fbwrap'; el.style.zIndex = 95; el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', 'Donner mon avis');
+  el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><div><div class="smallcaps" style="color:var(--brass-hi)">Bêta-test</div><div class="disp" style="font-size:28px">Votre avis</div></div><button class="round glass" data-a="fbclose" aria-label="Fermer">${ico('iClose')}</button></div>
+    <div class="pcard"><p class="note" style="margin:0">Quelques questions, deux minutes. Le texte s’ouvre ensuite dans le menu de partage du téléphone (Messages, WhatsApp, e-mail…) : rien n’est envoyé sans vous.</p>
+      <label class="fbq"><span>Âge et classe de l’enfant</span><input class="fld" id="fb-age" maxlength="40" placeholder="Ex. : 8 ans, CE2"></label>
+      ${FBQ.map(([k, l, o]) => `<div class="fbq"><span>${l}</span><div class="seg">${o.map(v => `<button type="button" data-a="fbset" data-k="${k}" data-v="${v}" aria-pressed="${FB[k] === v}">${k === 'note' ? v + ' ★' : v}</button>`).join('')}</div></div>`).join('')}
+      <label class="fbq"><span>Ce qu’il ou elle a préféré</span><textarea class="fld" id="fb-top" maxlength="600"></textarea></label>
+      <label class="fbq"><span>Ce qui a bloqué, ennuyé ou buggé</span><textarea class="fld" id="fb-pb" maxlength="600"></textarea></label>
+      <label class="fbq"><span>Autre remarque (facultatif)</span><textarea class="fld" id="fb-x" maxlength="600"></textarea></label>
+      <label class="chk"><input type="checkbox" id="fb-sum" checked><span>Joindre le résumé de jeu : niveaux et réussite par notion, minutes jouées, modèle de téléphone. Sans prénom.</span></label>
+      <div style="margin-top:16px"><button class="brass-btn" data-a="fbsend">Envoyer mon avis</button></div><div id="fbout"></div></div>`;
+  app.appendChild(el);
+}
+function feedbackText() {
+  const v = id => ($('#' + id) || {}).value || '', L = [`Avis bêta · L’Archipel des Nombres (version ${VERSION})`, ''];
+  L.push('Enfant : ' + (v('fb-age').trim() || '—'));
+  FBQ.forEach(([k, l]) => L.push(`${l} : ${FB[k] ? (k === 'note' ? FB[k] + '/5' : FB[k]) : '—'}`));
+  L.push('', 'Préféré : ' + (v('fb-top').trim() || '—'), 'Problèmes : ' + (v('fb-pb').trim() || '—'));
+  if (v('fb-x').trim()) L.push('Autre : ' + v('fb-x').trim());
+  if ($('#fb-sum') && $('#fb-sum').checked) {
+    const secs = Object.values(S.days).reduce((a, b) => a + b, 0), os = (navigator.userAgent.match(/OS (\d+[_\d]*)/) || [])[1];
+    L.push('', '— Résumé de jeu —', `${Object.keys(S.days).length} jour(s) de jeu · ${Math.round(secs / 60)} min · ${S.wins} escales gagnées · ${S.crew.length} équipiers`);
+    ISLES.forEach(i => { const s = IS(i.id); L.push(`${i.notion} : niveau ${Math.min(s.node, NODES)}/10${s.tot ? ` · ${Math.round(s.ok / s.tot * 100)} % sur ${s.tot} questions` : ' · pas encore joué'}`); });
+    L.push(`Appareil : ${isIOS ? 'iOS ' + (os || '?').replace(/_/g, '.') : navigator.platform || '?'} · ${standalone ? 'écran d’accueil' : 'navigateur'}`);
+  }
+  return L.join('\n');
+}
+function sendFeedback() {
+  const text = feedbackText(), out = $('#fbout');
+  const showText = msg => { out.innerHTML = `<p class="note" style="margin:14px 0 6px">${msg}</p><textarea class="fld" readonly style="min-height:160px">${esc(text)}</textarea>`; };
+  if (navigator.share) navigator.share({ title: 'Avis sur l’Archipel des Nombres', text }).then(() => { toast('Merci pour votre avis !'); showText('Merci ! Voici le texte envoyé :'); }, () => showText('Partage annulé. Vous pouvez aussi copier ce texte :'));
+  else copyText(text).then(ok => { toast(ok ? 'Avis copié : collez-le dans un message' : 'Copiez le texte ci-dessous'); showText(ok ? 'Le texte est copié. Collez-le dans un message ou un e-mail :' : 'Copiez ce texte et envoyez-le par message ou e-mail :'); });
+}
+const BKP = 'ARCHIPEL1:';
+function backupCode() { return BKP + btoa(unescape(encodeURIComponent(JSON.stringify(S)))); }
+function restoreFrom(code) {
+  try { const o = JSON.parse(decodeURIComponent(escape(atob(code.trim().replace(BKP, '').replace(/\s/g, ''))))); if (!o || typeof o !== 'object' || !o.isl) throw 0;
+    S = Object.assign(DEF(), o); save(); return true; } catch (e) { return false; }
 }
 
 /* ================= Onboarding ================= */
@@ -955,7 +1057,8 @@ function onboarding() {
   m.innerHTML = `<form class="box paper" id="ob" autocomplete="off"><img src="${IMG('capt-a')}" alt="" style="width:150px;margin:-70px auto 0;filter:drop-shadow(0 10px 10px rgba(0,0,0,.3))">
     <div class="disp" style="font-size:28px">Bienvenue à bord !</div><p style="margin:0;color:var(--ink-2)">Le Perroquet Pi va t’accompagner dans l’Archipel des Nombres. Comment s’appelle le capitaine ?</p>
     <label for="nm" class="smallcaps" style="color:var(--ink-2)">Ton nom de pirate</label><input id="nm" maxlength="14" placeholder="Ex. : Léo" value="${esc(S.name)}">
-    <button class="brass-btn" type="submit">Hisser les voiles !</button></form>`;
+    <button class="brass-btn" type="submit">Hisser les voiles !</button>
+    ${isIOS && !standalone ? '<div class="a2hs"><b>Conseil aux parents :</b> dans Safari, touchez Partager puis « Sur l’écran d’accueil ». L’Archipel s’ouvrira en plein écran et gardera mieux la progression.</div>' : ''}</form>`;
   app.appendChild(m);
   $('#ob').addEventListener('submit', e => { e.preventDefault(); S.name = $('#nm').value.trim().slice(0, 14) || 'Capitaine'; S.intro = true; save(); m.remove(); ac(); SND.fanfare(); show('map'); });
 }
@@ -995,6 +1098,14 @@ app.addEventListener('click', e => {
     case 'ep': S.epithet = el.dataset.e; save(); SND.tap(); renderPrime(); break;
     case 'eptip': toast(`Pour le gagner : ${el.dataset.h}.`); break;
     case 'rename': S.name = ''; onboarding(); break;
+    case 'fb': openFeedback(); break;
+    case 'fbclose': { const f = $('.fbwrap'); f && f.remove(); break; }
+    case 'fbset': FB[el.dataset.k] = el.dataset.v; $$(`[data-a="fbset"][data-k="${el.dataset.k}"]`).forEach(b => b.setAttribute('aria-pressed', b === el)); break;
+    case 'fbsend': sendFeedback(); break;
+    case 'guide': window.open('aide.html', '_blank', 'noopener'); break;
+    case 'bkcopy': { const c = backupCode(); copyText(c).then(ok => { toast(ok ? 'Code de sauvegarde copié' : 'Copiez le code ci-dessous'); $('#bkbox').innerHTML = `<p class="note" style="margin:12px 0 6px">Votre code (gardez-le précieusement) :</p><textarea class="fld" readonly style="min-height:90px;font-size:12px">${c}</textarea>`; }); break; }
+    case 'bkrestore': $('#bkbox').innerHTML = `<p class="note" style="margin:12px 0 6px">Collez le code de sauvegarde. La progression actuelle sera remplacée.</p><textarea class="fld" id="bkin" style="min-height:90px;font-size:12px" placeholder="ARCHIPEL1:…"></textarea><div style="margin-top:8px"><button class="ghost-btn" data-a="bkdo">Restaurer</button></div>`; break;
+    case 'bkdo': if (restoreFrom($('#bkin').value)) { toast('Progression restaurée'); setTimeout(() => location.reload(), 900); } else toast('Ce code ne fonctionne pas. Vérifiez qu’il est complet.'); break;
     case 'closeparents': { const p = $('.parents'); p && p.remove(); show(tab); break; }
     case 'limit': S.limit = +el.dataset.v; save(); $('.parents').remove(); openParents(); break;
     case 'extend': extraMs += 5 * 60000; $('.parents').remove(); openParents(); toast('5 minutes de plus accordées.'); break;
@@ -1020,7 +1131,7 @@ window.addEventListener('pagehide', save);
 window.addEventListener('resize', () => { if (!R && tab === 'map' && !$('.parents') && !$('.modal')) renderMap(); });
 
 /* Préchargement des images clés */
-['bg-sea-golden', 'ship-player-3', 'ship-requin', 'fg-waves', 'fx-explosion', 'fx-smoke', 'fx-splash', 'chest-closed', 'chest-open', 'coin-doublon', 'crew-perroquet', 'hero-canons'].forEach(n => { const i = new Image(); i.src = IMG(n); });
+['bg-sea-golden', 'ship-player-1', 'ship-player-2', 'ship-player-3', 'ship-requin', 'ship-requin-hit', 'bg-port-dusk', 'fg-waves', 'fx-explosion', 'fx-smoke', 'fx-splash', 'chest-closed', 'chest-open', 'coin-doublon', 'crew-perroquet', 'hero-canons'].forEach(n => { const i = new Image(); i.src = IMG(n); });
 
 show('map');
 if (!S.intro) onboarding();

@@ -12,6 +12,19 @@ Appli de mathématiques pour un enfant de CE2, pensée pour l'iPhone (au doigt o
 - **Récompenses** : doublons, coffre à ouvrir, équipiers avec pouvoirs (indice, relance, double butin), surnoms, avis de recherche.
 - **Espace parents** : maintenir la roue crantée 2 secondes.
 
+## Version 0.3 bêta (octobre 2026)
+
+- **Chaque île a son décor et son boss** : Kraken des Tables, Crabe Gardien, Golem des Blocs, Serpent Mesureur, Marchand Fantôme, Chef Pieuvre. Les boss ont une barre de vie.
+- **Le navire grandit** : sloop au départ, brigantin à 5 victoires, galion à 15. Le Requin Noir s'abîme puis coule.
+- **Dix équipiers** gagnés dans les coffres et contre les boss, chacun avec un petit pouvoir (combo, seconde chance, étoile bonus, prime de boss…).
+- **Retour au port** avec un vrai décor de fin de session.
+- **Espace parents pour la bêta** : formulaire d'avis (envoyé par le menu de partage du téléphone, rien n'est transmis automatiquement), code de sauvegarde et de restauration, guide pour les parents (`aide.html`), numéro de version.
+- **Installation sur l'écran d'accueil** : icône, fichier `manifest.webmanifest`, conseil affiché aux parents sur iPhone.
+
+### Mettre en ligne
+
+Ce dossier est le site complet : on le dépose tel quel sur un hébergeur de pages statiques (par exemple Netlify Drop). Les fichiers de travail du design sont dans `design/`, à la racine du dépôt, et ne sont pas mis en ligne.
+
 La suite de ce document décrit la première maquette (version 1).
 
 ## Principe

@@ -94,7 +94,7 @@ code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px;color:va
       <p class="lead">Tout ce qu’il faut générer pour construire l’appli, avec un prompt prêt à copier pour chaque élément. Les textes, chiffres, boutons et animations restent en code : je m’en occupe.</p>
     </div>
     <div class="meter" aria-live="polite">
-      <div><b id="m-p1">0 / 0</b> <span>du lot 2</span></div>
+      <div><b id="m-p1">0 / 0</b> <span>du lot 3</span></div>
       <div class="bar"><i id="m-bar"></i></div>
       <div class="sub"><span id="m-all">0 / 0 au total</span><span>coche au fur et à mesure</span></div>
     </div>
@@ -104,11 +104,11 @@ code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px;color:va
     <h2>Mode d’emploi</h2>
     <div class="steps">
       <div class="step"><span class="n">1</span><p><b>Une seule conversation</b> dans ton générateur. Colle le bloc de style, puis joins les références indiquées sur chaque fiche (« Joindre : … ») : <code>hero-canons</code> pour les décors, <code>boss-kraken</code> et <code>crew-perroquet</code> pour les personnages, <code>ship-player-3</code> pour les navires.</p></div>
-      <div class="step"><span class="n">2</span><p><b>Lot 1 reçu et intégré</b> (35 images). Place au <b>lot 2</b> : 20 images, dans l’ordre de la liste. Chaque fiche indique quelle image validée joindre comme référence.</p></div>
+      <div class="step"><span class="n">2</span><p><b>Lots 1 et 2 reçus et intégrés</b> (55 images). Place au <b>lot 3</b> : 17 objets pour les mini-jeux, dans l’ordre de la liste. Chaque fiche indique quelle image validée joindre comme référence.</p></div>
       <div class="step"><span class="n">3</span><p><b>Copie le prompt de chaque fiche</b> : il contient déjà le style, le sujet, le fond et le format. Commence par les fiches <b>Indispensable</b>.</p></div>
       <div class="step"><span class="n">4</span><p><b>Fond transparent</b> : demande un PNG transparent. Si l’outil ne sait pas, il doit mettre un fond magenta uni <code>#FF00FF</code>, je le découpe moi-même.</p></div>
       <div class="step"><span class="n">5</span><p><b>Nomme chaque fichier</b> avec son identifiant (<code>isle-canons.png</code>), en plus grande taille possible. Je redimensionne et je compresse.</p></div>
-      <div class="step"><span class="n">6</span><p><b>Dépose le lot dans un nouveau sous-dossier</b> du Drive partagé (par exemple <code>archipel-lot-2</code>) et dis-le-moi : je récupère, je vérifie et j’intègre.</p></div>
+      <div class="step"><span class="n">6</span><p><b>Dépose le lot dans un nouveau sous-dossier</b> du Drive partagé (par exemple <code>archipel-lot3</code>) et dis-le-moi : je récupère, je vérifie et j’intègre.</p></div>
     </div>
   </section>
 
@@ -315,11 +315,11 @@ const A = [
 ];
 
 const PRIO = { 1: 'Indispensable', 2: 'Important', 3: 'Plus tard' };
-const RECU = new Set(['app-icon','tex-parchment','tex-wood','tex-ocean','bg-ocean-a','bg-ocean-b','fx-fog-a','lagoon-round','lagoon-oval','lagoon-rocks','isle-canons','isle-stade','isle-mine','isle-jungle','isle-marche','isle-cuisine','bg-sea-golden','fg-waves','hero-canons','ship-player-3','ship-player-top','ship-requin','capt-a','crew-perroquet','crew-tortue','crew-calmar','crew-crabe','boss-kraken','chest-closed','chest-open','coin-doublon','poster-blank','fx-explosion','fx-smoke','fx-splash']);
+const RECU = new Set(['app-icon','tex-parchment','tex-wood','tex-ocean','bg-ocean-a','bg-ocean-b','fx-fog-a','lagoon-round','lagoon-oval','lagoon-rocks','isle-canons','isle-stade','isle-mine','isle-jungle','isle-marche','isle-cuisine','bg-sea-golden','fg-waves','hero-canons','ship-player-3','ship-player-top','ship-requin','capt-a','crew-perroquet','crew-tortue','crew-calmar','crew-crabe','boss-kraken','chest-closed','chest-open','coin-doublon','poster-blank','fx-explosion','fx-smoke','fx-splash','hero-stade','hero-mine','hero-jungle','hero-marche','hero-cuisine','boss-crabe','boss-golem','boss-serpent','boss-marchand','boss-chef','ship-player-1','ship-player-2','ship-requin-hit','crew-poisson','crew-phoque','crew-grenouille','crew-pieuvre','crew-requin','crew-croco','bg-port-dusk']);
 const LOTS = {
-  2: { t: 'Lot 2 · à faire maintenant', d: 'Ce qui change le plus l’appli actuelle : un décor et un boss pour chaque île, le navire qui grandit, le Requin Noir qui coule, les équipiers à collectionner et l’écran de fin de session.',
+  2: { t: 'Lot 2 · reçu et intégré', d: 'Ce qui change le plus l’appli actuelle : un décor et un boss pour chaque île, le navire qui grandit, le Requin Noir qui coule, les équipiers à collectionner et l’écran de fin de session.',
        ids: ['hero-stade','hero-mine','hero-jungle','hero-marche','hero-cuisine','boss-crabe','boss-golem','boss-serpent','boss-marchand','boss-chef','ship-player-1','ship-player-2','ship-requin-hit','crew-poisson','crew-phoque','crew-grenouille','crew-pieuvre','crew-requin','crew-croco','bg-port-dusk'] },
-  3: { t: 'Lot 3 · les objets des mini-jeux', d: 'Pour remplacer les éléments encore dessinés en code dans les tirs au but, la mine, le marché et la cuisine, plus deux expressions du perroquet guide.',
+  3: { t: 'Lot 3 · à faire maintenant : les objets des mini-jeux', d: 'Pour remplacer les éléments encore dessinés en code dans les tirs au but, la mine, le marché et la cuisine, plus deux expressions du perroquet guide.',
        ids: ['foot-ball','foot-goal','block-1000','block-100','block-10','block-1','coin-copper','coin-gold','coin-bimetal','bill-green','bill-red','bill-blue','food-pizza','food-cake','jungle-frame','guide-perroquet-bravo','guide-perroquet-hmm'] },
   4: { t: 'Lot 4 · personnalisation et finitions', d: 'Choix du capitaine, améliorations du navire, nouvelles îles de la carte, tempête des boss et petits effets.',
        ids: ['capt-b','capt-c','capt-d','capt-victory','fig-dragon','fig-sirene','cannon-gold','flag-blank','ship-meduse','bg-storm','bg-title','isle-port','isle-kraken','fx-fog-b','deco-compass','coin-pile','wax-seal','cannonball','fx-sparkle','fx-coins'] },
@@ -339,8 +339,8 @@ const KEY = 'archipel-assets-done';
 let done = new Set();
 try { done = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...done])); } catch (e) {} };
-let view = 'lot2', fC = 'all';
-try { view = localStorage.getItem('archipel-assets-view') || 'lot2'; } catch (e) {}
+let view = 'lot3', fC = 'all';
+try { view = localStorage.getItem('archipel-assets-view2') || 'lot3'; } catch (e) {}
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const full = a => { const r = REFS(a).filter(x => RECU.has(x) && x !== a.id); return [STYLE, r.length ? `REFERENCE: match the attached reference image${r.length > 1 ? 's' : ''} (${r.join(', ')}) exactly in rendering style, lighting, level of detail and scale.` : '', `SUBJECT: ${a.s}`, BG[a.bg], RATIO[a.r]].filter(Boolean).join('\n\n'); };
@@ -359,7 +359,7 @@ function copy(text, btn, label) {
 }
 document.getElementById('copy-style').addEventListener('click', e => copy(STYLE, e.currentTarget, 'Copier le bloc de style'));
 
-const VIEWS = [['lot2', 'Lot 2 · maintenant'], ['lot3', 'Lot 3'], ['lot4', 'Lot 4'], ['later', 'Plus tard'], ['recu', 'Reçus'], ['all', 'Tout']];
+const VIEWS = [['lot3', 'Lot 3 · maintenant'], ['lot2', 'Lot 2'], ['lot4', 'Lot 4'], ['later', 'Plus tard'], ['recu', 'Reçus'], ['all', 'Tout']];
 const inView = a => view === 'all' ? true : view === 'recu' ? RECU.has(a.id) : view === 'later' ? !RECU.has(a.id) && !lotOf(a.id) : lotOf(a.id) === +view.slice(3);
 function chips() {
   document.getElementById('f-prio').innerHTML = VIEWS.map(([v, l]) => `<button class="chip" type="button" data-v="${v}" aria-pressed="${view === v}">${l} · ${A.filter(a => { const o = view; view = v; const r = inView(a); view = o; return r; }).length}</button>`).join('');
@@ -396,14 +396,14 @@ function render() {
   meter();
 }
 function meter() {
-  const L = LOTS[2].ids, d2 = L.filter(id => done.has(id)).length;
+  const L = LOTS[3].ids, d2 = L.filter(id => done.has(id)).length;
   document.getElementById('m-p1').textContent = `${d2} / ${L.length}`;
   document.getElementById('m-bar').style.width = `${d2 / L.length * 100}%`;
   document.getElementById('m-all').textContent = `${RECU.size} reçus · ${A.filter(a => !RECU.has(a.id)).length} à faire`;
 }
 document.addEventListener('click', e => {
   const v = e.target.closest('[data-v]'), c = e.target.closest('[data-c]'), cp = e.target.closest('[data-copy]');
-  if (v) { view = v.dataset.v; try { localStorage.setItem('archipel-assets-view', view); } catch (er) {} chips(); render(); }
+  if (v) { view = v.dataset.v; try { localStorage.setItem('archipel-assets-view2', view); } catch (er) {} chips(); render(); }
   else if (c) { fC = c.dataset.c; chips(); render(); }
   else if (cp) { const a = A.find(x => x.id === cp.dataset.copy); copy(full(a), cp, 'Copier le prompt'); }
 });
