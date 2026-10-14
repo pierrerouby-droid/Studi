@@ -94,7 +94,7 @@ code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px;color:va
       <p class="lead">Tout ce qu’il faut générer pour construire l’appli, avec un prompt prêt à copier pour chaque élément. Les textes, chiffres, boutons et animations restent en code : je m’en occupe.</p>
     </div>
     <div class="meter" aria-live="polite">
-      <div><b id="m-p1">0 / 0</b> <span>indispensables</span></div>
+      <div><b id="m-p1">0 / 0</b> <span>du lot 2</span></div>
       <div class="bar"><i id="m-bar"></i></div>
       <div class="sub"><span id="m-all">0 / 0 au total</span><span>coche au fur et à mesure</span></div>
     </div>
@@ -103,12 +103,12 @@ code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px;color:va
   <section>
     <h2>Mode d’emploi</h2>
     <div class="steps">
-      <div class="step"><span class="n">1</span><p><b>Une seule conversation</b> dans ton générateur pour tout l’archipel. Colle le bloc de style, puis joins les images validées comme références : <code>crew-perroquet</code> pour les personnages, <code>ship-player-3</code> pour les navires, la nouvelle <code>isle-canons</code> pour les îles.</p></div>
-      <div class="step"><span class="n">2</span><p><b>Références validées</b> : <code>ship-player-3</code>, <code>crew-perroquet</code> et <code>isle-canons</code> (version sans eau). Prochaines à générer : <code>bg-ocean-a</code> puis <code>lagoon-a</code>, à m’envoyer avant le reste.</p></div>
+      <div class="step"><span class="n">1</span><p><b>Une seule conversation</b> dans ton générateur. Colle le bloc de style, puis joins les références indiquées sur chaque fiche (« Joindre : … ») : <code>hero-canons</code> pour les décors, <code>boss-kraken</code> et <code>crew-perroquet</code> pour les personnages, <code>ship-player-3</code> pour les navires.</p></div>
+      <div class="step"><span class="n">2</span><p><b>Lot 1 reçu et intégré</b> (35 images). Place au <b>lot 2</b> : 20 images, dans l’ordre de la liste. Chaque fiche indique quelle image validée joindre comme référence.</p></div>
       <div class="step"><span class="n">3</span><p><b>Copie le prompt de chaque fiche</b> : il contient déjà le style, le sujet, le fond et le format. Commence par les fiches <b>Indispensable</b>.</p></div>
       <div class="step"><span class="n">4</span><p><b>Fond transparent</b> : demande un PNG transparent. Si l’outil ne sait pas, il doit mettre un fond magenta uni <code>#FF00FF</code>, je le découpe moi-même.</p></div>
       <div class="step"><span class="n">5</span><p><b>Nomme chaque fichier</b> avec son identifiant (<code>isle-canons.png</code>), en plus grande taille possible. Je redimensionne et je compresse.</p></div>
-      <div class="step"><span class="n">6</span><p><b>Dépose tout dans un dossier Google Drive</b> et donne-moi le lien, ou joins les images dans notre conversation.</p></div>
+      <div class="step"><span class="n">6</span><p><b>Dépose le lot dans un nouveau sous-dossier</b> du Drive partagé (par exemple <code>archipel-lot-2</code>) et dis-le-moi : je récupère, je vérifie et j’intègre.</p></div>
     </div>
   </section>
 
@@ -192,14 +192,15 @@ const A = [
   { id: 'tex-wood', c: 'base', p: 1, bg: 'tile', r: '1:1', n: 'Bois sombre', u: 'Mur de l’avis de recherche, pont du navire.', s: 'Dark weathered ship deck planks, vertical boards, deep brown with subtle grain and a few iron nails. Low contrast.' },
   { id: 'bg-ocean-a', c: 'base', p: 1, bg: 'scene', r: '2:3', n: 'Océan de la carte (partie 1)', u: 'Fond peint de la carte du monde. Remplace l’océan dessiné en code.', a: 'Reflets et légère ondulation ajoutés en code par-dessus.', s: 'Painted ocean seen from directly above for a game world map, same rendering quality and golden light as the reference island isle-canons: deep teal and blue water with gentle wave crests catching warm light, darker deep zones, a few lighter sandy shoals, soft sun glints and thin foam streaks. No islands, no ships, no rocks, nothing that could read as land. The top and bottom edges must connect seamlessly so several copies can be stacked vertically.' },
   { id: 'bg-ocean-b', c: 'base', p: 1, bg: 'scene', r: '2:3', n: 'Océan de la carte (partie 2)', u: 'Suite de la carte quand on fait défiler vers le haut.', a: 'Je fonds la jonction entre les deux parties en code.', s: 'Continuation of the reference ocean image bg-ocean-a, same painting, same colors and light: its bottom edge must match the top edge of the reference so the two stack seamlessly. Painted ocean seen from directly above, deep teal and blue water, gentle wave crests, darker deep zones, a few sandy shoals, soft sun glints. No islands, no ships, no rocks.' },
+  { id: 'tex-ocean', c: 'base', p: 1, bg: 'tile', r: '1:1', n: 'Océan raccordable', u: 'Fond de la carte du monde (utilisé à la place de bg-ocean, plus calme).', a: 'Dérive lente et reflets en code.', s: 'Ocean water seen from directly above, deep teal with gentle wave patterns and soft light caustics, calm and low contrast.' },
   { id: 'fx-fog-a', c: 'base', p: 1, bg: 'alpha', r: '3:2', n: 'Banc de brouillard', u: 'Cache les îles pas encore découvertes.', a: 'Dérive lente en parallaxe, se dissipe quand une île est révélée.', s: 'A soft bank of white sea fog and low clouds, wispy edges fading to full transparency, slightly blue-tinted shadows.' },
   { id: 'fx-fog-b', c: 'base', p: 2, bg: 'alpha', r: '3:2', n: 'Brume légère', u: 'Deuxième couche de brouillard pour la profondeur.', a: 'Dérive à une autre vitesse que la première couche.', s: 'Thin drifting sea mist, long horizontal wisps, very soft and semi-transparent.' },
   { id: 'deco-compass', c: 'base', p: 2, bg: 'alpha', r: '1:1', n: 'Rose des vents', u: 'Décor de la carte, chargement.', a: 'Tourne lentement pendant les chargements.', s: 'An ornate engraved compass rose in brass and dark ink, antique nautical map style, 16 points, fine line engraving.' },
 
   // Carte
-  { id: 'lagoon-a', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Lagon rond', u: 'Posé sous une île : hauts-fonds turquoise et écume peints, qui se fondent dans l’océan.', a: 'L’écume bouge doucement en code.', s: 'Top-down painted tropical shallows like those surrounding a small island, same rendering and light as the reference island isle-canons: luminous turquoise water over pale sand, soft ripples and caustic light, white foam lines along a rounded inner shoreline, the very center pale wet sand. Rounded organic shape whose outer edge fades very gradually into full transparency, no hard border, no island, no objects.' },
-  { id: 'lagoon-b', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Lagon allongé', u: 'Variante pour les îles plus larges.', a: 'L’écume bouge doucement en code.', s: 'Same as the rounded lagoon but with an elongated oval shape: top-down painted tropical shallows, luminous turquoise water over pale sand, soft ripples, white foam lines along the inner shoreline, pale wet sand in the center, outer edge fading very gradually into full transparency. No island, no objects.' },
-  { id: 'lagoon-c', c: 'map', p: 2, bg: 'alpha', r: '1:1', n: 'Lagon à récifs', u: 'Variante avec quelques rochers et coraux sous l’eau.', s: 'Same lagoon style: top-down painted turquoise shallows with a few submerged rocks and small coral patches visible under the water, foam along the inner shoreline, pale sand center, outer edge fading very gradually into full transparency. No island.' },
+  { id: 'lagoon-round', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Lagon rond', u: 'Posé sous une île : hauts-fonds turquoise et écume peints, qui se fondent dans l’océan.', a: 'L’écume bouge doucement en code.', s: 'Top-down painted tropical shallows like those surrounding a small island, same rendering and light as the reference island isle-canons: luminous turquoise water over pale sand, soft ripples and caustic light, white foam lines along a rounded inner shoreline, the very center pale wet sand. Rounded organic shape whose outer edge fades very gradually into full transparency, no hard border, no island, no objects.' },
+  { id: 'lagoon-oval', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Lagon allongé', u: 'Variante pour les îles plus larges.', a: 'L’écume bouge doucement en code.', s: 'Same as the rounded lagoon but with an elongated oval shape: top-down painted tropical shallows, luminous turquoise water over pale sand, soft ripples, white foam lines along the inner shoreline, pale wet sand in the center, outer edge fading very gradually into full transparency. No island, no objects.' },
+  { id: 'lagoon-rocks', c: 'map', p: 2, bg: 'alpha', r: '1:1', n: 'Lagon à récifs', u: 'Variante avec quelques rochers et coraux sous l’eau.', s: 'Same lagoon style: top-down painted turquoise shallows with a few submerged rocks and small coral patches visible under the water, foam along the inner shoreline, pale sand center, outer edge fading very gradually into full transparency. No island.' },
   { id: 'isle-canons', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Île des Canons', u: 'Carte du monde. Tables de multiplication.', s: `${ISLE} a sturdy stone fort tower, a few cannons pointing at the sea, a small red flag and palm trees.` },
   { id: 'isle-stade', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Stade des Vagues', u: 'Carte du monde. Calcul mental.', s: `${ISLE} a small open-air football stadium carved into the rock, bright green pitch with white lines, two little goals and flags around the stands.` },
   { id: 'isle-mine', c: 'map', p: 1, bg: 'alpha', r: '1:1', n: 'Mine aux Blocs', u: 'Carte du monde. Nombres jusqu’à 10 000.', s: `${ISLE} a rocky mountain with a mine entrance held by wooden beams, rails and a mine cart, big cube-shaped crystals in gold, teal and emerald sticking out of the rock.` },
@@ -314,14 +315,35 @@ const A = [
 ];
 
 const PRIO = { 1: 'Indispensable', 2: 'Important', 3: 'Plus tard' };
+const RECU = new Set(['app-icon','tex-parchment','tex-wood','tex-ocean','bg-ocean-a','bg-ocean-b','fx-fog-a','lagoon-round','lagoon-oval','lagoon-rocks','isle-canons','isle-stade','isle-mine','isle-jungle','isle-marche','isle-cuisine','bg-sea-golden','fg-waves','hero-canons','ship-player-3','ship-player-top','ship-requin','capt-a','crew-perroquet','crew-tortue','crew-calmar','crew-crabe','boss-kraken','chest-closed','chest-open','coin-doublon','poster-blank','fx-explosion','fx-smoke','fx-splash']);
+const LOTS = {
+  2: { t: 'Lot 2 · à faire maintenant', d: 'Ce qui change le plus l’appli actuelle : un décor et un boss pour chaque île, le navire qui grandit, le Requin Noir qui coule, les équipiers à collectionner et l’écran de fin de session.',
+       ids: ['hero-stade','hero-mine','hero-jungle','hero-marche','hero-cuisine','boss-crabe','boss-golem','boss-serpent','boss-marchand','boss-chef','ship-player-1','ship-player-2','ship-requin-hit','crew-poisson','crew-phoque','crew-grenouille','crew-pieuvre','crew-requin','crew-croco','bg-port-dusk'] },
+  3: { t: 'Lot 3 · les objets des mini-jeux', d: 'Pour remplacer les éléments encore dessinés en code dans les tirs au but, la mine, le marché et la cuisine, plus deux expressions du perroquet guide.',
+       ids: ['foot-ball','foot-goal','block-1000','block-100','block-10','block-1','coin-copper','coin-gold','coin-bimetal','bill-green','bill-red','bill-blue','food-pizza','food-cake','jungle-frame','guide-perroquet-bravo','guide-perroquet-hmm'] },
+  4: { t: 'Lot 4 · personnalisation et finitions', d: 'Choix du capitaine, améliorations du navire, nouvelles îles de la carte, tempête des boss et petits effets.',
+       ids: ['capt-b','capt-c','capt-d','capt-victory','fig-dragon','fig-sirene','cannon-gold','flag-blank','ship-meduse','bg-storm','bg-title','isle-port','isle-kraken','fx-fog-b','deco-compass','coin-pile','wax-seal','cannonball','fx-sparkle','fx-coins'] },
+};
+const lotOf = id => { for (const k of [2, 3, 4]) if (LOTS[k].ids.includes(id)) return k; return 0; };
+const REFS = a => {
+  if (a.id.startsWith('hero-')) return ['hero-canons'];
+  if (a.id.startsWith('boss-')) return ['boss-kraken', 'crew-perroquet'];
+  if (a.id.startsWith('crew-') || a.id.startsWith('guide-') || a.id.startsWith('capt-')) return a.id.startsWith('capt-') && a.id !== 'capt-a' ? ['capt-a'] : ['crew-perroquet'];
+  if (a.c === 'ships') return ['ship-player-3'];
+  if (a.id.startsWith('isle-')) return ['isle-canons'];
+  if (a.id.startsWith('bg-')) return ['bg-sea-golden'];
+  if (a.c === 'games' || a.c === 'loot' || a.c === 'fx') return ['coin-doublon', 'chest-open'];
+  return [];
+};
 const KEY = 'archipel-assets-done';
 let done = new Set();
 try { done = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...done])); } catch (e) {} };
-let fP = 0, fC = 'all';
+let view = 'lot2', fC = 'all';
+try { view = localStorage.getItem('archipel-assets-view') || 'lot2'; } catch (e) {}
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const full = a => [STYLE, `SUBJECT: ${a.s}`, BG[a.bg], RATIO[a.r]].join('\n\n');
+const full = a => { const r = REFS(a).filter(x => RECU.has(x) && x !== a.id); return [STYLE, r.length ? `REFERENCE: match the attached reference image${r.length > 1 ? 's' : ''} (${r.join(', ')}) exactly in rendering style, lighting, level of detail and scale.` : '', `SUBJECT: ${a.s}`, BG[a.bg], RATIO[a.r]].filter(Boolean).join('\n\n'); };
 
 document.getElementById('style-text').textContent = STYLE;
 
@@ -337,64 +359,62 @@ function copy(text, btn, label) {
 }
 document.getElementById('copy-style').addEventListener('click', e => copy(STYLE, e.currentTarget, 'Copier le bloc de style'));
 
+const VIEWS = [['lot2', 'Lot 2 · maintenant'], ['lot3', 'Lot 3'], ['lot4', 'Lot 4'], ['later', 'Plus tard'], ['recu', 'Reçus'], ['all', 'Tout']];
+const inView = a => view === 'all' ? true : view === 'recu' ? RECU.has(a.id) : view === 'later' ? !RECU.has(a.id) && !lotOf(a.id) : lotOf(a.id) === +view.slice(3);
 function chips() {
-  const pr = [[0, 'Toutes priorités'], [1, 'Indispensable'], [2, 'Important'], [3, 'Plus tard']];
-  document.getElementById('f-prio').innerHTML = pr.map(([v, l]) => {
-    const n = v ? A.filter(a => a.p === v).length : A.length;
-    return `<button class="chip" type="button" data-p="${v}" aria-pressed="${fP === v}">${l} · ${n}</button>`;
-  }).join('');
+  document.getElementById('f-prio').innerHTML = VIEWS.map(([v, l]) => `<button class="chip" type="button" data-v="${v}" aria-pressed="${view === v}">${l} · ${A.filter(a => { const o = view; view = v; const r = inView(a); view = o; return r; }).length}</button>`).join('');
   document.getElementById('f-cat').innerHTML = [['all', 'Toutes les catégories'], ...CATS.map(c => [c[0], c[1]])].map(([v, l]) =>
     `<button class="chip" type="button" data-c="${v}" aria-pressed="${fC === v}">${l}</button>`).join('');
 }
-
+function card(a, n) {
+  const got = RECU.has(a.id), r = REFS(a).filter(x => RECU.has(x) && x !== a.id);
+  return `<article class="card${got || done.has(a.id) ? ' is-done' : ''}">
+    <div class="card-top"><div style="min-width:0"><div class="id">${n ? n + '. ' : ''}${a.id}.png</div><h3>${esc(a.n)}</h3></div>${got ? '<span class="tag" style="background:rgba(92,191,134,.22);color:#a6e3bf">Reçu ✓</span>' : `<span class="tag p${a.p}">${PRIO[a.p]}</span>`}</div>
+    <div class="meta"><span class="tag">${BGLABEL[a.bg]}</span><span class="tag">${a.r === '1:1' ? 'Carré 1:1' : a.r === '2:3' ? 'Portrait 2:3' : 'Paysage 3:2'}</span>${r.length && !got ? `<span class="tag" style="background:rgba(243,213,140,.14);color:var(--brass-hi)">Joindre : ${r.join(' + ')}</span>` : ''}</div>
+    <p class="use">${esc(a.u)}</p>
+    ${a.a ? `<p class="anim">${esc(a.a)}</p>` : ''}
+    ${got ? '' : `<div class="subject">${esc(a.s)}</div>
+    <div class="card-bot"><label class="check"><input type="checkbox" id="done-${a.id}" data-done="${a.id}" ${done.has(a.id) ? 'checked' : ''}>Généré</label><button class="cbtn" type="button" data-copy="${a.id}">Copier le prompt</button></div>`}
+  </article>`;
+}
 function render() {
   const list = document.getElementById('list'); let shown = 0;
-  list.innerHTML = CATS.map(([cid, name, desc]) => {
-    if (fC !== 'all' && fC !== cid) return '';
-    const items = A.filter(a => a.c === cid && (!fP || a.p === fP));
-    if (!items.length) return '';
-    shown += items.length;
+  if (view.startsWith('lot')) {
+    const L = LOTS[+view.slice(3)], items = L.ids.map(id => A.find(a => a.id === id)).filter(a => a && (fC === 'all' || a.c === fC));
+    shown = items.length;
     const dn = items.filter(a => done.has(a.id)).length;
-    return `<section class="cat" id="cat-${cid}"><div class="cat-h"><div><h2>${name}</h2><p>${desc}</p></div><span class="count">${dn} / ${items.length} générés</span></div>
-      <div class="grid">${items.map(a => `
-        <article class="card${done.has(a.id) ? ' is-done' : ''}">
-          <div class="card-top"><div style="min-width:0"><div class="id">${a.id}.png</div><h3>${esc(a.n)}</h3></div><span class="tag p${a.p}">${PRIO[a.p]}</span></div>
-          <div class="meta"><span class="tag">${BGLABEL[a.bg]}</span><span class="tag">${a.r === '1:1' ? 'Carré 1:1' : a.r === '2:3' ? 'Portrait 2:3' : 'Paysage 3:2'}</span></div>
-          <p class="use">${esc(a.u)}</p>
-          ${a.a ? `<p class="anim">${esc(a.a)}</p>` : ''}
-          <div class="subject">${esc(a.s)}</div>
-          <div class="card-bot">
-            <label class="check"><input type="checkbox" id="done-${a.id}" data-done="${a.id}" ${done.has(a.id) ? 'checked' : ''}>Généré</label>
-            <button class="cbtn" type="button" data-copy="${a.id}">Copier le prompt</button>
-          </div>
-        </article>`).join('')}</div></section>`;
-  }).join('');
+    list.innerHTML = items.length ? `<section class="cat"><div class="cat-h"><div><h2>${L.t}</h2><p>${L.d}</p></div><span class="count">${dn} / ${items.length} générés</span></div><div class="grid">${items.map((a, k) => card(a, k + 1)).join('')}</div></section>` : '';
+  } else {
+    list.innerHTML = CATS.map(([cid, name, desc]) => {
+      if (fC !== 'all' && fC !== cid) return '';
+      const items = A.filter(a => a.c === cid && inView(a)); if (!items.length) return '';
+      shown += items.length;
+      return `<section class="cat" id="cat-${cid}"><div class="cat-h"><div><h2>${name}</h2><p>${desc}</p></div><span class="count">${items.filter(a => RECU.has(a.id) || done.has(a.id)).length} / ${items.length} faits</span></div><div class="grid">${items.map(a => card(a)).join('')}</div></section>`;
+    }).join('');
+  }
   document.getElementById('empty').hidden = shown > 0;
   meter();
 }
-
 function meter() {
-  const p1 = A.filter(a => a.p === 1), d1 = p1.filter(a => done.has(a.id)).length;
-  document.getElementById('m-p1').textContent = `${d1} / ${p1.length}`;
-  document.getElementById('m-bar').style.width = `${p1.length ? d1 / p1.length * 100 : 0}%`;
-  document.getElementById('m-all').textContent = `${A.filter(a => done.has(a.id)).length} / ${A.length} au total`;
+  const L = LOTS[2].ids, d2 = L.filter(id => done.has(id)).length;
+  document.getElementById('m-p1').textContent = `${d2} / ${L.length}`;
+  document.getElementById('m-bar').style.width = `${d2 / L.length * 100}%`;
+  document.getElementById('m-all').textContent = `${RECU.size} reçus · ${A.filter(a => !RECU.has(a.id)).length} à faire`;
 }
-
 document.addEventListener('click', e => {
-  const p = e.target.closest('[data-p]'), c = e.target.closest('[data-c]'), cp = e.target.closest('[data-copy]');
-  if (p) { fP = +p.dataset.p; chips(); render(); }
+  const v = e.target.closest('[data-v]'), c = e.target.closest('[data-c]'), cp = e.target.closest('[data-copy]');
+  if (v) { view = v.dataset.v; try { localStorage.setItem('archipel-assets-view', view); } catch (er) {} chips(); render(); }
   else if (c) { fC = c.dataset.c; chips(); render(); }
   else if (cp) { const a = A.find(x => x.id === cp.dataset.copy); copy(full(a), cp, 'Copier le prompt'); }
 });
 document.addEventListener('change', e => {
   const id = e.target.dataset && e.target.dataset.done; if (!id) return;
   e.target.checked ? done.add(id) : done.delete(id); save();
-  const card = e.target.closest('.card'); card && card.classList.toggle('is-done', e.target.checked);
-  const sec = e.target.closest('.cat'); if (sec) { const boxes = sec.querySelectorAll('[data-done]'); sec.querySelector('.count').textContent = `${[...boxes].filter(b => b.checked).length} / ${boxes.length} générés`; }
-  meter();
+  const cardEl = e.target.closest('.card'); cardEl && cardEl.classList.toggle('is-done', e.target.checked);
+  render();
 });
 
 chips(); render();
-window.__assets = A;
+window.__assets = A.map(a => ({ ...a, recu: RECU.has(a.id), lot: RECU.has(a.id) ? 1 : lotOf(a.id) || null, refs: RECU.has(a.id) ? [] : REFS(a).filter(x => RECU.has(x) && x !== a.id) }));
 })();
 </script>
