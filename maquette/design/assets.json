@@ -30,14 +30,24 @@
   "ratio": "1:1"
  },
  {
-  "id": "tex-ocean",
-  "file": "tex-ocean.png",
+  "id": "bg-ocean-a",
+  "file": "bg-ocean-a.png",
   "categorie": "base",
   "priorite": 1,
-  "nom": "Océan vu du dessus",
-  "usage": "Fond de la carte du monde.",
-  "fond": "tile",
-  "ratio": "1:1"
+  "nom": "Océan de la carte (partie 1)",
+  "usage": "Fond peint de la carte du monde. Remplace l’océan dessiné en code.",
+  "fond": "scene",
+  "ratio": "2:3"
+ },
+ {
+  "id": "bg-ocean-b",
+  "file": "bg-ocean-b.png",
+  "categorie": "base",
+  "priorite": 1,
+  "nom": "Océan de la carte (partie 2)",
+  "usage": "Suite de la carte quand on fait défiler vers le haut.",
+  "fond": "scene",
+  "ratio": "2:3"
  },
  {
   "id": "fx-fog-a",
@@ -66,6 +76,36 @@
   "priorite": 2,
   "nom": "Rose des vents",
   "usage": "Décor de la carte, chargement.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "lagoon-a",
+  "file": "lagoon-a.png",
+  "categorie": "map",
+  "priorite": 1,
+  "nom": "Lagon rond",
+  "usage": "Posé sous une île : hauts-fonds turquoise et écume peints, qui se fondent dans l’océan.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "lagoon-b",
+  "file": "lagoon-b.png",
+  "categorie": "map",
+  "priorite": 1,
+  "nom": "Lagon allongé",
+  "usage": "Variante pour les îles plus larges.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "lagoon-c",
+  "file": "lagoon-c.png",
+  "categorie": "map",
+  "priorite": 2,
+  "nom": "Lagon à récifs",
+  "usage": "Variante avec quelques rochers et coraux sous l’eau.",
   "fond": "alpha",
   "ratio": "1:1"
  },
