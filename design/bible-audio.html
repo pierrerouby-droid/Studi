@@ -71,7 +71,7 @@ tr:last-child td{border-bottom:0}
 
 <div class="wrap">
   <header><div class="kick">Chiffres à l’abordage ! · production audio</div><h1>Voix, musiques et bruitages</h1></header>
-  <p class="lead"><b>Reçu et intégré :</b> les 62 répliques du Capitaine Barbe-Grise (découpées et vérifiées une à une) et la musique de la carte (« Tavern »). Le moteur audio est prêt : dès que tes fichiers portent les noms ci-dessous, je les dépose et ils jouent aux bons moments. Tant qu’un fichier manque, l’appli garde ses petits sons actuels.</p>
+  <p class="lead"><b>Reçu et intégré :</b> 62 répliques sur 65 (il manque les 3 de l’écran titre, ajoutées après le changement de nom) du Capitaine Barbe-Grise (découpées et vérifiées une à une) et la musique de la carte (« Tavern »). Le moteur audio est prêt : dès que tes fichiers portent les noms ci-dessous, je les dépose et ils jouent aux bons moments. Tant qu’un fichier manque, l’appli garde ses petits sons actuels.</p>
 
   <section class="alert" aria-labelledby="t-al">
     <h2 id="t-al">À lire avant de générer la voix</h2>
@@ -107,7 +107,7 @@ tr:last-child td{border-bottom:0}
   </section>
 
   <section class="sec" aria-labelledby="t-l">
-    <h2 id="t-l">2. Les 62 répliques</h2>
+    <h2 id="t-l">2. Les 65 répliques</h2>
     <p class="sub">Les indications entre crochets ([laughs], [whispers]…) sont à garder telles quelles : elles dirigent le jeu de la voix et ne sont pas prononcées. Si l’une d’elles est lue à voix haute, retire-la et régénère. Les répliques des tutoriels disent la même chose que le texte affiché à l’écran. Nomme chaque fichier exactement comme indiqué. Coche au fur et à mesure (mémorisé sur cet appareil).</p>
     <div class="row"><button class="btn" type="button" id="copyall" style="background:linear-gradient(180deg,#f7dc93,#d9a74a)">Copier toutes les répliques</button><span class="st" id="copyall-st" role="status" style="color:var(--brass-hi)"></span><span class="sub" id="prog"></span></div>
     <div id="lines"></div>
@@ -183,6 +183,10 @@ tr:last-child td{border-bottom:0}
 <script>
 (() => {
   const EV = [
+    ['titre', 'Écran titre', 'Au toucher de l’écran titre ; au premier lancement, juste avant la présentation', [
+      'Ho ho ! Bienvenue à bord, moussaillon ! Prêt pour Chiffres à l’abordage ?',
+      '[laughs heartily] Ha ha ha ! Sortez les canons et vos têtes bien pleines : c’est Chiffres à l’abordage !',
+      '[whispers] Approche, moussaillon… un trésor de nombres nous attend. [shouts] Chiffres… à l’abordage !']],
     ['intro', 'Présentation', 'Quand l’enfant touche la case de son nom, au tout premier lancement', [
       'Ohé ! Moi, c’est le Capitaine Barbe-Grise ! [laughs] Écris ton nom de pirate, moussaillon !']],
     ['carte', 'Découverte de la carte', 'Juste après la création du capitaine', [

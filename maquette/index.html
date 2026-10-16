@@ -611,7 +611,7 @@ function boom(vol = .5, dur = .55) {
 }
 /* Fichiers audio (musique, bruitages, voix) : listés dans assets/audio/manifest.json ; sinon les sons synthétiques ci-dessous servent de repli. */
 const AUDIO = 'assets/audio/';
-const VO = { intro: 1, carte: 1, accueil: 3, depart: 3, combo: 3, rire: 3, victoire: 3, parfait: 2, 'boss-debut': 2, boss: 3, coffre: 2, equipier: 2, ile: 2, navire: 2, presque: 3, indice: 2, revanche: 2, libre: 1, equipage: 1, pirate: 1, port: 3,
+const VO = { titre: 3, intro: 1, carte: 1, accueil: 3, depart: 3, combo: 3, rire: 3, victoire: 3, parfait: 2, 'boss-debut': 2, boss: 3, coffre: 2, equipier: 2, ile: 2, navire: 2, presque: 3, indice: 2, revanche: 2, libre: 1, equipage: 1, pirate: 1, port: 3,
   'tuto-keypad': 3, 'tuto-choices': 2, 'tuto-mine': 4, 'tuto-line': 2, 'tuto-money': 4, 'tuto-pizza': 2 };
 const BUF = {}; let audioAsked = false, BUS = null, musSrc = null, musName = null, musWant = null, lastVo = 0;
 function bus() { const a = ac(); if (!a) return null; if (!BUS) { BUS = { sfx: a.createGain(), mus: a.createGain(), vo: a.createGain() }; BUS.mus.gain.value = .3; BUS.sfx.gain.value = .8; Object.values(BUS).forEach(g => g.connect(a.destination)); } return BUS; }
@@ -627,6 +627,16 @@ function voice(ev, force) {
   if (!S.sound || !S.voice) return false; const now = performance.now(); if (!force && now - lastVo < 3000) return false;
   const opts = range(1, VO[ev] || 0).map(j => `vo-${ev}-${j}`).filter(x => BUF[x]); if (!opts.length) return false;
   lastVo = now; return say(pick(opts));
+}
+// Écran titre : le nom de l'appli d'abord (si la réplique existe), puis la présentation ou l'accueil
+function welcome(first) {
+  let tries = 20; const go = () => {
+    const titre = range(1, VO.titre).map(j => `vo-titre-${j}`).filter(x => BUF[x]);
+    const next = first ? 'intro' : 'accueil', nextReady = range(1, VO[next]).some(j => BUF[`vo-${next}-${j}`]);
+    if (!titre.length && !nextReady) { if (tries-- > 0) setTimeout(go, 250); return; }
+    if (titre.length && (first || Math.random() < .5)) { say(pick(titre)); const d = (voSrc && voSrc.buffer ? voSrc.buffer.duration : 3) * 1000 + 400; if (first) setTimeout(() => voice('intro', true), d); }
+    else voice(next, true);
+  }; go();
 }
 function voiceSoon(ev, tries = 20) { if (voice(ev, true) || tries <= 0) return; setTimeout(() => voiceSoon(ev, tries - 1), 250); }
 let voSrc = null;
@@ -1394,7 +1404,7 @@ app.addEventListener('click', e => {
       else if (wallet() >= pt[2]) { S.spent += pt[2]; S.paints.push(pt[0]); S.paint = pt[0]; sfx('coins') || SND.coin(); voice('navire', true); toast(`${pt[1]} : ton navire est repeint !`); }
       else { toast(`Il te manque ${fmt(pt[2] - wallet())} doublons.`); break; }
       save(); const y = $('.tabpage').scrollTop; renderCrew(); $('.tabpage').scrollTop = y; break; }
-    case 'start': ac(); { const st = $('.title'); st && st.remove(); } show('map'); if (!S.intro) { onboarding(); voiceSoon('intro'); } else voiceSoon('accueil'); break;
+    case 'start': ac(); { const st = $('.title'); st && st.remove(); } show('map'); if (!S.intro) { onboarding(); welcome(true); } else welcome(false); break;
     case 'tipclose': { const t = el.closest('.pi-tip'); t && t.remove(); break; }
     case 'key': key(el.dataset.k); break;
     case 'choice': { if (!R || R.locked) break; const c = R.q.choices[+el.dataset.i]; const [ok, g] = check(c); answer(ok, g, el); break; }
