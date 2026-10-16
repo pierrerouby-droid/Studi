@@ -71,46 +71,44 @@ tr:last-child td{border-bottom:0}
 
 <div class="wrap">
   <header><div class="kick">L’Archipel des Nombres · production audio</div><h1>Voix, musiques et bruitages</h1></header>
-  <p class="lead">Le moteur audio de l’appli est prêt : dès que tes fichiers portent les noms ci-dessous, je les dépose et ils jouent aux bons moments. Tant qu’un fichier manque, l’appli garde ses petits sons actuels.</p>
+  <p class="lead">Version 0.5 de l’appli. Le moteur audio est prêt : dès que tes fichiers portent les noms ci-dessous, je les dépose et ils jouent aux bons moments. Tant qu’un fichier manque, l’appli garde ses petits sons actuels.</p>
 
   <section class="alert" aria-labelledby="t-al">
     <h2 id="t-al">À lire avant de générer la voix</h2>
-    <p>La politique d’utilisation d’ElevenLabs (mise à jour le 9 octobre 2026) contient deux points qui concernent directement ce projet :</p>
+    <p>Une voix d’adulte règle la question des voix d’enfant. Mais la politique d’ElevenLabs (mise à jour le 9 octobre 2026) contient aussi cette règle, valable quelle que soit la voix :</p>
     <ul>
-      <li>Les applis, produits ou expériences <b>destinés aux moins de 18 ans</b> sont interdits <b>sauf accord écrit</b> d’ElevenLabs, et le développeur doit alors recueillir le consentement parental exigé par la loi.</li>
-      <li>Les voix d’enfant, ou de voix adultes qui imitent un enfant, ne peuvent pas être partagées dans leur bibliothèque de voix. On ne peut pas non plus leur envoyer d’enregistrement d’un mineur pour créer une voix.</li>
+      <li>Les applis, produits ou expériences <b>destinés aux moins de 18 ans</b> sont interdits <b>sauf accord écrit</b> d’ElevenLabs, avec le consentement parental exigé par la loi.</li>
     </ul>
-    <p>Je ne peux pas vérifier si des fichiers générés une fois puis intégrés à ton appli entrent dans « expérience destinée aux moins de 18 ans ». Pour une bêta envoyée à d’autres familles, le plus sûr est d’écrire à ElevenLabs pour obtenir un accord écrit avant de diffuser les voix. Autres options : enregistrer ton fils toi-même avec ton téléphone (sans passer par ElevenLabs), ou donner une voix de personnage adulte au perroquet Pi.</p>
+    <p>Je ne peux pas vérifier si des fichiers audio générés une fois puis intégrés à ton appli entrent dans ce cadre. Avant de diffuser la bêta à d’autres familles, le plus sûr est d’écrire au support d’ElevenLabs pour obtenir leur accord écrit. Pour un usage avec ton fils uniquement, la question se pose moins, mais je ne peux pas l’affirmer.</p>
   </section>
 
   <section class="sec" aria-labelledby="t-v">
-    <h2 id="t-v">1. Créer la voix : « Le Mousse »</h2>
-    <p class="sub">Un jeune membre de l’équipage, enthousiaste et bienveillant, qui fête les victoires avec l’enfant. Il ne lit jamais les questions : il réagit seulement aux grands moments.</p>
+    <h2 id="t-v">1. Créer la voix : le Capitaine Barbe-Grise</h2>
+    <p class="sub">Un vieux loup de mer jovial, à la grosse voix, qui guide l’enfant : il présente le jeu, explique chaque mini-jeu, fête les victoires et encourage après une erreur. Pi le perroquet reste son compagnon, perché sur son épaule. Il ne lit jamais les calculs : l’enfant les lit lui-même.</p>
     <div class="paper">
       <span class="lbl">Voice Design · description de la voix</span>
-      <div class="code" id="desc">Native French from France, standard Parisian French. Young boy, around 10 years old, child voice. Studio quality. Persona: cheerful pirate cabin boy. Emotion: enthusiastic, warm, playful. Bright, clear, slightly high-pitched voice with natural childlike energy, never shrill or nasal. Lively but easy-to-follow pacing, a big smile in the voice, quick genuine laughs, real excitement when celebrating. Friendly and encouraging, like a best friend sharing an adventure.</div>
+      <div class="code" id="desc">Native French from France. Male, in his 60s. Studio quality. Persona: jolly old pirate captain and storyteller. Emotion: boisterous, warm, mischievous. Deep, gravelly, booming voice with a rough, salty rasp, like a man who has shouted over storms for forty years. Hearty belly laughs, theatrical exclamations, rolled Rs for dramatic effect. Slow, swaggering rhythm when explaining, sudden bursts of energy when celebrating. Always kind and encouraging with children, never scary or mean.</div>
       <div class="row"><button class="btn" type="button" data-copy="desc">Copier la description</button><span class="st" role="status"></span></div>
-      <p class="note">Pour une fille : remplace « Young boy » par « Young girl » et « cabin boy » par « cabin girl ». Dans les répliques, « Content de te revoir » devient « Contente de te revoir » et « je suis sûr » devient « je suis sûre ».</p>
     </div>
     <div class="paper">
       <span class="lbl">Voice Design · texte d’aperçu</span>
-      <div class="code" id="prev">Ohé, capitaine ! Bienvenue à bord ! Aujourd’hui, on part à l’aventure dans l’Archipel des Nombres. Regarde, le Requin Noir est juste là, derrière les vagues… Prêt ? Feu ! Ouais ! En plein dans le mille ! Trop fort ! Allez, on continue, je suis sûr qu’on peut trouver le trésor avant la nuit !</div>
+      <div class="code" id="prev">Ohé, moussaillon ! Je suis le Capitaine Barbe-Grise, le plus vieux loup de mer de l’Archipel des Nombres ! Ha ha ha ! Tu vois ce coffre ? Il est rempli de doublons… mais pour l’ouvrir, il faudra du courage et une tête bien remplie. Alors, prêt à larguer les amarres ? Hissez les voiles ! À l’abordage !</div>
       <div class="row"><button class="btn" type="button" data-copy="prev">Copier le texte d’aperçu</button><span class="st" role="status"></span></div>
     </div>
     <div class="paper">
       <span class="lbl">Réglages conseillés</span>
       <div class="set">
-        <div><b>Guidance</b>Autour de 30 %. Plus haut si l’accent n’est pas assez français, plus bas si le son est dégradé.</div>
-        <div><b>Choix</b>Génère, écoute les 3 propositions, régénère si aucune n’est naturelle. Enregistre la meilleure sous « Le Mousse ».</div>
-        <div><b>Modèle pour les répliques</b>Eleven v3 : il comprend les indications entre crochets comme <code>[excited]</code> ou <code>[laughs]</code>.</div>
+        <div><b>Guidance</b>Autour de 30 %. Monte un peu si la voix n’est pas assez grave ou rocailleuse, baisse si le son se dégrade.</div>
+        <div><b>Choix</b>Écoute les 3 propositions. Garde celle qui fait sourire sans faire peur, et enregistre-la sous « Capitaine Barbe-Grise ».</div>
+        <div><b>Modèle pour les répliques</b>Eleven v3 : il comprend les indications entre crochets comme <code>[laughs]</code> ou <code>[whispers]</code>.</div>
         <div><b>Export</b>MP3, 44,1 kHz. Une réplique par fichier, sans silence au début ni à la fin.</div>
       </div>
     </div>
   </section>
 
   <section class="sec" aria-labelledby="t-l">
-    <h2 id="t-l">2. Les 33 répliques</h2>
-    <p class="sub">Les indications entre crochets ([excited], [laughs]…) sont à garder telles quelles : elles dirigent le jeu de la voix et ne sont pas prononcées. Nomme chaque fichier exactement comme indiqué. Coche au fur et à mesure (mémorisé sur cet appareil).</p>
+    <h2 id="t-l">2. Les 62 répliques</h2>
+    <p class="sub">Les indications entre crochets ([laughs], [whispers]…) sont à garder telles quelles : elles dirigent le jeu de la voix et ne sont pas prononcées. Si l’une d’elles est lue à voix haute, retire-la et régénère. Les répliques des tutoriels disent la même chose que le texte affiché à l’écran. Nomme chaque fichier exactement comme indiqué. Coche au fur et à mesure (mémorisé sur cet appareil).</p>
     <div class="row"><button class="btn" type="button" id="copyall" style="background:linear-gradient(180deg,#f7dc93,#d9a74a)">Copier toutes les répliques</button><span class="st" id="copyall-st" role="status" style="color:var(--brass-hi)"></span><span class="sub" id="prog"></span></div>
     <div id="lines"></div>
   </section>
@@ -184,54 +182,97 @@ tr:last-child td{border-bottom:0}
 <script>
 (() => {
   const EV = [
-    ['accueil', 'Arrivée dans l’appli', 'Première marée du jour, après la création du capitaine', [
-      '[excited] Ohé, capitaine ! Content de te revoir à bord !',
-      'Bienvenue à bord ! Le navire est prêt, on y va ?',
-      '[laughs] Ah, te voilà ! Tout l’équipage t’attendait !']],
-    ['depart', 'Départ de la marée', 'Les marées suivantes de la journée', [
-      'Larguez les amarres !',
-      '[excited] Cap sur l’aventure !',
-      'Hissez les voiles, moussaillon !']],
-    ['combo', 'Série de bonnes réponses', 'À 3 puis 5 bonnes réponses de suite', [
-      '[excited] Trop fort !',
-      'Waouh, quelle série !',
-      '[laughs] T’es en feu, capitaine !']],
+    ['intro', 'Présentation', 'Quand l’enfant touche la case de son nom, au tout premier lancement', [
+      'Ohé ! Moi, c’est le Capitaine Barbe-Grise ! [laughs] Écris ton nom de pirate, moussaillon !']],
+    ['carte', 'Découverte de la carte', 'Juste après la création du capitaine', [
+      'Bienvenue sur ma carte, moussaillon ! Touche le gros bouton Jouer pour lever l’ancre !']],
+    ['accueil', 'Retour dans l’appli', 'Première marée de la journée', [
+      'Ohé, moussaillon ! Content de te revoir à bord !',
+      '[laughs] Te revoilà ! Le navire n’attendait plus que toi !',
+      'Ah, mon pirate préféré ! Prêt pour une nouvelle marée ?']],
+    ['depart', 'Départ', 'Les marées suivantes de la journée', [
+      'À l’abordage !',
+      'Hissez les voiles, moussaillon ! [laughs]',
+      'Larguez les amarres ! Cap sur l’aventure !']],
+    ['combo', 'Série de 3', 'Trois bonnes réponses de suite', [
+      'Sacrebleu, quelle série !',
+      'Par tous les krakens, tu es en feu !',
+      'Yo-ho ! Et encore un !']],
+    ['rire', 'Rires', 'Série de 5, et pour ponctuer les grands moments', [
+      '[laughs heartily] Ha ha ha !',
+      '[laughs] Yo-ho-ho !',
+      '[laughs] Ah ah ! Par ma barbe, quel talent !']],
     ['victoire', 'Escale gagnée', 'Écran de victoire', [
-      '[excited] Ouaiiis ! Victoire !',
-      'On a gagné ! Hourra !',
-      '[laughs] Bravo, capitaine, escale réussie !']],
-    ['parfait', 'Escale parfaite', 'Toutes les réponses justes', [
-      '[excited] Parfait ! Zéro faute ! Incroyable !',
-      'Tout juste ! T’es une vraie légende !']],
-    ['boss', 'Boss vaincu', 'Victoire au niveau 10 d’une île', [
-      '[excited] On l’a battu ! Le boss est vaincu !',
-      'Hourra, hourra ! Le boss a pris la fuite !',
-      '[laughs] Il est reparti au fond de l’eau ! Quelle bataille !']],
+      'Victoire ! [laughs heartily] Bien joué, moussaillon !',
+      'Hourra ! L’escale est gagnée !',
+      'Yo-ho-ho ! Encore une victoire pour notre équipage !']],
+    ['parfait', 'Sans-faute', 'Toutes les réponses justes', [
+      'Zéro faute ! Par tous les krakens, tu es une légende !',
+      'Parfait ! Même moi, je n’aurais pas fait mieux ! [laughs]']],
+    ['boss-debut', 'Arrivée du boss', 'Début d’un combat de boss', [
+      'Attention, moussaillon… [whispers] voilà le boss de l’île. Reste concentré.',
+      'Tonnerre ! Un boss droit devant ! Tous à vos postes !']],
+    ['boss', 'Boss vaincu', 'Victoire au niveau 10', [
+      'Hourra ! Le boss est vaincu ! Ce soir, on fait la fête !',
+      '[laughs heartily] Il est retourné au fond de l’océan !',
+      'Victoire ! Ce boss ne reviendra pas de sitôt ! [laughs]']],
     ['coffre', 'Coffre ouvert', 'L’enfant touche le coffre', [
-      '[gasps] Waouh… un vrai trésor !',
-      'Regarde toutes ces pièces d’or !']],
+      '[gasps] Par ma barbe… un trésor !',
+      'Des doublons ! Plein de doublons ! [laughs heartily]']],
     ['equipier', 'Nouvel équipier', 'Un personnage rejoint l’équipage', [
-      'Un nouvel équipier ! Bienvenue dans l’équipage !',
-      '[excited] On a un nouveau copain à bord !']],
+      'Un nouveau matelot ! Bienvenue à bord, l’ami !',
+      'Ho ho ! L’équipage s’agrandit !']],
     ['ile', 'Nouvelle île', 'Une île sort du brouillard', [
-      '[excited] Terre en vue ! Une nouvelle île !',
-      '[whispers] Le brouillard se lève… [excited] Une île inconnue !']],
+      'Terre en vue ! Une nouvelle île sort du brouillard !',
+      '[whispers] Regarde… le brouillard se lève… Terre !']],
     ['navire', 'Navire amélioré', 'Passage au brigantin puis au galion', [
-      'Notre navire a grandi ! Trop la classe !',
-      '[gasps] Regarde notre nouveau bateau !']],
+      'Sacrebleu ! Notre navire a grandi !',
+      'Admire ce navire, moussaillon ! Le plus beau de l’archipel !']],
     ['presque', 'Escale perdue', 'Encouragement, jamais de reproche', [
-      'Pas grave, on réessaie ensemble !',
-      'Presque ! La prochaine fois, c’est la bonne !',
-      'On n’abandonne jamais, capitaine !']],
+      'Pas grave, moussaillon ! Même les grands pirates ratent parfois leur tir.',
+      'Presque ! On recharge les canons et on réessaie !',
+      'Courage ! Un vrai pirate n’abandonne jamais !']],
     ['indice', 'Indice demandé', 'Quand l’enfant appelle le perroquet', [
-      'Pi a une idée !',
-      'Écoute bien le perroquet, il est malin !']],
+      'Écoute mon perroquet, il est plus malin que moi ! [laughs]',
+      'Pi a une idée, moussaillon !']],
+    ['revanche', 'Revanche', 'Une question ratée la veille revient', [
+      'Une revanche ! Celle-là, on l’avait ratée… cette fois, on l’aura !',
+      'Ha ! Je me souviens de celle-là ! Montre-lui qui est le capitaine !']],
+    ['libre', 'Exploration libre', 'Après la marée du jour', [
+      'La marée du jour est finie, mais tu peux encore explorer ! Touche une île sur la carte.']],
+    ['equipage', 'Page équipage', 'Première visite', [
+      'Voici ton équipage ! Chaque matelot a un pouvoir. Ouvre des coffres et bats des boss pour en recruter d’autres !']],
+    ['pirate', 'Page Mon pirate', 'Première visite', [
+      '[laughs] Ton avis de recherche ! Plus tu gagnes de doublons, plus ta prime grimpe !']],
     ['port', 'Retour au port', 'Fin de la session de 5 minutes', [
-      'Belle navigation, capitaine ! À demain !',
-      '[sighs] Quelle aventure… L’équipage va se reposer.',
-      'On rentre au port. À la prochaine marée !']],
+      'Belle navigation, moussaillon ! L’équipage va se reposer. À demain !',
+      '[sighs] Quelle journée… Reviens demain, l’archipel t’attend !',
+      'On rentre au port ! [laughs] Tu as été formidable !']],
+    ['tuto-keypad', 'Tutoriel · pavé de chiffres', 'Canons et lecture des blocs, une réplique par étape', [
+      'Lis bien le calcul en haut, moussaillon !',
+      'Tape ta réponse avec les chiffres. La flèche, elle efface !',
+      'Puis appuie sur le gros bouton pour valider ta réponse !']],
+    ['tuto-choices', 'Tutoriel · trois réponses', 'Stade, Jungle et Cuisine', [
+      'Lis bien la question, moussaillon.',
+      'Touche la bonne réponse parmi les trois !']],
+    ['tuto-mine', 'Tutoriel · Mine aux Blocs', 'Une réplique par étape', [
+      'Construis ce nombre avec des blocs !',
+      'Touche une case pour choisir combien de milliers, de centaines, de dizaines ou d’unités.',
+      'Tu peux aussi ajouter ou enlever un bloc avec plus et moins.',
+      'Quand ton nombre est prêt, touche Valider !']],
+    ['tuto-line', 'Tutoriel · droite graduée', 'Jungle des Créatures', [
+      'Une créature se cache sur la ligne ! Touche la graduation qui correspond au nombre.',
+      'Puis touche Valider !']],
+    ['tuto-money', 'Tutoriel · Marché du Port', 'Une réplique par étape', [
+      'Ici, il faut payer exactement le prix demandé.',
+      'Touche les billets et les pièces pour les poser dans le plateau.',
+      'Tu t’es trompé ? Touche une pièce du plateau pour la reprendre.',
+      'Quand le compte est bon, touche Payer !']],
+    ['tuto-pizza', 'Tutoriel · Cuisine du Navire', 'Une réplique par étape', [
+      'Touche les parts de la pizza pour les colorier.',
+      'Quand tu as colorié la bonne fraction, touche Servir !']],
   ];
-  const KEY = 'archipel-audio-done';
+  const KEY = 'archipel-audio-done-v2';
   let done = {}; try { done = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} };
   const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -255,7 +296,7 @@ tr:last-child td{border-bottom:0}
     if (l) { const [f, t] = all[+l.dataset.line];
       copy(t, () => { l.textContent = 'Copié'; l.classList.add('ok'); setTimeout(() => { l.textContent = 'Copier'; l.classList.remove('ok'); }, 1500); }, () => { selectNode(l.parentElement.querySelector('.s')); }); }
     if (e.target.id === 'copyall') { const txt = all.map(([f, t]) => `${f}\n${t}`).join('\n\n'), st = document.getElementById('copyall-st');
-      copy(txt, () => { st.textContent = 'Les 33 répliques sont copiées.'; }, () => { st.textContent = 'Copie refusée par le navigateur : copie les répliques une par une.'; }); }
+      copy(txt, () => { st.textContent = `Les ${all.length} répliques sont copiées.`; }, () => { st.textContent = 'Copie refusée par le navigateur : copie les répliques une par une.'; }); }
   });
   document.addEventListener('change', e => { const f = e.target.dataset && e.target.dataset.f; if (!f) return; done[f] = e.target.checked; save(); prog(); });
 })();

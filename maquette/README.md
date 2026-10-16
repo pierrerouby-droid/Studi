@@ -12,6 +12,15 @@ Appli de mathématiques pour un enfant de CE2, pensée pour l'iPhone (au doigt o
 - **Récompenses** : doublons, coffre à ouvrir, équipiers avec pouvoirs (indice, relance, double butin), surnoms, avis de recherche.
 - **Espace parents** : maintenir la roue crantée 2 secondes.
 
+## Version 0.5 bêta (octobre 2026)
+
+- **Tutoriels** : la première fois qu'un type de mini-jeu apparaît, un pas-à-pas met en lumière chaque élément à toucher. Le bouton « ? » le rejoue.
+- **Revanche** : une question ratée revient le lendemain avec le badge « Revanche ! » (+5 doublons si elle est réussie). Les îles avec une revanche en attente passent en tête de la marée.
+- **Écran d'île** : le prochain trophée (coffre ou boss) et les étoiles gagnées remplacent les pourcentages, qui restent dans l'espace parents. Objectif clair sur la route : « 4 sur 6 pour gagner ».
+- **Pouvoirs visibles** : un portrait apparaît quand un équipier agit, et les pouvoirs de fin d'escale s'affichent dans les récompenses.
+- **Onglets illustrés** : Carte, Équipage, Mon pirate. Prochaine île à découvrir annoncée au retour au port.
+- **Voix du guide** : 62 répliques prévues pour le Capitaine Barbe-Grise (tutoriels, accueil, victoires, rires, encouragements), voir `design/bible-audio.html`.
+
 ## Version 0.4 bêta (octobre 2026)
 
 - **Lisibilité** : textes destinés à l'enfant à 14 px minimum, zones tactiles de 44 px minimum, espaces insécables avant « ! » et « ? ».

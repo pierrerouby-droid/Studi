@@ -727,6 +727,21 @@
   "ratio": "2:3"
  },
  {
+  "id": "guide-capitaine",
+  "file": "guide-capitaine.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "crew-perroquet"
+  ],
+  "nom": "Capitaine Barbe-Grise",
+  "usage": "Le guide du jeu : tutoriels, encouragements, explications. Porte la grosse voix de pirate.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
   "id": "crew-perroquet",
   "file": "crew-perroquet.png",
   "categorie": "chars",

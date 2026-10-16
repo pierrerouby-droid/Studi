@@ -433,6 +433,43 @@ textarea.fld{min-height:76px}
 .pw{height:44px}.pw img{width:38px;height:38px}
 .bill{height:44px}
 .hpbox #hpt{font-size:13px}
+
+/* ---------- Lot B : tutoriels, île simplifiée, pouvoirs visibles, revanche, onglets ---------- */
+.coach{position:absolute;inset:0;z-index:70}
+.coach .ring{position:absolute;border-radius:18px;box-shadow:0 0 0 9999px rgba(6,20,28,.66),0 0 0 3px var(--brass-hi),0 0 24px 6px rgba(243,213,140,.55);transition:all .35s ease;pointer-events:none}
+.coach .hand{position:absolute;width:46px;height:46px;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.45));animation:tapme 1.1s ease-in-out infinite;transition:left .35s,top .35s}
+@keyframes tapme{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4px,-6px) scale(.9)}}
+.coach .bub{position:absolute;left:12px;right:12px;border-radius:20px;padding:12px 14px 12px 12px;display:flex;gap:12px;align-items:flex-start;color:var(--ink);transition:top .35s}
+.coach .bub img{width:62px;flex:none;margin-top:-4px;filter:drop-shadow(0 4px 4px rgba(0,0,0,.2))}
+.coach .bub .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.coach .bub b{font-family:var(--f-d);font-weight:800;font-size:15px;color:#8a5a14}
+.coach .bub p{margin:0;font-size:17px;line-height:1.35}
+.coach .bub .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.coach .bub .dots{display:flex;gap:5px}.coach .bub .dots i{width:8px;height:8px;border-radius:50%;background:rgba(42,28,18,.2)}.coach .bub .dots i.on{background:var(--brass)}
+.coach .bub button{min-height:46px;padding:0 18px;border-radius:14px;font:700 16px var(--f-u);color:#2a1a07;background:linear-gradient(180deg,#f7dc93,#c9973f);box-shadow:0 3px 0 var(--brass-lo)}
+.ghud .help{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;font:800 20px var(--f-d);color:#ffe2a6}
+.trophy{display:flex;align-items:center;gap:12px;padding:14px 16px 12px;border-bottom:1px solid rgba(138,98,36,.25)}
+.trophy .ti{position:relative;width:64px;height:64px;flex:none;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff3c9,#e9cf8f);box-shadow:0 0 0 3px var(--parch),0 0 0 5px var(--brass)}
+.trophy .ti img{width:54px;height:54px;object-fit:contain}
+.trophy .ti.boss{background:#1a1222;box-shadow:0 0 0 3px var(--parch),0 0 0 5.5px var(--wax);overflow:hidden}.trophy .ti.boss img{width:100%;height:100%;object-fit:cover;transform:scale(1.3) translateY(6%)}
+.trophy .tt{flex:1;min-width:0}
+.trophy .tt span{display:block;font-size:14px;color:var(--ink-2)}
+.trophy .tt b{display:block;font-family:var(--f-d);font-weight:800;font-size:19px;line-height:1.15}
+.trophy .st{flex:none;text-align:center;font-family:var(--f-d);font-weight:800;font-size:20px;color:var(--ink)}
+.trophy .st small{display:block;font:500 12.5px var(--f-u);color:var(--ink-2)}
+.trophy .st i{font-style:normal;color:var(--brass)}
+.pop{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:15;display:flex;align-items:center;gap:8px;padding:5px 14px 5px 5px;border-radius:24px;font:700 15px var(--f-u);white-space:nowrap;color:#fff3d0;animation:popin .35s cubic-bezier(.2,1.5,.4,1)}
+.pop img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:#0f3446;box-shadow:0 0 0 1.5px var(--brass)}
+@keyframes popin{from{opacity:0;transform:translate(-50%,8px) scale(.8)}}
+.revb{position:absolute;left:50%;top:-13px;transform:translateX(-50%) rotate(-2deg);padding:3px 12px;border-radius:10px;font:800 14px var(--f-u);letter-spacing:.04em;color:#fff3e6;background:linear-gradient(#e0644f,#b8382a);box-shadow:0 3px 0 #5e170f;white-space:nowrap}
+.dock .di{width:30px;height:30px;margin-top:8px;border-radius:50%;object-fit:cover;background:#173f52;box-shadow:0 0 0 1.5px rgba(243,213,140,.35);opacity:.8}
+.dock .di.ship{object-fit:contain;background:none;box-shadow:none;transform:rotate(-30deg)}
+.dock button[aria-current="page"] .di{opacity:1;box-shadow:0 0 0 2.5px var(--brass-hi)}
+.dock button[aria-current="page"] .di.ship{box-shadow:none;filter:drop-shadow(0 0 4px rgba(243,213,140,.8))}
+.nextisle{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding:8px 10px;border-radius:14px;background:rgba(42,28,18,.06)}
+.nextisle img{width:52px;height:46px;object-fit:contain;filter:brightness(.55) saturate(.3)}
+.nextisle span{font-size:14.5px;color:var(--ink-2);line-height:1.3}
+.nextisle b{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 
@@ -492,11 +529,11 @@ const decomp = n => { const [m, c, d, u] = digits(n); return `${pl(m, 'millier')
 
 /* ================= Sauvegarde ================= */
 const KEY = 'archipel-nombres-v2';
-const DEF = () => ({ name: '', epithet: '', eps: [], gold: 0, sound: true, music: true, voice: true, limit: 5, wins: 0, rounds: 0, isl: {}, crew: ['perroquet'], errors: [], days: {}, tide: null, fastStreak: 0, intro: false });
+const DEF = () => ({ name: '', epithet: '', eps: [], gold: 0, sound: true, music: true, voice: true, tuto: {}, rev: [], seenTab: {}, limit: 5, wins: 0, rounds: 0, isl: {}, crew: ['perroquet'], errors: [], days: {}, tide: null, fastStreak: 0, intro: false });
 let S;
 try { S = Object.assign(DEF(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = DEF(); }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
-const VERSION = '0.4 bêta · octobre 2026';
+const VERSION = '0.5 bêta · octobre 2026';
 try { navigator.storage && navigator.storage.persist && navigator.storage.persist().catch(() => {}); } catch (e) {}
 const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent), standalone = !!(navigator.standalone || (window.matchMedia && matchMedia('(display-mode: standalone)').matches));
 function copyText(text) {
@@ -504,6 +541,8 @@ function copyText(text) {
   try { if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).then(() => true, fb); } catch (e) {}
   return Promise.resolve(fb());
 }
+['tuto', 'seenTab'].forEach(k => { if (!S[k] || typeof S[k] !== 'object') S[k] = {}; }); if (!Array.isArray(S.rev)) S.rev = [];
+const tomorrow = () => today(new Date(Date.now() + 864e5));
 const IS = id => S.isl[id] || (S.isl[id] = { node: 1, stars: {}, ok: 0, tot: 0, ms: 0, fails: 0, best: 0 });
 
 /* ================= Sons ================= */
@@ -524,7 +563,8 @@ function boom(vol = .5, dur = .55) {
 }
 /* Fichiers audio (musique, bruitages, voix) : listés dans assets/audio/manifest.json ; sinon les sons synthétiques ci-dessous servent de repli. */
 const AUDIO = 'assets/audio/';
-const VO = { accueil: 3, depart: 3, combo: 3, victoire: 3, parfait: 2, boss: 3, coffre: 2, equipier: 2, ile: 2, navire: 2, presque: 3, indice: 2, port: 3 };
+const VO = { intro: 1, carte: 1, accueil: 3, depart: 3, combo: 3, rire: 3, victoire: 3, parfait: 2, 'boss-debut': 2, boss: 3, coffre: 2, equipier: 2, ile: 2, navire: 2, presque: 3, indice: 2, revanche: 2, libre: 1, equipage: 1, pirate: 1, port: 3,
+  'tuto-keypad': 3, 'tuto-choices': 2, 'tuto-mine': 4, 'tuto-line': 2, 'tuto-money': 4, 'tuto-pizza': 2 };
 const BUF = {}; let audioAsked = false, BUS = null, musSrc = null, musName = null, musWant = null, lastVo = 0;
 function bus() { const a = ac(); if (!a) return null; if (!BUS) { BUS = { sfx: a.createGain(), mus: a.createGain(), vo: a.createGain() }; BUS.mus.gain.value = .3; BUS.sfx.gain.value = .8; Object.values(BUS).forEach(g => g.connect(a.destination)); } return BUS; }
 function loadAudio() {
@@ -538,7 +578,12 @@ const sfx = (n, vol) => !!playBuf('sfx-' + n, 'sfx', vol);
 function voice(ev, force) {
   if (!S.sound || !S.voice) return false; const now = performance.now(); if (!force && now - lastVo < 3000) return false;
   const opts = range(1, VO[ev] || 0).map(j => `vo-${ev}-${j}`).filter(x => BUF[x]); if (!opts.length) return false;
-  lastVo = now; const src = playBuf(pick(opts), 'vo'); if (src && BUS) { const g = BUS.mus.gain, t = AC.currentTime; g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.09, t + .2); g.linearRampToValueAtTime(.3, t + src.buffer.duration + .6); }
+  lastVo = now; return say(pick(opts));
+}
+let voSrc = null;
+function say(name) {
+  if (!S.sound || !S.voice || !BUF[name]) return false; if (voSrc) { try { voSrc.stop(); } catch (e) {} }
+  const src = playBuf(name, 'vo'); voSrc = src; lastVo = performance.now(); if (src && BUS) { const g = BUS.mus.gain, t = AC.currentTime; g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.09, t + .2); g.linearRampToValueAtTime(.3, t + src.buffer.duration + .6); }
   return !!src;
 }
 function stopMusic() { if (!musSrc) return; const { src, g } = musSrc; try { const t = AC.currentTime; g.gain.setValueAtTime(g.gain.value, t); g.gain.linearRampToValueAtTime(0, t + .6); src.stop(t + .7); } catch (e) {} musSrc = null; musName = null; }
@@ -694,7 +739,7 @@ function genCuisine(l) {
 function ensureTide() {
   if (S.tide && S.tide.date === today()) return S.tide;
   const open = ISLES.filter(unlocked);
-  const acc = i => { const s = IS(i.id); return s.tot ? s.ok / s.tot : -1; };
+  const acc = i => { const s = IS(i.id); return S.rev.some(x => x.g === i.id && x.due <= today()) ? -2 : s.tot ? s.ok / s.tot : -1; };
   const byWeak = open.slice().sort((a, b) => acc(a) - acc(b) || IS(a.id).node - IS(b.id).node);
   const stops = []; for (const i of byWeak) { if (stops.length < 2 && !stops.includes(i.id)) stops.push(i.id); }
   const best = open.slice().sort((a, b) => acc(b) - acc(a)).find(i => !stops.includes(i.id));
@@ -720,8 +765,8 @@ function hudHTML() {
     <button class="cog" id="cog" aria-label="Réglages parents : maintenir 2 secondes">${ico('iCog')}<i></i></button></div>`;
 }
 function dockHTML() {
-  const b = (t, i, l) => `<button data-a="tab" data-t="${t}" ${tab === t ? 'aria-current="page"' : ''}>${ico(i)}${l}</button>`;
-  return `<nav class="dock glass" aria-label="Navigation">${b('map', 'iCompass', 'Carte')}${b('crew', 'iCrew', 'Équipage')}${b('prime', 'iScroll', 'Ma prime')}</nav>`;
+  const b = (t, img, l, cls = '') => `<button data-a="tab" data-t="${t}" ${tab === t ? 'aria-current="page"' : ''}><img class="di ${cls}" src="${IMG(img)}" alt="">${l}</button>`;
+  return `<nav class="dock glass" aria-label="Navigation">${b('map', 'isle-canons', 'Carte')}${b('crew', 'crew-perroquet', 'Équipage')}${b('prime', 'capt-a', 'Mon pirate')}</nav>`;
 }
 function bindCog() {
   const c = $('#cog'); if (!c) return; let tm, held = false;
@@ -773,6 +818,14 @@ function tideHTML(t) {
     <div class="tt2"><div class="sub2">${t.done ? 'Marée du jour terminée' : `Marée du jour · escale ${t.i + 1} sur 3`}</div><h2>${t.done ? 'Bravo, capitaine !' : `Cap sur ${nxt.art}`}</h2></div><div class="mini">${mini}</div></div>${btn}</section>`;
 }
 
+function trophyHTML(i, s) {
+  const total = Object.values(s.stars).reduce((a, b) => a + b, 0), max = (NODES - 1) * 3;
+  let ic, top, title;
+  if (s.node <= CHEST) { const left = CHEST - s.node; ic = `<div class="ti"><img src="${IMG('chest-closed')}" alt=""></div>`; top = left ? `Prochain trésor · encore ${left} niveau${left > 1 ? 'x' : ''}` : 'Prochain trésor · c’est maintenant\u00a0!'; title = has(i.chestCrew) ? 'Le coffre de l’île' : 'Un coffre et un nouvel équipier'; }
+  else if (s.node <= BOSS) { const left = BOSS - s.node; ic = `<div class="ti boss"><img src="${IMG(i.boss.img)}" alt=""></div>`; top = left ? `Prochain défi · encore ${left} niveau${left > 1 ? 'x' : ''}` : 'Prochain défi · c’est maintenant\u00a0!'; title = i.boss.n; }
+  else { ic = `<div class="ti"><img src="${IMG(i.img)}" alt=""></div>`; top = 'Île conquise\u00a0!'; title = 'Rejoue pour gagner toutes les étoiles'; }
+  return `<div class="trophy">${ic}<div class="tt"><span>${top}</span><b>${title}</b></div><div class="st"><i>★</i> ${total}<small>sur ${max}</small></div></div>`;
+}
 function renderIsle(id) {
   const i = isleById(id), s = IS(id), node = Math.min(s.node, NODES);
   const acc = s.tot ? Math.round(s.ok / s.tot * 100) : 0;
@@ -786,7 +839,7 @@ function renderIsle(id) {
     else if (k === CHEST) { cls = 'chest' + (k > s.node ? ' lockimg' : ''); inner = `<img src="${IMG(isDone ? 'chest-open' : 'chest-closed')}" alt="" style="width:46px">`; }
     else if (isDone) { cls = 'done'; inner = k; } else if (isCur) { cls = 'cur'; inner = k; }
     if (isCur && k !== BOSS && k !== CHEST) cls = 'cur';
-    const lab = isCur ? `<div class="rlab" style="left:${x < W / 2 ? x + 48 : x - 200}px;top:${y - 18}px;${x < W / 2 ? '' : 'text-align:right;width:150px'}"><b>${k === BOSS ? i.boss.n : k === CHEST ? 'Le coffre de l’île' : 'Niveau ' + k}</b>${k === BOSS ? 'Combat de boss · 8 tirs' : k === CHEST ? 'Gagne pour l’ouvrir' : 'Difficulté ' + nodeDiff(k, s.fails) + ' sur 5'}</div>` : '';
+    const lab = isCur ? `<div class="rlab" style="left:${x < W / 2 ? x + 48 : x - 200}px;top:${y - 18}px;${x < W / 2 ? '' : 'text-align:right;width:150px'}"><b>${k === BOSS ? i.boss.n : k === CHEST ? 'Le coffre de l’île' : 'Niveau ' + k}</b>${k === BOSS ? '6 sur 8 pour gagner' : k === CHEST ? 'Gagne pour l’ouvrir' : '4 sur 6 pour gagner'}</div>` : '';
     const stars = isDone && k !== CHEST ? `<div class="rstars" style="left:${x}px;top:${y + 30}px">${'★'.repeat(st)}<span style="opacity:.25">${'★'.repeat(3 - st)}</span></div>` : '';
     const play = isDone || isCur;
     return `<button class="rnode ${cls}" style="left:${x}px;top:${y}px" ${play ? `data-a="play" data-i="${id}" data-n="${k}"` : 'disabled'} aria-label="Niveau ${k}">${inner}</button>${stars}${lab}`;
@@ -796,7 +849,7 @@ function renderIsle(id) {
   app.innerHTML = `<div class="screen"><div class="hero">${hero}
       <div class="tt"><div class="smallcaps" style="color:#ffd9a0">${i.notion}</div><div class="disp">${i.n}</div></div></div>
     <div class="topbar"><button class="round glass" data-a="home" aria-label="Retour à la carte">${ico('iBack')}</button><span class="chip glass" style="height:40px;border-radius:20px;color:#ffe2a6">${s.node > CHEST ? 'Coffre ouvert' : 'Coffre au niveau 5'}</span></div>
-    <div class="sheet paper"><div class="stats">
+    <div class="sheet paper">${trophyHTML(i, s)}<div class="stats" hidden>
         <div class="stat"><svg width="58" height="58" viewBox="0 0 58 58"><circle cx="29" cy="29" r="24" fill="none" stroke="rgba(138,98,36,.2)" stroke-width="6"/><circle cx="29" cy="29" r="24" fill="none" stroke="url(#gBrass)" stroke-width="6" stroke-linecap="round" stroke-dasharray="${(acc / 100 * 150.8).toFixed(1)} 150.8" transform="rotate(-90 29 29)"/><text x="29" y="34.5" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="15" fill="#2a1c12">${acc}%</text></svg><span>Réussite</span></div>
         <div class="stat"><b>${node}<span style="font-size:15px;color:#6b5440;font-weight:600"> /${NODES}</span></b><span>Niveau</span></div>
         <div class="stat"><b class="num">${s.best || 0}</b><span>Meilleur combo</span></div></div>
@@ -809,12 +862,13 @@ function renderIsle(id) {
 function startEscale(id, node, fromTide) {
   if (sessionOver()) return renderPort();
   const i = isleById(id), s = IS(id), boss = node === BOSS;
-  R = { i, node, d: boss ? 5 : nodeDiff(node, s.fails), boss, n: boss ? 8 : 6, q: null, k: 0, ok: 0, res: [], gold: 0, combo: 0, best: 0, seen: new Set(), fromTide, hp: 100, used: {}, goldBefore: S.gold, done: false };
+  R = { i, node, d: boss ? 5 : nodeDiff(node, s.fails), boss, n: boss ? 8 : 6, q: null, k: 0, ok: 0, res: [], gold: 0, combo: 0, best: 0, seen: new Set(), fromTide, hp: 100, used: {}, goldBefore: S.gold, done: false, revs: 0, popped: {} };
   ac(); music(boss ? 'boss' : 'escale'); nextQ();
 }
 function nextQ() {
   if (R.k >= R.n) return endEscale();
-  let q, t = 0; do { q = R.i.gen(R.d); t++; } while (R.seen.has(q.log) && t < 20);
+  let q, t = 0; const rv = !R.boss && R.revs < 2 && S.rev.find(x => x.g === R.i.id && x.due <= today() && !R.seen.has(x.q.log));
+  if (rv) { q = Object.assign({}, rv.q, { rev: true }); R.revs++; setTimeout(() => voice('revanche', true), 500); } else do { q = R.i.gen(R.d); t++; } while (R.seen.has(q.log) && t < 20);
   R.seen.add(q.log); R.q = q; R.input = ''; R.locked = false; R.qt = performance.now(); R.counts = R.tray = R.sel = R.pick = R.dig = null;
   renderGame();
 }
@@ -888,19 +942,52 @@ function qcardHTML(q) {
   if (q.kind === 'pizza') body = `<div style="text-align:center">${pizzaSVG(q.parts, R.sel || (R.sel = new Set()))}</div>`;
   if (q.kind === 'compare') body = `<div class="fbars">${q.fr.map(([n, d]) => barHTML(n, d)).join('')}</div>`;
   if (q.cake) body = `<div class="fbars">${barHTML(q.cake, q.cake)}</div>`;
-  return `<div class="qcard paper"><div class="ask">${q.ask}</div>${q.prompt ? `<div class="prompt ${q.promptClass || ''}">${q.prompt}</div>` : ''}${body}</div>`;
+  return `<div class="qcard paper">${q.rev ? '<span class="revb">Revanche\u00a0!</span>' : ''}<div class="ask">${q.ask}</div>${q.prompt ? `<div class="prompt ${q.promptClass || ''}">${q.prompt}</div>` : ''}${body}</div>`;
 }
+const TK = { keypad: 'keypad', mineRead: 'keypad', choices: 'choices', lineRead: 'choices', compare: 'choices', mine: 'mine', line: 'line', money: 'money', pizza: 'pizza' };
+const TUTO = {
+  keypad: [['.qcard', 'Lis bien le calcul en haut.'], ['.keypad', 'Tape ta réponse avec les chiffres. La flèche efface.'], ['[data-k="ok"]', 'Puis appuie ici pour valider ta réponse.']],
+  choices: [['.qcard', 'Lis bien la question.'], ['.choices', 'Touche la bonne réponse parmi les trois.']],
+  mine: [['.qcard', 'Construis ce nombre avec des blocs.'], ['.mcol .cnt', 'Touche une case pour choisir combien de milliers, de centaines, de dizaines ou d’unités.'], ['.mcol .pm', 'Tu peux aussi ajouter ou enlever un bloc avec + et −.'], ['[data-a="validate"]', 'Quand ton nombre est prêt, touche Valider.']],
+  line: [['#line', 'Une créature se cache sur la ligne. Touche la graduation qui correspond au nombre.'], ['[data-a="validate"]', 'Puis touche Valider.']],
+  money: [['.qcard', 'Il faut payer exactement le prix demandé.'], ['.purse-g', 'Touche les billets et les pièces pour les poser dans le plateau.'], ['.tray', 'Tu t’es trompé ? Touche une pièce du plateau pour la reprendre.'], ['[data-a="validate"]', 'Quand le compte est bon, touche Payer.']],
+  pizza: [['.pizza', 'Touche les parts pour les colorier.'], ['[data-a="validate"]', 'Quand tu as colorié la bonne fraction, touche Servir.']],
+};
+let coach = null;
+function startTuto(key) {
+  const steps = TUTO[key]; if (!steps || !R) return; coach = { key, k: 0 };
+  const el = document.createElement('div'); el.className = 'coach'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', 'Comment jouer');
+  el.innerHTML = `<div class="ring"></div><svg class="hand" viewBox="0 0 48 48" aria-hidden="true"><path d="M18 6a4 4 0 0 1 4 4v14l2-.3V8a4 4 0 0 1 8 0v16l2 .2V12a4 4 0 0 1 8 0v18c0 9-6 16-15 16-6 0-10-3-13-8L8 30a3.5 3.5 0 0 1 5.5-4.3L14 26V10a4 4 0 0 1 4-4Z" fill="#fff3d0" stroke="#2a1c12" stroke-width="2.5" stroke-linejoin="round"/></svg>
+    <div class="bub paper"><img src="${IMG('crew-perroquet')}" alt=""><div class="tx"><b>Comment jouer</b><p></p><div class="row"><span class="dots">${steps.map(() => '<i></i>').join('')}</span><button data-a="coachnext"></button></div></div></div>`;
+  $('.screen.game').appendChild(el); coachStep();
+}
+function coachStep() {
+  const el = $('.coach'); if (!el || !coach) return; const steps = TUTO[coach.key], [sel, txt] = steps[coach.k], last = coach.k === steps.length - 1;
+  const t = $(sel, $('.screen.game')), scr = $('.screen.game').getBoundingClientRect();
+  const r = t ? t.getBoundingClientRect() : { left: scr.left + 20, top: scr.top + 200, width: scr.width - 40, height: 80 };
+  const ring = $('.ring', el), pad = 6, L = r.left - scr.left - pad, T = r.top - scr.top - pad, W = r.width + pad * 2, H = r.height + pad * 2;
+  Object.assign(ring.style, { left: L + 'px', top: T + 'px', width: W + 'px', height: H + 'px' });
+  Object.assign($('.hand', el).style, { left: (L + W * .62) + 'px', top: (T + H * .55) + 'px' });
+  $('p', el).textContent = txt; $('[data-a="coachnext"]', el).textContent = last ? 'À toi\u00a0!' : 'Compris';
+  $$('.dots i', el).forEach((d, j) => d.classList.toggle('on', j === coach.k));
+  const bub = $('.bub', el), above = T + H / 2 > scr.height * .5; bub.style.top = '0px';
+  const bh = bub.offsetHeight; bub.style.top = Math.max(8, Math.min(scr.height - bh - 8, above ? T - bh - 14 : T + H + 14)) + 'px';
+  say(`vo-tuto-${coach.key}-${coach.k + 1}`);
+}
+function endTuto() { const el = $('.coach'); el && el.remove(); if (coach) { S.tuto[coach.key] = 1; save(); } coach = null; if (R) R.qt = performance.now(); }
+function maybeTuto() { const key = TK[R.q.kind]; if (key && !S.tuto[key] && !$('.coach')) setTimeout(() => { if (R && !R.locked && R.q && TK[R.q.kind] === key) startTuto(key); }, 450); }
 function renderGame() {
   const q = R.q, segs = range(0, R.n - 1).map(k => `<i class="${k < R.res.length ? (R.res[k] ? 'ok' : 'ko') : k === R.k ? 'cur' : ''}"></i>`).join('');
   const keep = $('#scene') && R.sceneKept;
-  const top = `<div class="ghud"><button class="round glass" data-a="quit" aria-label="Quitter l’escale">${ico('iClose')}</button><div class="segs glass" aria-label="Question ${R.k + 1} sur ${R.n}">${segs}</div><div class="combo glass" style="${R.combo < 2 ? 'visibility:hidden' : ''}">${ico('iFlame')}×${R.combo}</div></div>`;
+  const top = `<div class="ghud"><button class="round glass" data-a="quit" aria-label="Quitter l’escale">${ico('iClose')}</button><div class="segs glass" aria-label="Question ${R.k + 1} sur ${R.n}">${segs}</div><button class="help glass" data-a="tuto" aria-label="Comment jouer">?</button><div class="combo glass" style="${R.combo < 2 ? 'visibility:hidden' : ''}">${ico('iFlame')}×${R.combo}</div></div>`;
   if (keep) {
     $('.ghud').outerHTML = top; $('.powers').outerHTML = powersHTML(); $$('.pi-tip').forEach(x => x.remove());
     $('#gb').innerHTML = qcardHTML(q) + inputHTML(q);
   } else {
     app.innerHTML = `<div class="screen game">${sceneHTML()}${top}<div class="g-bottom" id="gb">${qcardHTML(q)}${inputHTML(q)}</div></div>`;
-    R.sceneKept = true;
+    R.sceneKept = true; if (R.boss && R.k === 0) setTimeout(() => voice('boss-debut', true), 400);
   }
+  maybeTuto();
 }
 function refreshBottom() { $('#gb').innerHTML = qcardHTML(R.q) + inputHTML(R.q); }
 
@@ -915,6 +1002,11 @@ function check(given) {
     default: return [given.v === q.answer, q.cake ? `${given.v}/${q.cake}` : String(typeof given.v === 'number' ? fmt(given.v) : given.v)];
   }
 }
+function pop(img, text, once) {
+  if (once) { if (R.popped[once]) return; R.popped[once] = 1; }
+  const sc = $('#scene'); if (!sc) return; $$('.pop', sc).forEach(x => x.remove());
+  const e = document.createElement('div'); e.className = 'pop glass'; e.innerHTML = `<img src="${IMG(img)}" alt="">${esc(text)}`; sc.appendChild(e); setTimeout(() => e.remove(), 1900);
+}
 function nearMiss(given) {
   const a = Number(String(R.q.answer).replace(/\s/g, '').replace(',', '.')), g = Number(String(given).replace(/[^\d,.-]/g, '').replace(',', '.'));
   return Number.isFinite(a) && Number.isFinite(g) && String(given).trim() !== '' && Math.abs(a - g) <= Math.max(1, Math.abs(a) * .1);
@@ -926,16 +1018,22 @@ function answer(ok, givenText, btn) {
   R.res.push(ok);
   if (btn) btn.classList.add(ok ? 'right' : 'wrong');
   if (ok) {
-    R.ok++; R.combo++; R.best = Math.max(R.best, R.combo); if (R.combo === 3 || R.combo === 5) setTimeout(() => voice('combo'), 700); s.best = Math.max(s.best || 0, R.combo);
+    R.ok++; R.combo++; R.best = Math.max(R.best, R.combo); if (R.combo === 3) setTimeout(() => voice('combo'), 700); else if (R.combo === 5) setTimeout(() => voice('rire'), 700); s.best = Math.max(s.best || 0, R.combo);
     const fastLimit = has('tortue') ? 8000 : 6000, fast = ms < fastLimit;
     S.fastStreak = ms < 5000 ? (S.fastStreak || 0) + 1 : 0;
     if (S.fastStreak >= 5) grantEp('Calcul-Éclair');
     const gain = 4 * R.d + (fast ? (has('requin') ? 8 : 4) : 0) + Math.min(R.combo, has('phoque') ? 8 : 5);
-    R.gold += gain; S.gold += gain; save();
+    R.gold += gain; S.gold += gain;
+    if (R.q.rev) { S.rev = S.rev.filter(x => x.q.log !== R.q.log || x.g !== R.i.id); S.gold += 5; R.gold += 5; setTimeout(() => pop('crew-perroquet', 'Revanche réussie · +5'), 650); }
+    if (fast && ms >= 6000) pop('crew-tortue', 'La Tortue t’offre l’éclair');
+    else if (fast && has('requin') && !R.popped.requin) pop('crew-requin', 'Éclair doublé par le Requin', 'requin');
+    if (has('phoque') && R.combo === 6) pop('crew-phoque', 'Le Phoque booste ton combo', 'phoque');
+    save();
     celebrate(fast, gain);
     setTimeout(() => { R.k++; nextQ(); }, R.i.id === 'canons' ? 1500 : 1150);
   } else {
-    if (has('grenouille') && !R.used.grenouille) R.used.grenouille = true; else R.combo = 0;
+    if (has('grenouille') && !R.used.grenouille && R.combo > 0) { R.used.grenouille = true; pop('crew-grenouille', 'La Grenouille garde ton combo'); } else R.combo = 0;
+    { const due = tomorrow(), it = S.rev.find(x => x.g === R.i.id && x.q.log === R.q.log); if (it) it.due = due; else if (R.q.kind) { const qq = Object.assign({}, R.q); delete qq.rev; S.rev.push({ g: R.i.id, q: qq, due }); S.rev = S.rev.slice(-12); } }
     S.fastStreak = 0; SND.ko();
     S.errors.unshift({ t: Date.now(), g: R.i.id, q: R.q.log, a: givenText, c: R.q.answerText }); S.errors = S.errors.slice(0, 40); save();
     if (R.i.id === 'canons') missFx();
@@ -982,6 +1080,9 @@ function endEscale() {
   if (win) {
     const lvBefore = shipLv(); S.wins++; s.fails = 0; s.stars[R.node] = Math.max(s.stars[R.node] || 0, stars);
     const bonus = stars * 10 + (R.boss ? (has('pieuvre') ? 300 : 150) : 0) + (has('croco') ? 10 : 0); S.gold += bonus; R.gold += bonus;
+    if (has('croco')) rewards.push({ img: 'crew-croco', b: 'Croco Comparo : +10 doublons', s: 'Son pouvoir à chaque victoire', tag: 'Pouvoir' });
+    if (has('poisson') && R.ok === R.n - 1) rewards.push({ img: 'crew-poisson', b: 'Étoile bonus du Poisson Fraction', s: '5 sur 6 compte comme un sans-faute', tag: 'Pouvoir' });
+    if (R.boss && has('pieuvre')) rewards.push({ img: 'crew-pieuvre', b: 'Prime doublée par la Pieuvre', s: '+300 au lieu de +150', tag: 'Pouvoir' });
     if (shipLv() > lvBefore) rewards.push({ img: shipImg(), b: `Ton navire devient un ${SHIPS[shipLv()][2]} !`, s: 'Le Fier Calcul s’agrandit', tag: 'Navire' });
     const join = id => { if (!has(id)) { S.crew.push(id); const c = CREW.find(c => c.id === id); rewards.push({ img: 'crew-' + id, b: `${c.n} rejoint l’équipage`, s: c.p, tag: c.r }); } };
     if (R.node === s.node) { s.node++; if (s.node > NODES) rewards.push({ img: R.i.img, b: 'Île terminée !', s: 'Tu as conquis toute la route', tag: 'Route' }); else rewards.push({ img: s.node === CHEST ? 'chest-closed' : s.node === BOSS ? R.i.boss.img : R.i.img, b: s.node > NODES ? 'Île terminée !' : `Niveau ${s.node} débloqué`, s: s.node === BOSS ? 'Le boss t’attend' : s.node === CHEST ? 'Le coffre de l’île' : `Difficulté ${nodeDiff(s.node, 0)} sur 5`, tag: 'Route' }); }
@@ -1044,7 +1145,8 @@ function renderPort() {
   app.innerHTML = `<div class="screen port"><img class="bg" src="${IMG('bg-port-dusk')}" alt="">
     <div style="position:absolute;left:0;right:0;top:calc(var(--st) + 60px);text-align:center;padding:0 20px"><div class="smallcaps" style="color:#ffd9a0">Fin de la marée</div><div class="disp" style="font-size:36px;color:#fffaf0;margin-top:6px;text-shadow:0 3px 14px rgba(0,0,0,.45)">Retour au port</div></div>
     <div class="card paper"><div class="disp" style="font-size:20px">Belle navigation, ${esc(S.name || 'Capitaine')} !</div>
-      <p style="margin:8px 0 12px;color:var(--ink-2)">${t.gold ? `Tu as gagné <b style="color:var(--ink)">${t.gold} doublons</b> pendant la marée. ` : ''}L’équipage se repose. Demain : ${nextI ? `cap sur ${nextI.n}, niveau ${Math.min(IS(nextI.id).node, NODES)}` : 'une nouvelle marée'}${S.wins < 3 ? ', et une nouvelle île pourrait sortir du brouillard' : ''}.</p>
+      <p style="margin:8px 0 12px;color:var(--ink-2)">${t.gold ? `Tu as gagné <b style="color:var(--ink)">${t.gold} doublons</b> pendant la marée. ` : ''}L’équipage se repose. Demain : ${nextI ? `cap sur ${nextI.n}, niveau ${Math.min(IS(nextI.id).node, NODES)}` : 'une nouvelle marée'}.</p>
+      ${(() => { const nl = ISLES.find(i => !unlocked(i)); if (!nl) return ''; const left = nl.unlock - S.wins; return `<div class="nextisle"><img src="${IMG(nl.img)}" alt=""><span>Prochaine découverte : <b>${nl.n}</b><br>encore ${left} victoire${left > 1 ? 's' : ''}</span></div>`; })()}
       <button class="brass-btn" data-a="home">Voir la carte</button></div></div>`;
 }
 
@@ -1077,7 +1179,7 @@ function renderPrime() {
   bindCog();
   $$('.eps svg').forEach(s => { s.style.width = '14px'; s.style.height = '14px'; s.style.verticalAlign = '-1px'; });
 }
-function show(t) { tab = t; R = null; music('carte'); ({ map: renderMap, crew: renderCrew, prime: renderPrime })[t](); }
+function show(t) { tab = t; R = null; music('carte'); if (t !== 'map' && !S.seenTab[t]) { S.seenTab[t] = 1; save(); setTimeout(() => voice(t === 'crew' ? 'equipage' : 'pirate', true), 300); } ({ map: renderMap, crew: renderCrew, prime: renderPrime })[t](); }
 
 /* ================= Parents ================= */
 let parentSample = false;
@@ -1159,7 +1261,8 @@ function onboarding() {
     <button class="brass-btn" type="submit">Hisser les voiles !</button>
     ${isIOS && !standalone ? '<div class="a2hs"><b>Conseil aux parents :</b> dans Safari, touchez Partager puis « Sur l’écran d’accueil ». L’Archipel s’ouvrira en plein écran et gardera mieux la progression.</div>' : ''}</form>`;
   app.appendChild(m);
-  $('#ob').addEventListener('submit', e => { e.preventDefault(); S.name = $('#nm').value.trim().slice(0, 14) || 'Capitaine'; S.intro = true; save(); m.remove(); ac(); SND.fanfare(); show('map'); setTimeout(() => voice('accueil', true), 600); });
+  $('#nm').addEventListener('focus', () => { ac(); setTimeout(() => voice('intro', true), 200); }, { once: true });
+  $('#ob').addEventListener('submit', e => { e.preventDefault(); S.name = $('#nm').value.trim().slice(0, 14) || 'Capitaine'; S.intro = true; save(); m.remove(); ac(); SND.fanfare(); show('map'); setTimeout(() => voice('carte', true), 600); });
 }
 
 /* ================= Événements ================= */
@@ -1177,12 +1280,14 @@ app.addEventListener('click', e => {
     case 'home': R = null; show('map'); break;
     case 'play': SND.tap(); startEscale(el.dataset.i, +el.dataset.n, false); break;
     case 'tide': case 'tidenext': { const t = ensureTide(); const id = t.stops[t.i]; ac(); if (a === 'tide' && !t.i) voice(S.days[today()] ? 'depart' : 'accueil', true); startEscale(id, Math.min(IS(id).node, NODES), true); break; }
-    case 'free': toast('Choisis une île sur la carte.'); break;
+    case 'free': toast('Choisis une île sur la carte.'); voice('libre', true); break;
     case 'quit': { if ($('.quitm')) break; const m = document.createElement('div'); m.className = 'modal quitm';
       m.innerHTML = `<div class="box paper" role="alertdialog" aria-label="Quitter l’escale ?"><img src="${IMG('crew-perroquet')}" alt="" style="width:96px;margin:-58px auto 0;filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))"><div class="disp" style="font-size:26px">Quitter l’escale ?</div><p style="margin:0;color:var(--ink-2);font-size:16px">Tes réponses de cette escale seront perdues.</p><button class="brass-btn" data-a="quitno">Continuer à jouer</button><button class="ghost-btn dark" data-a="quityes">Quitter</button></div>`;
       app.appendChild(m); $('[data-a="quitno"]', m).focus(); break; }
     case 'quitno': { const m = $('.quitm'); m && m.remove(); break; }
     case 'quityes': { const m = $('.quitm'); m && m.remove(); R = null; show('map'); break; }
+    case 'coachnext': if (coach) { coach.k++; if (coach.k >= TUTO[coach.key].length) endTuto(); else coachStep(); } break;
+    case 'tuto': { if ($('.coach') || !R || R.locked) break; const key = TK[R.q.kind]; key && startTuto(key); break; }
     case 'tipclose': { const t = el.closest('.pi-tip'); t && t.remove(); break; }
     case 'key': key(el.dataset.k); break;
     case 'choice': { if (!R || R.locked) break; const c = R.q.choices[+el.dataset.i]; const [ok, g] = check(c); answer(ok, g, el); break; }
@@ -1229,6 +1334,7 @@ app.addEventListener('pointerup', e => {
 });
 document.addEventListener('keydown', e => {
   if (!R || R.done) { if (e.key === 'Enter' && $('#chest.shake')) openChest(); return; }
+  if ($('.coach')) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); $('[data-a="coachnext"]').click(); } return; }
   const qm = $('.quitm'); if (qm) { if (e.key === 'Escape') qm.remove(); return; }
   const sh = $('.sheet-err'); if (sh) { if (e.key === 'Enter') { e.preventDefault(); $('[data-a="next"]', sh).click(); } return; }
   const k = R.q.kind;
