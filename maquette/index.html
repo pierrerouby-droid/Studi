@@ -622,7 +622,7 @@ function loadAudio() {
       .then(buf => { BUF[n] = buf; if (n === 'mus-' + musWant || (n === 'mus-carte' && musWant === 'port')) music(musWant); }).catch(() => {}))).catch(() => {});
 }
 function playBuf(name, b = 'sfx', vol = 1) { if (!S.sound || !BUF[name]) return null; const B = bus(); if (!B) return null; const src = AC.createBufferSource(), g = AC.createGain(); g.gain.value = vol; src.buffer = BUF[name]; src.connect(g); g.connect(B[b]); src.start(); return src; }
-const sfx = (n, vol) => !!playBuf('sfx-' + n, 'sfx', vol);
+const sfx = (n, vol) => { const opts = ['', '-1', '-2', '-3'].map(v => `sfx-${n}${v}`).filter(x => BUF[x]); return opts.length ? !!playBuf(pick(opts), 'sfx', vol) : false; };
 function voice(ev, force) {
   if (!S.sound || !S.voice) return false; const now = performance.now(); if (!force && now - lastVo < 3000) return false;
   const opts = range(1, VO[ev] || 0).map(j => `vo-${ev}-${j}`).filter(x => BUF[x]); if (!opts.length) return false;
@@ -1149,7 +1149,7 @@ function isleFx(id) {
   else if (id === 'horloge') add(`<svg class="ifx tick" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#fff8e8" stroke="#c9973f" stroke-width="6"/><path d="M50 50V22" stroke="#2a1c12" stroke-width="5" stroke-linecap="round" class="mh"/><path d="M50 50h18" stroke="#2a1c12" stroke-width="6" stroke-linecap="round"/></svg>`);
 }
 function celebrate(fast, gain) {
-  SND.ok();
+  if (R.i.id === 'canons') setTimeout(SND.ok, 620); else SND.ok();
   if (R.i.id === 'canons') {
     shoot(true);
     setTimeout(() => { SND.boom(); fx('boom', 'fx-explosion', 74, 58, 170); fx('smoke', 'fx-smoke', 76, 50, 150);
