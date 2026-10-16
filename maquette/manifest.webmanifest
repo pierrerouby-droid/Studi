@@ -1,6 +1,6 @@
 {
-  "name": "L'Archipel des Nombres",
-  "short_name": "Archipel",
+  "name": "Chiffres à l'abordage !",
+  "short_name": "À l'abordage",
   "description": "Jeu de mathématiques pour le CE2.",
   "lang": "fr",
   "start_url": "./",

@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Archipel">
+<meta name="apple-mobile-web-app-title" content="À l'abordage">
 <meta name="theme-color" content="#0B2230">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
-<title>L'Archipel des Nombres</title>
+<title>Chiffres à l'abordage !</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600..900,100&family=Lexend:wght@400;500;600;700;800&display=swap">
@@ -477,8 +477,8 @@ textarea.fld{min-height:76px}
 .title::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,26,36,.55),transparent 38%,transparent 60%,rgba(8,26,36,.75));pointer-events:none}
 .title>*{position:relative;z-index:1}
 .tlogo{text-align:center;color:#fffaf0;text-shadow:0 4px 18px rgba(0,0,0,.55)}
-.tlogo .smallcaps{color:#ffd9a0;font-size:15px;letter-spacing:.3em}
-.tlogo .disp{font-size:clamp(46px,14vw,68px);line-height:.95;margin-top:6px}
+.tlogo .smallcaps{color:#ffd9a0;font-size:14px;letter-spacing:.22em}
+.tlogo .disp{font-size:clamp(40px,11.5vw,66px);line-height:.98;margin-top:8px}
 .tship{position:absolute!important;left:50%;top:58%;width:min(70%,400px,calc((100vh - 360px) * 1.2));transform:translate(-50%,-50%);animation:tship 4s ease-in-out infinite;z-index:1}
 @keyframes tship{50%{transform:translate(-50%,calc(-50% - 8px)) rotate(-1.5deg)}}
 .tgo{display:flex;flex-direction:column;align-items:center;gap:12px;width:min(100%,320px)}
@@ -1308,7 +1308,7 @@ function openParents() {
       <div style="margin-bottom:12px"><div style="font-size:13px;color:var(--mist);margin-bottom:6px">Voix des personnages</div><div class="seg"><button data-a="vox" data-v="1" aria-pressed="${S.voice}">Oui</button><button data-a="vox" data-v="0" aria-pressed="${!S.voice}">Non</button></div></div>
       <div id="resetbox"><button class="ghost-btn" data-a="reset1" style="color:#ffb9ad">Tout effacer…</button></div>
       <p style="font-size:12.5px;color:var(--mist);margin:10px 0 0">Les données restent dans le navigateur de cet appareil. Aucune publicité, aucun compte.</p></div>
-    <div class="vers">L’Archipel des Nombres · version ${VERSION}</div>`;
+    <div class="vers">Chiffres à l’abordage ! · version ${VERSION}</div>`;
   app.appendChild(el);
 }
 
@@ -1328,7 +1328,7 @@ function openFeedback() {
   app.appendChild(el);
 }
 function feedbackText() {
-  const v = id => ($('#' + id) || {}).value || '', L = [`Avis bêta · L’Archipel des Nombres (version ${VERSION})`, ''];
+  const v = id => ($('#' + id) || {}).value || '', L = [`Avis bêta · Chiffres à l’abordage ! (version ${VERSION})`, ''];
   L.push('Enfant : ' + (v('fb-age').trim() || '—'));
   FBQ.forEach(([k, l]) => L.push(`${l} : ${FB[k] ? (k === 'note' ? FB[k] + '/5' : FB[k]) : '—'}`));
   L.push('', 'Préféré : ' + (v('fb-top').trim() || '—'), 'Problèmes : ' + (v('fb-pb').trim() || '—'));
@@ -1344,7 +1344,7 @@ function feedbackText() {
 function sendFeedback() {
   const text = feedbackText(), out = $('#fbout');
   const showText = msg => { out.innerHTML = `<p class="note" style="margin:14px 0 6px">${msg}</p><textarea class="fld" readonly style="min-height:160px">${esc(text)}</textarea>`; };
-  if (navigator.share) navigator.share({ title: 'Avis sur l’Archipel des Nombres', text }).then(() => { toast('Merci pour votre avis !'); showText('Merci ! Voici le texte envoyé :'); }, () => showText('Partage annulé. Vous pouvez aussi copier ce texte :'));
+  if (navigator.share) navigator.share({ title: 'Avis sur Chiffres à l’abordage !', text }).then(() => { toast('Merci pour votre avis !'); showText('Merci ! Voici le texte envoyé :'); }, () => showText('Partage annulé. Vous pouvez aussi copier ce texte :'));
   else copyText(text).then(ok => { toast(ok ? 'Avis copié : collez-le dans un message' : 'Copiez le texte ci-dessous'); showText(ok ? 'Le texte est copié. Collez-le dans un message ou un e-mail :' : 'Copiez ce texte et envoyez-le par message ou e-mail :'); });
 }
 const BKP = 'ARCHIPEL1:';
@@ -1358,7 +1358,7 @@ function restoreFrom(code) {
 function onboarding() {
   const m = document.createElement('div'); m.className = 'modal';
   m.innerHTML = `<form class="box paper" id="ob" autocomplete="off"><img src="${IMG('capt-a')}" alt="" style="width:150px;margin:-70px auto 0;filter:drop-shadow(0 10px 10px rgba(0,0,0,.3))">
-    <div class="disp" style="font-size:28px">Bienvenue à bord !</div><p style="margin:0;color:var(--ink-2)">Le Perroquet Pi va t’accompagner dans l’Archipel des Nombres. Comment s’appelle le capitaine ?</p>
+    <div class="disp" style="font-size:28px">Bienvenue à bord !</div><p style="margin:0;color:var(--ink-2)">Le Capitaine Barbe-Grise et son perroquet Pi vont t’accompagner d’île en île. Comment s’appelle le capitaine ?</p>
     <label for="nm" class="smallcaps" style="color:var(--ink-2)">Ton nom de pirate</label><input id="nm" maxlength="14" placeholder="Ex. : Léo" value="${esc(S.name)}">
     <button class="brass-btn" type="submit">Hisser les voiles !</button>
     ${isIOS && !standalone ? '<div class="a2hs"><b>Conseil aux parents :</b> dans Safari, touchez Partager puis « Sur l’écran d’accueil ». L’Archipel s’ouvrira en plein écran et gardera mieux la progression.</div>' : ''}</form>`;
@@ -1458,7 +1458,7 @@ window.addEventListener('resize', () => { if (!R && tab === 'map' && !$('.parent
 
 function titleScreen() {
   app.innerHTML = `<div class="screen title" data-a="start" role="button" tabindex="0" aria-label="Toucher pour embarquer"><img class="bg" src="${IMG('bg-sea-golden')}" alt="">
-    <div class="tlogo"><div class="smallcaps">L’Archipel</div><div class="disp">des Nombres</div></div>
+    <div class="tlogo"><div class="smallcaps">Une aventure de pirates</div><div class="disp">Chiffres<br>à l’abordage !</div></div>
     <img class="tship" src="${IMG(shipImg())}" alt="" style="${shipFx()}">
     <div class="tgo"><span>Touche pour embarquer</span><div class="tload" aria-hidden="true"><i id="tload"></i></div></div><div class="vers2">v${VERSION.split(' ')[0]}</div></div>`;
   const list = ['tex-ocean', 'lagoon-round', 'lagoon-oval', 'lagoon-rocks', 'fx-fog-a', 'ship-player-top', 'capt-a', 'coin-doublon', 'tex-parchment', ...ISLES.filter(i => !i.soon).map(i => i.img), 'crew-perroquet'];

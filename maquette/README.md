@@ -1,4 +1,4 @@
-# L'Archipel des Nombres
+# Chiffres à l’abordage !
 
 Appli de mathématiques pour un enfant de CE2, pensée pour l'iPhone (au doigt ou au clavier).
 `index.html` + le dossier `assets/` (illustrations générées, en WebP). On l'ouvre dans un navigateur, sans installation.
