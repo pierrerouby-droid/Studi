@@ -169,6 +169,21 @@
   "ratio": "1:1"
  },
  {
+  "id": "isle-horloge",
+  "file": "isle-horloge.png",
+  "categorie": "map",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "isle-canons"
+  ],
+  "nom": "Île de l’Horloge",
+  "usage": "Carte du monde. Heures et durées (la nouvelle île, déjà programmée).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
   "id": "isle-stade",
   "file": "isle-stade.png",
   "categorie": "map",
@@ -284,7 +299,7 @@
   "categorie": "map",
   "priorite": 3,
   "recu": false,
-  "lot": null,
+  "lot": 3,
   "references": [
    "isle-canons"
   ],
@@ -344,6 +359,21 @@
   "references": [],
   "nom": "En-tête Île des Canons",
   "usage": "Haut de l’écran de l’île.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-horloge",
+  "file": "hero-horloge.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "hero-canons"
+  ],
+  "nom": "En-tête Île de l’Horloge",
+  "usage": "Haut de l’écran de l’île et fond des combats de boss.",
   "fond": "scene",
   "ratio": "3:2"
  },
@@ -911,6 +941,22 @@
   "references": [],
   "nom": "Le Kraken des Tables",
   "usage": "Boss de l’Île des Canons, teaser dans le brouillard.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-horloge",
+  "file": "boss-horloge.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "boss-kraken",
+   "crew-perroquet"
+  ],
+  "nom": "Le Maître des Heures",
+  "usage": "Boss de l’Île de l’Horloge.",
   "fond": "alpha",
   "ratio": "1:1"
  },

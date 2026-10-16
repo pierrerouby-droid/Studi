@@ -12,6 +12,15 @@ Appli de mathématiques pour un enfant de CE2, pensée pour l'iPhone (au doigt o
 - **Récompenses** : doublons, coffre à ouvrir, équipiers avec pouvoirs (indice, relance, double butin), surnoms, avis de recherche.
 - **Espace parents** : maintenir la roue crantée 2 secondes.
 
+## Version 0.6 bêta (octobre 2026)
+
+- **Écran titre** « Touche pour embarquer » : il précharge les images et débloque le son sur iPhone, puis le capitaine accueille l'enfant.
+- **Voix du Capitaine Barbe-Grise** : les 62 répliques, découpées depuis l'enregistrement complet et vérifiées une à une par transcription. Musique de la carte (« Tavern », Ardie Son, Artlist).
+- **Chantier naval** (onglet Équipage) : 6 peintures du navire à acheter avec les doublons. La prime de l'avis de recherche ne baisse jamais ; seule la bourse diminue.
+- **Animations d'îles** à chaque bonne réponse : ballon, blocs, grenouille, pluie de pièces, vapeur de cuisine.
+- **Île de l'Horloge** (lire l'heure, durées) programmée et testée ; elle reste « Bientôt » sur la carte jusqu'à l'arrivée de ses trois illustrations.
+- **Hors connexion** : une fois le site ouvert en https, `sw.js` garde le jeu, les images et les voix en cache.
+
 ## Version 0.5 bêta (octobre 2026)
 
 - **Tutoriels** : la première fois qu'un type de mini-jeu apparaît, un pas-à-pas met en lumière chaque élément à toucher. Le bouton « ? » le rejoue.
