@@ -374,6 +374,65 @@ textarea.fld{min-height:76px}
 .days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end;height:100px}
 .day{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;height:100%;font-size:11.5px;color:var(--mist)}
 .day i{display:block;width:70%;border-radius:5px 5px 0 0;background:linear-gradient(var(--brass-hi),var(--brass));min-height:2px}
+
+/* ---------- Lot A : lisibilité enfant, carte, Mine, indice, sortie ---------- */
+.smallcaps{font-size:13px;letter-spacing:.14em}
+.lvl-pill{font-size:14px;letter-spacing:0;text-transform:none;padding:3px 10px}
+.hud .rk{font-size:14px}
+.dock button{font-size:14px}
+.stat span{font-size:13px}
+.rstars{font-size:15px}
+.rlab{font-size:14px;max-width:170px}.rlab b{font-size:16px}
+.rw span{font-size:14px}.tagr{font-size:12px}
+.crew-card span{font-size:14px;line-height:1.35}.crew-card .rar{font-size:11px}
+.chest .tap{font-size:15px}
+.burst .g{font-size:20px}
+.tide{padding:12px 12px 12px;border-radius:22px}
+.tide .th{display:flex;align-items:center;gap:12px;margin-bottom:10px;min-width:0}
+.tide .mini{display:flex;gap:5px;flex:none}
+.tide .mini span{position:relative;width:36px;height:36px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.45);box-shadow:inset 0 0 0 1px rgba(138,98,36,.3)}
+.tide .mini img{width:32px;height:28px;object-fit:contain}
+.tide .mini .cur{background:rgba(255,255,255,.85);box-shadow:inset 0 0 0 2px var(--brass),0 3px 8px rgba(138,98,36,.3)}
+.tide .mini .done{opacity:.6}
+.tide .mini .done::after{content:"✓";position:absolute;right:-4px;top:-4px;width:18px;height:18px;border-radius:50%;background:var(--kelp);color:#fff;font:800 11px/18px var(--f-u);text-align:center}
+.tide .tt2{min-width:0;flex:1}
+.tide .sub2{font:600 14px var(--f-u);color:var(--ink-2)}
+.tide h2{margin:1px 0 0;font-size:20px;line-height:1.12}
+@media (max-width:400px){.tide .mini{display:none}}
+.brass-btn .play{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(42,26,7,.14)}
+.brass-btn .play svg{width:16px;height:16px;margin-left:2px}
+.brass-btn .lbl{display:flex;flex-direction:column;align-items:flex-start;line-height:1.05;text-align:left}
+.brass-btn .lbl small{font-size:13px;margin-top:2px}
+.mine-wrap{position:relative}
+.mcol-h{font-size:13px;letter-spacing:0;text-transform:none}
+.cnt{display:grid;place-items:center;width:100%;min-height:44px;border-radius:12px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 2px var(--brass),0 2px 0 rgba(138,98,36,.35);font-size:26px;color:var(--ink)}
+.pm button{height:48px;font-size:26px}
+.digpick{position:absolute;inset:0;z-index:5;border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:8px;background:rgba(244,232,204,.98);box-shadow:0 10px 24px rgba(0,0,0,.3),inset 0 0 0 2px var(--brass)}
+.digpick b{font:700 16px var(--f-u);color:var(--ink);text-align:center}
+.digs{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.digs button{min-height:44px;border-radius:12px;font:800 24px var(--f-d);color:var(--ink);background:linear-gradient(#fbf3df,#ecdcb6);box-shadow:0 3px 0 #a98a52}
+.digs button[aria-pressed="true"]{background:linear-gradient(#f7dc93,#c9973f);box-shadow:0 3px 0 var(--brass-lo)}
+.pi-tip{position:absolute;left:12px;right:12px;bottom:38px;z-index:12;border-radius:18px;padding:10px 52px 10px 10px;display:flex;gap:10px;align-items:center;font-size:16px;line-height:1.35;color:var(--ink);animation:rise2 .3s ease-out}
+.pi-tip img{width:58px;flex:none;filter:drop-shadow(0 4px 4px rgba(0,0,0,.2))}
+.pi-tip .x{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--ink)}
+.pi-tip .x svg{width:20px;height:20px}
+.modal .box .disp{color:var(--ink)}
+.shipcap{display:flex;flex-direction:column;gap:4px;margin:-6px 2px 18px}
+.shipcap .disp{font-size:26px;color:#fffaf0}
+.shipcap .nx{font-size:14px;color:var(--soft,#cfe0df)}
+.shipcap .bar{height:8px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:4px}
+.shipcap .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brass),var(--brass-hi))}
+.showship{height:180px}
+.showship img.sh{left:50%;right:auto;bottom:6px;width:min(78%,360px);transform:translateX(-50%)}
+.showship::after{display:none}
+.poster .foot{font-size:13px;left:17%;right:17%}
+.poster .foot .rkt{font:700 13px var(--f-u);color:var(--ink)}
+.eps button{height:44px;font-size:14px;border-radius:22px}
+.round{min-width:44px;min-height:44px}
+.cog{width:44px;height:44px;flex:none}
+.pw{height:44px}.pw img{width:38px;height:38px}
+.bill{height:44px}
+.hpbox #hpt{font-size:13px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 
@@ -383,6 +442,7 @@ textarea.fld{min-height:76px}
   <symbol id="iCrew" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c-4 0-6.5 2.7-6.5 6.2 0 2.2 1.2 3.6 2.6 4.2l.3 2.4h7.2l.3-2.4c1.4-.6 2.6-2 2.6-4.2 0-3.5-2.5-6.2-6.5-6.2Z"/><path d="M9.3 10.2h.1M14.6 10.2h.1M10 19.5l-.3 1.5M14 19.5l.3 1.5"/></g></symbol>
   <symbol id="iScroll" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h11a2 2 0 0 1 2 2v1h-3"/><path d="M17 7v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1h10v1a2 2 0 0 0 3 0"/><path d="M7 4a2 2 0 0 0-2 2v11M9 9h5M9 12.5h5"/></g></symbol>
   <symbol id="iCog" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1Z"/></g></symbol>
+  <symbol id="iPlay" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></symbol>
   <symbol id="iBack" viewBox="0 0 24 24"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="iClose" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
   <symbol id="iLock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></g></symbol>
@@ -432,11 +492,11 @@ const decomp = n => { const [m, c, d, u] = digits(n); return `${pl(m, 'millier')
 
 /* ================= Sauvegarde ================= */
 const KEY = 'archipel-nombres-v2';
-const DEF = () => ({ name: '', epithet: '', eps: [], gold: 0, sound: true, limit: 5, wins: 0, rounds: 0, isl: {}, crew: ['perroquet'], errors: [], days: {}, tide: null, fastStreak: 0, intro: false });
+const DEF = () => ({ name: '', epithet: '', eps: [], gold: 0, sound: true, music: true, voice: true, limit: 5, wins: 0, rounds: 0, isl: {}, crew: ['perroquet'], errors: [], days: {}, tide: null, fastStreak: 0, intro: false });
 let S;
 try { S = Object.assign(DEF(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = DEF(); }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
-const VERSION = '0.3 bêta · octobre 2026';
+const VERSION = '0.4 bêta · octobre 2026';
 try { navigator.storage && navigator.storage.persist && navigator.storage.persist().catch(() => {}); } catch (e) {}
 const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent), standalone = !!(navigator.standalone || (window.matchMedia && matchMedia('(display-mode: standalone)').matches));
 function copyText(text) {
@@ -448,7 +508,7 @@ const IS = id => S.isl[id] || (S.isl[id] = { node: 1, stars: {}, ok: 0, tot: 0, 
 
 /* ================= Sons ================= */
 let AC = null;
-function ac() { if (!AC) { try { AC = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } } if (AC.state === 'suspended') AC.resume(); return AC; }
+function ac() { if (!AC) { try { AC = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } setTimeout(loadAudio, 0); } if (AC.state === 'suspended') AC.resume(); return AC; }
 function beep(notes, { type = 'triangle', dur = .13, gap = .09, vol = .18 } = {}) {
   if (!S.sound) return; const a = ac(); if (!a) return; let t = a.currentTime + .01;
   notes.forEach(f => { const o = a.createOscillator(), g = a.createGain(); o.type = type; o.frequency.value = f;
@@ -462,13 +522,41 @@ function boom(vol = .5, dur = .55) {
   const s = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
   f.type = 'lowpass'; f.frequency.value = 600; g.gain.value = vol; s.buffer = b; s.connect(f); f.connect(g); g.connect(a.destination); s.start();
 }
+/* Fichiers audio (musique, bruitages, voix) : listés dans assets/audio/manifest.json ; sinon les sons synthétiques ci-dessous servent de repli. */
+const AUDIO = 'assets/audio/';
+const VO = { accueil: 3, depart: 3, combo: 3, victoire: 3, parfait: 2, boss: 3, coffre: 2, equipier: 2, ile: 2, navire: 2, presque: 3, indice: 2, port: 3 };
+const BUF = {}; let audioAsked = false, BUS = null, musSrc = null, musName = null, musWant = null, lastVo = 0;
+function bus() { const a = ac(); if (!a) return null; if (!BUS) { BUS = { sfx: a.createGain(), mus: a.createGain(), vo: a.createGain() }; BUS.mus.gain.value = .3; BUS.sfx.gain.value = .8; Object.values(BUS).forEach(g => g.connect(a.destination)); } return BUS; }
+function loadAudio() {
+  if (audioAsked || !AC || location.protocol === 'file:') return; audioAsked = true;
+  fetch(AUDIO + 'manifest.json').then(r => r.ok ? r.json() : []).then(list => (Array.isArray(list) ? list : []).forEach(n =>
+    fetch(AUDIO + n + '.mp3').then(r => r.ok ? r.arrayBuffer() : Promise.reject()).then(b => new Promise((res, rej) => AC.decodeAudioData(b, res, rej)))
+      .then(buf => { BUF[n] = buf; if (n === 'mus-' + musWant) music(musWant); }).catch(() => {}))).catch(() => {});
+}
+function playBuf(name, b = 'sfx', vol = 1) { if (!S.sound || !BUF[name]) return null; const B = bus(); if (!B) return null; const src = AC.createBufferSource(), g = AC.createGain(); g.gain.value = vol; src.buffer = BUF[name]; src.connect(g); g.connect(B[b]); src.start(); return src; }
+const sfx = (n, vol) => !!playBuf('sfx-' + n, 'sfx', vol);
+function voice(ev, force) {
+  if (!S.sound || !S.voice) return false; const now = performance.now(); if (!force && now - lastVo < 3000) return false;
+  const opts = range(1, VO[ev] || 0).map(j => `vo-${ev}-${j}`).filter(x => BUF[x]); if (!opts.length) return false;
+  lastVo = now; const src = playBuf(pick(opts), 'vo'); if (src && BUS) { const g = BUS.mus.gain, t = AC.currentTime; g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.09, t + .2); g.linearRampToValueAtTime(.3, t + src.buffer.duration + .6); }
+  return !!src;
+}
+function stopMusic() { if (!musSrc) return; const { src, g } = musSrc; try { const t = AC.currentTime; g.gain.setValueAtTime(g.gain.value, t); g.gain.linearRampToValueAtTime(0, t + .6); src.stop(t + .7); } catch (e) {} musSrc = null; musName = null; }
+function music(name) {
+  musWant = name; if (!name || !S.sound || !S.music) return stopMusic(); if (musName === name && musSrc) return;
+  const buf = BUF['mus-' + name], B = bus(); if (!B) return; if (!buf) return stopMusic(); stopMusic();
+  const src = AC.createBufferSource(), g = AC.createGain(), t = AC.currentTime; src.buffer = buf; src.loop = true; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(1, t + 1.2); src.connect(g); g.connect(B.mus); src.start(); musSrc = { src, g }; musName = name;
+}
+const ISLE_SFX = { stade: 'kick', mine: 'block', jungle: 'pop', marche: 'cash', cuisine: 'slice' };
 const SND = {
-  tap: () => beep([720], { dur: .04, vol: .06 }),
-  ok: () => beep([523, 659, 784, 1047], { gap: .07 }),
-  ko: () => beep([220, 175], { type: 'sawtooth', dur: .2, gap: .15, vol: .06 }),
-  coin: () => beep([988, 1319], { type: 'square', dur: .07, gap: .06, vol: .04 }),
-  fanfare: () => beep([523, 523, 523, 698, 880, 1047], { gap: .12, dur: .18 }),
-  splash: () => boom(.25, .35),
+  tap: () => sfx('tap', .7) || beep([720], { dur: .04, vol: .06 }),
+  ok: () => sfx('correct') || beep([523, 659, 784, 1047], { gap: .07 }),
+  ko: () => sfx('wrong', .7) || beep([220, 175], { type: 'sawtooth', dur: .2, gap: .15, vol: .06 }),
+  coin: () => sfx('coin') || beep([988, 1319], { type: 'square', dur: .07, gap: .06, vol: .04 }),
+  fanfare: () => sfx('fanfare') || beep([523, 523, 523, 698, 880, 1047], { gap: .12, dur: .18 }),
+  splash: () => sfx('splash') || boom(.25, .35),
+  cannon: () => sfx('cannon') || boom(.35, .3),
+  boom: () => sfx('explosion') || boom(.6, .6),
 };
 
 /* ================= Univers ================= */
@@ -495,12 +583,12 @@ const EPITHETS = [
   ['Bâtisseur', '6 sur 6 à la Mine aux Blocs'], ['Œil-de-Lynx', '6 sur 6 dans la Jungle'], ['Main-d’Or', '6 sur 6 au Marché du Port'], ['Fine Lame', '6 sur 6 à la Cuisine'], ['Vainqueur du Kraken', 'Bats le boss de l’Île des Canons'],
 ];
 const ISLES = [
-  { id: 'canons', hero: 'hero-canons', boss: { img: 'boss-kraken', n: 'Le Kraken des Tables' }, chestCrew: 'tortue', art: 'l’Île des Canons', n: 'Île des Canons', notion: 'Tables de multiplication', img: 'isle-canons', lag: 'lagoon-round', x: 28, y: 1450, gen: genCanon, ep: 'Canonnier d’Élite', unlock: 0, sfx: ['BOUM !', 'TOUCHÉ !', 'EN PLEIN DANS LE MILLE !'] },
-  { id: 'stade', hero: 'hero-stade', boss: { img: 'boss-crabe', n: 'Le Crabe Gardien' }, chestCrew: 'phoque', art: 'le Stade des Vagues', n: 'Stade des Vagues', notion: 'Calcul mental', img: 'isle-stade', lag: 'lagoon-oval', x: 72, y: 1230, gen: genFoot, ep: 'Tête Froide', unlock: 0, sfx: ['BUUUT !', 'LUCARNE !', 'GOLAZO !'] },
-  { id: 'mine', hero: 'hero-mine', boss: { img: 'boss-golem', n: 'Le Golem des Blocs' }, chestCrew: 'grenouille', art: 'la Mine aux Blocs', n: 'Mine aux Blocs', notion: 'Nombres jusqu’à 10 000', img: 'isle-mine', lag: 'lagoon-rocks', x: 28, y: 1010, gen: genMine, ep: 'Bâtisseur', unlock: 0, sfx: ['CONSTRUIT !', 'BLOC PARFAIT !'] },
-  { id: 'jungle', hero: 'hero-jungle', boss: { img: 'boss-serpent', n: 'Le Serpent Mesureur' }, chestCrew: 'croco', art: 'la Jungle des Créatures', n: 'Jungle des Créatures', notion: 'Droite graduée', img: 'isle-jungle', lag: 'lagoon-oval', x: 72, y: 790, gen: genChasse, ep: 'Œil-de-Lynx', unlock: 3, sfx: ['ATTRAPÉ !', 'TROUVÉ !'] },
-  { id: 'marche', hero: 'hero-marche', boss: { img: 'boss-marchand', n: 'Le Marchand Fantôme' }, chestCrew: 'calmar', art: 'le Marché du Port', n: 'Marché du Port', notion: 'Monnaie et euros', img: 'isle-marche', lag: 'lagoon-round', x: 28, y: 570, gen: genMarche, ep: 'Main-d’Or', unlock: 6, sfx: ['VENDU !', 'PILE LE COMPTE !'] },
-  { id: 'cuisine', hero: 'hero-cuisine', boss: { img: 'boss-chef', n: 'Le Chef Pieuvre' }, chestCrew: 'poisson', art: 'la Cuisine du Navire', n: 'Cuisine du Navire', notion: 'Fractions', img: 'isle-cuisine', lag: 'lagoon-rocks', x: 72, y: 350, gen: genCuisine, ep: 'Fine Lame', unlock: 9, sfx: ['MIAM !', 'PARFAIT, CHEF !'] },
+  { id: 'canons', hero: 'hero-canons', boss: { img: 'boss-kraken', n: 'Le Kraken des Tables' }, chestCrew: 'tortue', art: 'l’Île des Canons', n: 'Île des Canons', notion: 'Tables de multiplication', img: 'isle-canons', lag: 'lagoon-round', x: 28, y: 1450, gen: genCanon, ep: 'Canonnier d’Élite', unlock: 0, sfx: ['BOUM !', 'TOUCHÉ !', 'EN PLEIN DANS LE MILLE !'] },
+  { id: 'stade', hero: 'hero-stade', boss: { img: 'boss-crabe', n: 'Le Crabe Gardien' }, chestCrew: 'phoque', art: 'le Stade des Vagues', n: 'Stade des Vagues', notion: 'Calcul mental', img: 'isle-stade', lag: 'lagoon-oval', x: 72, y: 1230, gen: genFoot, ep: 'Tête Froide', unlock: 0, sfx: ['BUUUT !', 'LUCARNE !', 'GOLAZO !'] },
+  { id: 'mine', hero: 'hero-mine', boss: { img: 'boss-golem', n: 'Le Golem des Blocs' }, chestCrew: 'grenouille', art: 'la Mine aux Blocs', n: 'Mine aux Blocs', notion: 'Nombres jusqu’à 10 000', img: 'isle-mine', lag: 'lagoon-rocks', x: 28, y: 1010, gen: genMine, ep: 'Bâtisseur', unlock: 0, sfx: ['CONSTRUIT !', 'BLOC PARFAIT !'] },
+  { id: 'jungle', hero: 'hero-jungle', boss: { img: 'boss-serpent', n: 'Le Serpent Mesureur' }, chestCrew: 'croco', art: 'la Jungle des Créatures', n: 'Jungle des Créatures', notion: 'Droite graduée', img: 'isle-jungle', lag: 'lagoon-oval', x: 72, y: 790, gen: genChasse, ep: 'Œil-de-Lynx', unlock: 3, sfx: ['ATTRAPÉ !', 'TROUVÉ !'] },
+  { id: 'marche', hero: 'hero-marche', boss: { img: 'boss-marchand', n: 'Le Marchand Fantôme' }, chestCrew: 'calmar', art: 'le Marché du Port', n: 'Marché du Port', notion: 'Monnaie et euros', img: 'isle-marche', lag: 'lagoon-round', x: 28, y: 570, gen: genMarche, ep: 'Main-d’Or', unlock: 6, sfx: ['VENDU !', 'PILE LE COMPTE !'] },
+  { id: 'cuisine', hero: 'hero-cuisine', boss: { img: 'boss-chef', n: 'Le Chef Pieuvre' }, chestCrew: 'poisson', art: 'la Cuisine du Navire', n: 'Cuisine du Navire', notion: 'Fractions', img: 'isle-cuisine', lag: 'lagoon-rocks', x: 72, y: 350, gen: genCuisine, ep: 'Fine Lame', unlock: 9, sfx: ['MIAM !', 'PARFAIT, CHEF !'] },
 ];
 const isleById = id => ISLES.find(i => i.id === id);
 const unlocked = i => S.wins >= i.unlock;
@@ -523,7 +611,7 @@ function genCanon(l) {
   const seq = range(1, b).map(i => fmt(a * i)).join(', ');
   const explain = m === 'd' ? `${a} × ${b} = ${p}. On compte de ${a} en ${a} : ${seq}.` : `${a} × ${b} = ${p}${m === 'div' ? `, donc ${p} ÷ ${a} = ${b}. Diviser, c’est faire la multiplication à l’envers.` : `, donc le nombre caché est ${b}.`}`;
   const hint = m === 'd' ? `Compte de ${a} en ${a}, ${b} fois : ${range(1, Math.min(b, 3)).map(i => a * i).join(', ')}…` : `Cherche dans la table de ${a} le résultat ${p}.`;
-  return { kind: 'keypad', ask: 'Charge le canon avec la bonne réponse !', prompt, answer: ans, answerText: fmt(ans), explain, hint, log };
+  return { kind: 'keypad', ask: 'Charge le canon avec la bonne réponse !', prompt, answer: ans, answerText: fmt(ans), explain, hint, log };
 }
 function genFoot(l) {
   let q, ans, explain, log, extra = [];
@@ -545,19 +633,19 @@ function genFoot(l) {
     else if (t === 'dbl') { const n = pick([100, 150, 200, 250, 300, 400, 500, 600]); ans = 2 * n; log = `double de ${n}`; q = `Le double de ${n} ?`; explain = `${n} + ${n} = ${fmt(ans)}.`; extra = [ans + 100, ans - 100, n + 2]; }
     else { const n = pick([200, 300, 400, 500, 600, 800, 1000, 1200]); ans = n / 2; log = `moitié de ${fmt(n)}`; q = `La moitié de ${fmt(n)} ?`; explain = `${ans} + ${ans} = ${fmt(n)}.`; extra = [ans + 50, ans - 50, n * 2]; }
   } else { const t = pick(['c100', 'm25', 'd60', 'sub']);
-    if (t === 'c100') { const a = rnd(11, 89); ans = 100 - a; log = `${a} + … = 100`; const up = a % 10 ? a + 10 - a % 10 : a; explain = a % 10 ? `${a} + ${up - a} = ${up}, puis ${up} + ${100 - up} = 100. Donc ${up - a} + ${100 - up} = ${ans}.` : `${a} + ${ans} = 100.`; extra = [ans + 10, ans - 10]; q = `${a} + … = 100 ?`; }
+    if (t === 'c100') { const a = rnd(11, 89); ans = 100 - a; log = `${a} + … = 100`; const up = a % 10 ? a + 10 - a % 10 : a; explain = a % 10 ? `${a} + ${up - a} = ${up}, puis ${up} + ${100 - up} = 100. Donc ${up - a} + ${100 - up} = ${ans}.` : `${a} + ${ans} = 100.`; extra = [ans + 10, ans - 10]; q = `${a} + … = 100 ?`; }
     else if (t === 'm25') { const k = rnd(2, 4); ans = 25 * k; log = `${k} × 25`; explain = `${Array(k).fill(25).join(' + ')} = ${ans}.`; extra = [ans + 25, ans - 25]; q = `${log} = ?`; }
-    else if (t === 'd60') { const [a, b] = pick([[2, 30], [3, 20], [4, 15], [5, 12], [6, 10]]); ans = b; log = `${a} × … = 60`; explain = `${a} × ${b} = 60.`; extra = [b + 5, b - 5, b + 2]; q = `${a} × … = 60 ?`; }
+    else if (t === 'd60') { const [a, b] = pick([[2, 30], [3, 20], [4, 15], [5, 12], [6, 10]]); ans = b; log = `${a} × … = 60`; explain = `${a} × ${b} = 60.`; extra = [b + 5, b - 5, b + 2]; q = `${a} × … = 60 ?`; }
     else { const a = rnd(41, 99), b = rnd(12, a - 15); ans = a - b; log = `${a} − ${b}`; const tb = b - b % 10; explain = `On enlève ${tb} puis ${b % 10} : ${a} − ${tb} = ${a - tb}, puis ${a - tb} − ${b % 10} = ${ans}.`; extra = [ans + 10, ans - 10]; q = `${log} = ?`; }
   }
-  return { kind: 'choices', ask: 'Tire dans la bonne case !', prompt: q, answer: ans, answerText: fmt(ans), explain, hint: 'Pi dit : coupe le calcul en deux petits calculs faciles.', log, choices: opts(ans, extra) };
+  return { kind: 'choices', ask: 'Tire dans la bonne case !', prompt: q, answer: ans, answerText: fmt(ans), explain, hint: 'Pi dit : coupe le calcul en deux petits calculs faciles.', log, choices: opts(ans, extra) };
 }
 function genMine(l) {
   if (l <= 3) { const n = l === 1 ? rnd(101, 999) : rnd(1001, 9999);
     return { kind: 'mine', target: n, showTotal: l === 1, answer: n, answerText: fmt(n), prompt: l === 3 ? `<span class="words">${words(n)}</span>` : fmt(n), promptClass: l === 3 ? 'mid' : '', ask: 'Construis ce nombre avec les blocs :', log: l === 3 ? words(n) : fmt(n), explain: `${fmt(n)}, c’est ${decomp(n)}.`, hint: `Commence par les milliers, puis les centaines, les dizaines et les unités.` }; }
   if (l === 4) { let m, c, d, u, n;
     do { m = rnd(0, 7); c = rnd(0, 9); d = rnd(0, 9); u = rnd(0, 9); const w = rnd(1, 3); if (w === 1) c = rnd(10, 19); else if (w === 2) d = rnd(10, 19); else u = rnd(10, 19); n = m * 1000 + c * 100 + d * 10 + u; } while (n > 9999 || n < 100);
-    return { kind: 'mineRead', counts: [m, c, d, u], answer: n, answerText: fmt(n), ask: 'Quel nombre forment ces blocs ?', prompt: SLOT, log: `${m} milliers, ${c} centaines, ${d} dizaines, ${u} unités`,
+    return { kind: 'mineRead', counts: [m, c, d, u], answer: n, answerText: fmt(n), ask: 'Quel nombre forment ces blocs ?', prompt: SLOT, log: `${m} milliers, ${c} centaines, ${d} dizaines, ${u} unités`,
       explain: `${m} × 1 000 + ${c} × 100 + ${d} × 10 + ${u} = ${fmt(n)}. Rappel : 10 centaines font 1 millier, 10 dizaines font 1 centaine.`, hint: `Attention : quand une colonne a 10 blocs ou plus, ils forment une unité de la colonne de gauche.` }; }
   const n = rnd(1001, 9999), [m, c, d, u] = digits(n), f = pick(['mult', 'add', 'diz', 'mix']);
   const txt = f === 'mult' ? `(${m} × 1 000) + (${c} × 100) + (${d} × 10) + ${u}` : f === 'add' ? [m * 1000, c * 100, d * 10, u].filter(Boolean).map(fmt).join(' + ') : f === 'diz' ? `${fmt(Math.floor(n / 10))} dizaines et ${pl(u, 'unité')}` : `${pl(d, 'dizaine')}, ${pl(m * 10 + c, 'centaine')} et ${pl(u, 'unité')}`;
@@ -568,9 +656,9 @@ function genChasse(l) {
   const k = rnd(1, 9), v = cfg.s + k * cfg.st;
   const explain = `Chaque graduation avance de ${fmt(cfg.st)}. ${fmt(cfg.s)} + ${k} × ${fmt(cfg.st)} = ${fmt(v)}.`;
   const base = { start: cfg.s, step: cfg.st, k, mid: l <= 2, answer: v, answerText: fmt(v), explain, hint: `Compte les graduations de ${fmt(cfg.st)} en ${fmt(cfg.st)} depuis ${fmt(cfg.s)}.` };
-  if (Math.random() < .55) return { ...base, kind: 'line', ask: 'Une créature se cache à ce nombre. Touche sa graduation !', prompt: fmt(v), log: `placer ${fmt(v)} (de ${fmt(cfg.s)} en ${fmt(cfg.st)})` };
+  if (Math.random() < .55) return { ...base, kind: 'line', ask: 'Une créature se cache à ce nombre. Touche sa graduation !', prompt: fmt(v), log: `placer ${fmt(v)} (de ${fmt(cfg.s)} en ${fmt(cfg.st)})` };
   const wrong = shuffle([v + cfg.st, v - cfg.st, v + 2 * cfg.st, v - 2 * cfg.st]).filter(x => x >= cfg.s && x <= cfg.s + 10 * cfg.st && x !== v);
-  return { ...base, kind: 'lineRead', ask: 'Quel nombre indique la flèche ?', prompt: '', log: `lire la flèche (de ${fmt(cfg.s)} en ${fmt(cfg.st)})`, choices: shuffle([v, ...[...new Set(wrong)].slice(0, 2)]).map(x => ({ v: x, html: fmt(x) })) };
+  return { ...base, kind: 'lineRead', ask: 'Quel nombre indique la flèche ?', prompt: '', log: `lire la flèche (de ${fmt(cfg.s)} en ${fmt(cfg.st)})`, choices: shuffle([v, ...[...new Set(wrong)].slice(0, 2)]).map(x => ({ v: x, html: fmt(x) })) };
 }
 const ITEMS = ['une corde', 'un poisson', 'une boussole', 'une longue-vue', 'une carte au trésor', 'un tonneau de jus', 'des bananes', 'une voile neuve', 'un drapeau', 'un sac de riz'];
 function genMarche(l) {
@@ -594,11 +682,11 @@ function genCuisine(l) {
     else if (t === 'sameN') { a = c = rnd(1, 5); b = rnd(a + 1, 12); do { d2 = rnd(a + 1, 12); } while (d2 === b); why = `On prend ${a} parts dans les deux cas. Plus on coupe en beaucoup de parts, plus chaque part est petite.`; }
     else { const base = pick([2, 3, 4, 5, 6]); b = base; d2 = base * 2; a = rnd(1, b - 1); c = rnd(1, d2 - 1); why = `${frac(a, b)} = ${frac(2 * a, d2)}. On compare ${frac(2 * a, d2)} et ${frac(c, d2)}.`; }
     const x = a / b, y = c / d2, sym = Math.abs(x - y) < 1e-9 ? '=' : x < y ? '<' : '>';
-    return { kind: 'compare', fr: [[a, b], [c, d2]], ask: 'Quel signe faut-il mettre ?', prompt: `${frac(a, b)} <span class="slot">?</span> ${frac(c, d2)}`, answer: sym, answerText: sym, log: `comparer ${a}/${b} et ${c}/${d2}`, explain: `${why} Donc ${frac(a, b)} ${sym} ${frac(c, d2)}.`, hint: 'Regarde les barres : laquelle est la plus remplie ?', choices: ['<', '=', '>'].map(s => ({ v: s, html: s })) }; }
+    return { kind: 'compare', fr: [[a, b], [c, d2]], ask: 'Quel signe faut-il mettre ?', prompt: `${frac(a, b)} <span class="slot">?</span> ${frac(c, d2)}`, answer: sym, answerText: sym, log: `comparer ${a}/${b} et ${c}/${d2}`, explain: `${why} Donc ${frac(a, b)} ${sym} ${frac(c, d2)}.`, hint: 'Regarde les barres : laquelle est la plus remplie ?', choices: ['<', '=', '>'].map(s => ({ v: s, html: s })) }; }
   const d = pick([6, 8, 10, 12]), who = shuffle(['le mousse', 'le perroquet', 'le capitaine', 'la vigie']).slice(0, 2);
   const a = rnd(1, Math.floor(d / 3)), b = rnd(1, Math.floor(d / 3)), rest = d - a - b;
   const wrong = [...new Set([a + b, rest + 1, rest - 1].filter(x => x > 0 && x < d && x !== rest))].slice(0, 2);
-  return { kind: 'choices', cake: d, ask: `Gâteau coupé en ${d} parts. ${who[0][0].toUpperCase() + who[0].slice(1)} mange ${frac(a, d)}, ${who[1]} mange ${frac(b, d)}. Quelle fraction reste-t-il ?`, prompt: '', answer: rest, answerText: `${rest}/${d}`, log: `${d}/${d} − ${a}/${d} − ${b}/${d}`,
+  return { kind: 'choices', cake: d, ask: `Gâteau coupé en ${d} parts. ${who[0][0].toUpperCase() + who[0].slice(1)} mange ${frac(a, d)}, ${who[1]} mange ${frac(b, d)}. Quelle fraction reste-t-il ?`, prompt: '', answer: rest, answerText: `${rest}/${d}`, log: `${d}/${d} − ${a}/${d} − ${b}/${d}`,
     explain: `${frac(a, d)} + ${frac(b, d)} = ${frac(a + b, d)}. Le gâteau entier, c’est ${frac(d, d)}. Il reste ${frac(d, d)} − ${frac(a + b, d)} = ${frac(rest, d)}.`, hint: `Le gâteau entier fait ${frac(d, d)}. Enlève ce qui a été mangé.`, choices: shuffle([rest, ...wrong]).map(x => ({ v: x, html: frac(x, d) })) };
 }
 
@@ -652,7 +740,7 @@ function renderMap() {
     const s = IS(i.id), lk = !unlocked(i), isCur = i === cur;
     return `<button class="isle${lk ? ' locked' : ''}${isCur ? ' cur' : ''}" style="left:${px(i)}px;top:${i.y}px" data-a="isle" data-i="${i.id}" aria-label="${esc(i.n)}${lk ? ', verrouillée' : ''}">
       <img class="lag" src="${IMG(i.lag)}" alt=""><img class="land" src="${IMG(i.img)}" alt="">
-      <span class="lbl"><b>${i.n}</b>${lk ? `<span class="lvl-pill lock">${ico('iLock')} ${i.unlock - S.wins} escale${i.unlock - S.wins > 1 ? 's' : ''} à gagner</span>` : `<span class="lvl-pill">NIVEAU ${Math.min(s.node, NODES)} / ${NODES}</span>`}</span></button>`;
+      <span class="lbl"><b>${i.n}</b>${lk ? `<span class="lvl-pill lock">${ico('iLock')} ${i.unlock - S.wins} escale${i.unlock - S.wins > 1 ? 's' : ''} à gagner</span>` : `<span class="lvl-pill">Niveau ${Math.min(s.node, NODES)}/${NODES}</span>`}</span></button>`;
   }).join('');
   const fog = ISLES.filter(i => !unlocked(i)).map(i => `<img class="fogpatch" src="${IMG('fx-fog-a')}" alt="" style="left:${px(i)}px;top:${i.y - 10}px">`).join('');
   app.innerHTML = `<div class="screen">
@@ -670,20 +758,19 @@ function renderMap() {
     ${dockHTML()}</div>`;
   bindCog();
   const sc = $('#mapScroll');
-  sc.scrollTop = mapScroll != null ? mapScroll : Math.max(0, cur.y - sc.clientHeight * .38);
+  const hb = $('.hud').getBoundingClientRect().bottom, tt = $('.tide').getBoundingClientRect().top;
+  sc.scrollTop = mapScroll != null ? mapScroll : Math.max(0, cur.y - (hb + tt) / 2 + 10);
   sc.addEventListener('scroll', () => { mapScroll = sc.scrollTop; }, { passive: true });
 }
 function tideHTML(t) {
-  const st = t.stops.map((id, k) => { const i = isleById(id); return `<div class="stop ${t.done || k < t.i ? 'done' : k === t.i ? 'cur' : ''}"><img src="${IMG(i.img)}" alt=""><b>${i.notion}</b><span>Niveau ${Math.min(IS(id).node, NODES)}</span></div>`; }).join('');
-  const day = new Date().toLocaleDateString('fr-FR', { weekday: 'long' });
+  const mini = t.stops.map((id, k) => { const i = isleById(id); return `<span class="${t.done || k < t.i ? 'done' : k === t.i ? 'cur' : ''}" title="${esc(i.notion)}"><img src="${IMG(i.img)}" alt="${esc(i.notion)}"></span>`; }).join('');
   const nxt = isleById(t.stops[Math.min(t.i, 2)]);
+  const play = `<span class="play">${ico('iPlay')}</span>`;
   const btn = sessionOver() ? `<button class="brass-btn" disabled>Le navire se repose · à demain</button>`
-    : t.done ? `<button class="brass-btn" data-a="free">Naviguer librement <small>· choisis une île</small></button>`
-    : `<button class="brass-btn" data-a="tide">${t.i ? `Continuer la marée <small>· escale ${t.i + 1} / 3</small>` : `Larguer les amarres <small>· 5 min</small>`}</button>`;
-  return `<section class="tide paper" aria-label="Marée du jour"><div class="seal">MARÉE<br>DU<br>JOUR</div>
-    <div class="smallcaps" style="color:var(--ink-2)">${day} · ta marée du jour</div>
-    <h2>${t.done ? 'Marée terminée, bravo !' : `Cap sur ${nxt.art}`}</h2>
-    <div class="stops">${st}</div>${btn}</section>`;
+    : t.done ? `<button class="brass-btn" data-a="free">Choisis une île sur la carte</button>`
+    : `<button class="brass-btn" data-a="tide">${play}<span class="lbl">${t.i ? `Continuer<small>escale ${t.i + 1} sur 3</small>` : `Jouer<small>Larguer les amarres · 5 min</small>`}</span></button>`;
+  return `<section class="tide paper" aria-label="Marée du jour"><div class="th">
+    <div class="tt2"><div class="sub2">${t.done ? 'Marée du jour terminée' : `Marée du jour · escale ${t.i + 1} sur 3`}</div><h2>${t.done ? 'Bravo, capitaine !' : `Cap sur ${nxt.art}`}</h2></div><div class="mini">${mini}</div></div>${btn}</section>`;
 }
 
 function renderIsle(id) {
@@ -723,12 +810,12 @@ function startEscale(id, node, fromTide) {
   if (sessionOver()) return renderPort();
   const i = isleById(id), s = IS(id), boss = node === BOSS;
   R = { i, node, d: boss ? 5 : nodeDiff(node, s.fails), boss, n: boss ? 8 : 6, q: null, k: 0, ok: 0, res: [], gold: 0, combo: 0, best: 0, seen: new Set(), fromTide, hp: 100, used: {}, goldBefore: S.gold, done: false };
-  ac(); nextQ();
+  ac(); music(boss ? 'boss' : 'escale'); nextQ();
 }
 function nextQ() {
   if (R.k >= R.n) return endEscale();
   let q, t = 0; do { q = R.i.gen(R.d); t++; } while (R.seen.has(q.log) && t < 20);
-  R.seen.add(q.log); R.q = q; R.input = ''; R.locked = false; R.qt = performance.now(); R.counts = R.tray = R.sel = R.pick = null;
+  R.seen.add(q.log); R.q = q; R.input = ''; R.locked = false; R.qt = performance.now(); R.counts = R.tray = R.sel = R.pick = R.dig = null;
   renderGame();
 }
 function sceneHTML() {
@@ -757,7 +844,7 @@ function powersHTML() {
   if (S.crew.includes('crabe')) p.push(`<button class="pw glass" data-a="power" data-p="crabe" ${R.used.crabe ? 'disabled' : ''}><img src="${IMG('crew-crabe')}" alt=""><span>Relance<small>Crabe · ×1</small></span></button>`);
   return `<div class="powers">${p.join('')}</div>`;
 }
-const keypadHTML = () => `<div class="keypad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => `<button class="key" data-a="key" data-k="${n}">${n}</button>`).join('')}<button class="key dk" data-a="key" data-k="del" aria-label="Effacer">${ico('iDel')}</button><button class="key" data-a="key" data-k="0">0</button><button class="key fire" data-a="key" data-k="ok" aria-label="Valider">${ico('iCannon')}Feu !</button></div>`;
+const keypadHTML = () => `<div class="keypad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => `<button class="key" data-a="key" data-k="${n}">${n}</button>`).join('')}<button class="key dk" data-a="key" data-k="del" aria-label="Effacer">${ico('iDel')}</button><button class="key" data-a="key" data-k="0">0</button><button class="key fire" data-a="key" data-k="ok" aria-label="Valider">${ico('iCannon')}Feu !</button></div>`;
 const choicesHTML = q => `<div class="choices">${q.choices.map((c, k) => `<button class="choice" data-a="choice" data-i="${k}">${c.html}</button>`).join('')}</div>`;
 const pileHTML = (k, n) => Array.from({ length: Math.min(n, 19) }, () => `<i class="blk ${['b-m', 'b-c', 'b-d', 'b-u'][k]}"></i>`).join('');
 const COLS = ['Milliers', 'Centaines', 'Dizaines', 'Unités'];
@@ -781,14 +868,15 @@ function inputHTML(q) {
     case 'keypad': case 'mineRead': return keypadHTML();
     case 'choices': case 'lineRead': case 'compare': return choicesHTML(q);
     case 'mine': { const c = R.counts || (R.counts = [0, 0, 0, 0]); const v = c[0] * 1000 + c[1] * 100 + c[2] * 10 + c[3];
-      return `<div class="mine-cols">${COLS.map((h, k) => `<div class="mcol"><span class="mcol-h">${h}</span><div class="pile">${pileHTML(k, c[k])}</div><span class="cnt">${c[k]}</span><div class="pm"><button data-a="blk" data-k="${k}" data-d="-1" aria-label="Enlever un bloc">−</button><button class="plus" data-a="blk" data-k="${k}" data-d="1" aria-label="Ajouter un bloc">+</button></div></div>`).join('')}</div>
+      const pick = R.dig != null ? `<div class="digpick" role="dialog" aria-label="Choisis un chiffre"><b>Combien de ${COLS[R.dig].toLowerCase()} ?</b><div class="digs">${range(0, 9).map(d => `<button data-a="digset" data-d="${d}" aria-pressed="${c[R.dig] === d}">${d}</button>`).join('')}</div></div>` : '';
+      return `<div class="mine-wrap"><div class="mine-cols">${COLS.map((h, k) => `<div class="mcol"><span class="mcol-h">${h}</span><div class="pile">${pileHTML(k, c[k])}</div><button class="cnt" data-a="digpick" data-k="${k}" aria-label="Choisir le nombre de ${h.toLowerCase()}">${c[k]}</button><div class="pm"><button data-a="blk" data-k="${k}" data-d="-1" aria-label="Enlever un bloc">−</button><button class="plus" data-a="blk" data-k="${k}" data-d="1" aria-label="Ajouter un bloc">+</button></div></div>`).join('')}</div>${pick}</div>
         <button class="brass-btn" data-a="validate">Valider${q.showTotal ? ` <small>· tes blocs font ${fmt(v)}</small>` : ''}</button>`; }
     case 'line': return `<button class="brass-btn" data-a="validate" ${R.pick == null ? 'disabled' : ''}>Valider</button>`;
     case 'money': { const tr = R.tray || (R.tray = []), sum = tr.reduce((a, b) => a + b, 0);
       const piece = (c, attrs) => `<button class="${c >= 500 ? `bill b${c / 100}` : `coin ${c >= 100 ? 'bi' : c >= 10 ? 'au' : 'cu'}`}" ${attrs}>${coinLabel(c)}</button>`;
       return `<div class="purse-g">${q.denoms.map(c => piece(c, `data-a="pay" data-c="${c}" aria-label="Poser ${coinLabel(c)}"`)).join('')}</div>
         <button class="brass-btn valid" data-a="validate" ${tr.length ? '' : 'disabled'}>Payer${q.showTotal ? ` <small>· ${fmtE(sum)}</small>` : ''}</button>`; }
-    case 'pizza': return `<button class="brass-btn" data-a="validate" ${R.sel && R.sel.size ? '' : 'disabled'}>Servir !</button>`;
+    case 'pizza': return `<button class="brass-btn" data-a="validate" ${R.sel && R.sel.size ? '' : 'disabled'}>Servir !</button>`;
   }
 }
 function qcardHTML(q) {
@@ -805,9 +893,9 @@ function qcardHTML(q) {
 function renderGame() {
   const q = R.q, segs = range(0, R.n - 1).map(k => `<i class="${k < R.res.length ? (R.res[k] ? 'ok' : 'ko') : k === R.k ? 'cur' : ''}"></i>`).join('');
   const keep = $('#scene') && R.sceneKept;
-  const top = `<div class="ghud"><button class="round glass" data-a="quit" aria-label="Quitter l’escale">${ico('iClose')}</button><div class="segs glass" aria-label="Question ${R.k + 1} sur ${R.n}">${segs}</div><div class="combo glass">${ico('iFlame')}×${R.combo}</div></div>`;
+  const top = `<div class="ghud"><button class="round glass" data-a="quit" aria-label="Quitter l’escale">${ico('iClose')}</button><div class="segs glass" aria-label="Question ${R.k + 1} sur ${R.n}">${segs}</div><div class="combo glass" style="${R.combo < 2 ? 'visibility:hidden' : ''}">${ico('iFlame')}×${R.combo}</div></div>`;
   if (keep) {
-    $('.ghud').outerHTML = top; $('.powers').outerHTML = powersHTML();
+    $('.ghud').outerHTML = top; $('.powers').outerHTML = powersHTML(); $$('.pi-tip').forEach(x => x.remove());
     $('#gb').innerHTML = qcardHTML(q) + inputHTML(q);
   } else {
     app.innerHTML = `<div class="screen game">${sceneHTML()}${top}<div class="g-bottom" id="gb">${qcardHTML(q)}${inputHTML(q)}</div></div>`;
@@ -827,6 +915,10 @@ function check(given) {
     default: return [given.v === q.answer, q.cake ? `${given.v}/${q.cake}` : String(typeof given.v === 'number' ? fmt(given.v) : given.v)];
   }
 }
+function nearMiss(given) {
+  const a = Number(String(R.q.answer).replace(/\s/g, '').replace(',', '.')), g = Number(String(given).replace(/[^\d,.-]/g, '').replace(',', '.'));
+  return Number.isFinite(a) && Number.isFinite(g) && String(given).trim() !== '' && Math.abs(a - g) <= Math.max(1, Math.abs(a) * .1);
+}
 function answer(ok, givenText, btn) {
   if (R.locked) return; R.locked = true;
   const ms = Math.min(30000, performance.now() - R.qt), s = IS(R.i.id);
@@ -834,7 +926,7 @@ function answer(ok, givenText, btn) {
   R.res.push(ok);
   if (btn) btn.classList.add(ok ? 'right' : 'wrong');
   if (ok) {
-    R.ok++; R.combo++; R.best = Math.max(R.best, R.combo); s.best = Math.max(s.best || 0, R.combo);
+    R.ok++; R.combo++; R.best = Math.max(R.best, R.combo); if (R.combo === 3 || R.combo === 5) setTimeout(() => voice('combo'), 700); s.best = Math.max(s.best || 0, R.combo);
     const fastLimit = has('tortue') ? 8000 : 6000, fast = ms < fastLimit;
     S.fastStreak = ms < 5000 ? (S.fastStreak || 0) + 1 : 0;
     if (S.fastStreak >= 5) grantEp('Calcul-Éclair');
@@ -849,7 +941,7 @@ function answer(ok, givenText, btn) {
     if (R.i.id === 'canons') missFx();
     setTimeout(() => {
       const sh = document.createElement('div'); sh.className = 'sheet-err paper'; sh.setAttribute('role', 'alertdialog');
-      sh.innerHTML = `<div class="who"><img src="${IMG('crew-perroquet')}" alt=""><div><h3>Raté de peu !</h3><div class="good">La bonne réponse : <span style="color:#2b7a4d">${esc(R.q.answerText)}</span></div></div></div><p class="why">${R.q.explain}</p><button class="brass-btn" data-a="next">J’ai compris</button>`;
+      sh.innerHTML = `<div class="who"><img src="${IMG('crew-perroquet')}" alt=""><div><h3>${nearMiss(givenText) ? 'Raté de peu !' : 'Pas tout à fait !'}</h3><div class="good">La bonne réponse : <span style="color:#2b7a4d">${esc(R.q.answerText)}</span></div></div></div><p class="why">${R.q.explain}</p><button class="brass-btn" data-a="next">J’ai compris</button>`;
       app.firstElementChild.appendChild(sh); $('[data-a="next"]', sh).focus();
     }, R.i.id === 'canons' ? 700 : 350);
   }
@@ -859,19 +951,19 @@ function shoot(hit) {
   const sc = $('#scene'); if (!sc) return; const b = document.createElement('div'); b.className = 'ball'; sc.appendChild(b);
   const W = sc.clientWidth, H = sc.clientHeight, x0 = W * .36, y0 = H * .58, x1 = W * (hit ? .74 : .66), y1 = H * (hit ? .62 : .74);
   b.animate([{ opacity: 1, transform: `translate(${x0}px,${y0}px)` }, { opacity: 1, transform: `translate(${(x0 + x1) / 2}px,${y0 - H * .32}px)` }, { opacity: 1, transform: `translate(${x1}px,${y1}px)` }], { duration: 520, easing: 'ease-in' });
-  fx('smoke', 'fx-smoke', 34, 56, 110); boom(.35, .3);
+  fx('smoke', 'fx-smoke', 34, 56, 110); SND.cannon();
   setTimeout(() => b.remove(), 520);
 }
 function celebrate(fast, gain) {
   SND.ok();
   if (R.i.id === 'canons') {
     shoot(true);
-    setTimeout(() => { boom(.6, .6); fx('boom', 'fx-explosion', 74, 58, 170); fx('smoke', 'fx-smoke', 76, 50, 150);
+    setTimeout(() => { SND.boom(); fx('boom', 'fx-explosion', 74, 58, 170); fx('smoke', 'fx-smoke', 76, 50, 150);
       hitFoe(); }, 520);
-  } else if (R.boss) { boom(.4, .4); fx('boom', 'fx-explosion', 62, 48, 150); hitFoe(); }
-  else if (R.i.id === 'marche') SND.coin();
+  } else if (R.boss) { sfx('boss-hit') || boom(.4, .4); fx('boom', 'fx-explosion', 62, 48, 150); hitFoe(); }
+  else if (ISLE_SFX[R.i.id]) sfx(ISLE_SFX[R.i.id]) || (R.i.id === 'marche' && SND.coin());
   const b = document.createElement('div'); b.className = 'burst';
-  b.innerHTML = `<span class="w">${pick(R.i.sfx)}</span><span class="g"><img src="${IMG('coin-doublon')}" alt="">+${gain}${fast ? ' · éclair !' : ''}</span>`;
+  b.innerHTML = `<span class="w">${pick(R.i.sfx)}</span><span class="g"><img src="${IMG('coin-doublon')}" alt="">+${gain}${fast ? ' · éclair !' : ''}</span>`;
   setTimeout(() => { const sc = $('#scene'); sc && sc.appendChild(b); setTimeout(() => b.remove(), 1100); }, R.i.id === 'canons' ? 560 : 0);
 }
 function hitFoe() {
@@ -892,12 +984,12 @@ function endEscale() {
     const bonus = stars * 10 + (R.boss ? (has('pieuvre') ? 300 : 150) : 0) + (has('croco') ? 10 : 0); S.gold += bonus; R.gold += bonus;
     if (shipLv() > lvBefore) rewards.push({ img: shipImg(), b: `Ton navire devient un ${SHIPS[shipLv()][2]} !`, s: 'Le Fier Calcul s’agrandit', tag: 'Navire' });
     const join = id => { if (!has(id)) { S.crew.push(id); const c = CREW.find(c => c.id === id); rewards.push({ img: 'crew-' + id, b: `${c.n} rejoint l’équipage`, s: c.p, tag: c.r }); } };
-    if (R.node === s.node) { s.node++; if (s.node > NODES) rewards.push({ img: R.i.img, b: 'Île terminée !', s: 'Tu as conquis toute la route', tag: 'Route' }); else rewards.push({ img: s.node === CHEST ? 'chest-closed' : s.node === BOSS ? R.i.boss.img : R.i.img, b: s.node > NODES ? 'Île terminée !' : `Niveau ${s.node} débloqué`, s: s.node === BOSS ? 'Le boss t’attend' : s.node === CHEST ? 'Le coffre de l’île' : `Difficulté ${nodeDiff(s.node, 0)} sur 5`, tag: 'Route' }); }
+    if (R.node === s.node) { s.node++; if (s.node > NODES) rewards.push({ img: R.i.img, b: 'Île terminée !', s: 'Tu as conquis toute la route', tag: 'Route' }); else rewards.push({ img: s.node === CHEST ? 'chest-closed' : s.node === BOSS ? R.i.boss.img : R.i.img, b: s.node > NODES ? 'Île terminée !' : `Niveau ${s.node} débloqué`, s: s.node === BOSS ? 'Le boss t’attend' : s.node === CHEST ? 'Le coffre de l’île' : `Difficulté ${nodeDiff(s.node, 0)} sur 5`, tag: 'Route' }); }
     if (R.node === CHEST) {
       S.gold += 80; R.gold += 80; rewards.push({ img: 'chest-open', b: 'Coffre de l’île : +80', s: 'Trésor caché du niveau 5', tag: 'Coffre' });
       join(R.i.chestCrew);
     }
-    if (R.boss) { rewards.push({ img: R.i.boss.img, b: `${R.i.boss.n} est vaincu !`, s: `Prime de boss : +${has('pieuvre') ? 300 : 150} doublons`, tag: 'Boss' }); join(R.i.id === 'canons' ? 'requin' : 'pieuvre'); }
+    if (R.boss) { rewards.push({ img: R.i.boss.img, b: `${R.i.boss.n} est vaincu !`, s: `Prime de boss : +${has('pieuvre') ? 300 : 150} doublons`, tag: 'Boss' }); join(R.i.id === 'canons' ? 'requin' : 'pieuvre'); }
     join('crabe');
     if (R.ok === R.n) grantEp(R.i.ep);
     if (R.boss && R.i.id === 'canons') grantEp('Vainqueur du Kraken');
@@ -911,12 +1003,14 @@ function endEscale() {
   if (R.fromTide && S.tide && !S.tide.done) { S.tide.gold += R.gold; S.tide.i++; if (S.tide.i >= 3) S.tide.done = true; else tideNext = isleById(S.tide.stops[S.tide.i]); }
   save();
   const sinks = win && (R.i.id === 'canons' || R.boss);
-  if (sinks) { const f = $('#foe'); if (f) { if (R.i.id === 'canons' && !R.boss) f.src = IMG('ship-requin-hit'); setTimeout(() => f.classList.add('sunk'), 250); } }
+  if (sinks) { setTimeout(() => sfx('sink'), 250); const f = $('#foe'); if (f) { if (R.i.id === 'canons' && !R.boss) f.src = IMG('ship-requin-hit'); setTimeout(() => f.classList.add('sunk'), 250); } }
   setTimeout(() => renderResult(win, stars, rewards, tideNext), sinks ? 1300 : 200);
 }
 function renderResult(win, stars, rewards, tideNext) {
-  SND.fanfare();
-  const title = win ? (R.boss ? (R.i.id === 'canons' ? 'Le Kraken plonge au fond des mers !' : `${R.i.boss.n} est vaincu !`) : R.i.id === 'canons' ? 'Le Requin Noir a coulé !' : R.ok === R.n ? 'Escale parfaite !' : 'Escale réussie !') : 'Presque ! On réessaie ?';
+  stopMusic(); R.rewardTags = rewards.map(r => r.tag);
+  if (win) { playBuf('mus-victoire', 'mus') || SND.fanfare(); setTimeout(() => voice(R.boss ? 'boss' : R.ok === R.n ? 'parfait' : 'victoire', true), 900); }
+  else setTimeout(() => voice('presque', true), 500);
+  const title = win ? (R.boss ? (R.i.id === 'canons' ? 'Le Kraken plonge au fond des mers !' : `${R.i.boss.n} est vaincu !`) : R.i.id === 'canons' ? 'Le Requin Noir a coulé !' : R.ok === R.n ? 'Escale parfaite !' : 'Escale réussie !') : 'Presque ! On réessaie ?';
   const over = sessionOver(), tideDone = R.fromTide && S.tide && S.tide.done;
   const primary = over || tideDone ? `<button class="brass-btn" data-a="port">Retour au port</button>`
     : tideNext ? `<button class="brass-btn" data-a="tidenext">Escale suivante <small>· ${tideNext.notion}</small></button>`
@@ -932,7 +1026,9 @@ function renderResult(win, stars, rewards, tideNext) {
 function openChest() {
   const c = $('#chest'); if (!c || c.classList.contains('open')) return;
   c.classList.remove('shake'); c.classList.add('open'); $('.closed', c).style.opacity = 0; $('.opened', c).style.opacity = 1; const t = $('.tap', c); t && t.remove();
-  SND.coin(); setTimeout(SND.coin, 120); setTimeout(SND.coin, 240);
+  sfx('chest-open'); sfx('coins') || (SND.coin(), setTimeout(SND.coin, 120), setTimeout(SND.coin, 240));
+  const tags = (R && R.rewardTags) || [];
+  setTimeout(() => { if (tags.includes('Carte')) { sfx('unlock'); voice('ile', true); } else if (tags.includes('Rare') || tags.includes('Commun') || tags.includes('Épique')) { sfx('crew-join'); voice('equipier', true); } else if (tags.includes('Navire')) voice('navire', true); else voice('coffre', true); }, 700);
   const r = c.getBoundingClientRect(), ar = app.getBoundingClientRect();
   for (let k = 0; k < 14; k++) { const im = document.createElement('img'); im.className = 'coinfly'; im.src = IMG('coin-doublon'); im.alt = '';
     const x = r.left - ar.left + r.width / 2, y = r.top - ar.top + r.height * .4; im.style.left = x + 'px'; im.style.top = y + 'px'; app.appendChild(im);
@@ -944,7 +1040,7 @@ function openChest() {
 
 /* ================= Port (fin de session) ================= */
 function renderPort() {
-  R = null; const t = S.tide || {}; const nextI = ISLES.filter(unlocked).sort((a, b) => IS(a.id).node - IS(b.id).node)[0];
+  R = null; music('port'); setTimeout(() => voice('port', true), 800); const t = S.tide || {}; const nextI = ISLES.filter(unlocked).sort((a, b) => IS(a.id).node - IS(b.id).node)[0];
   app.innerHTML = `<div class="screen port"><img class="bg" src="${IMG('bg-port-dusk')}" alt="">
     <div style="position:absolute;left:0;right:0;top:calc(var(--st) + 60px);text-align:center;padding:0 20px"><div class="smallcaps" style="color:#ffd9a0">Fin de la marée</div><div class="disp" style="font-size:36px;color:#fffaf0;margin-top:6px;text-shadow:0 3px 14px rgba(0,0,0,.45)">Retour au port</div></div>
     <div class="card paper"><div class="disp" style="font-size:20px">Belle navigation, ${esc(S.name || 'Capitaine')} !</div>
@@ -955,8 +1051,9 @@ function renderPort() {
 /* ================= Onglets ================= */
 function renderCrew() {
   app.innerHTML = `<div class="screen" style="background:radial-gradient(ellipse at 50% 0%,#16384a,#0b2230 60%)">${hudHTML()}<div class="tabpage">
-    <div class="showship"><img class="bg" src="${IMG('bg-sea-golden')}" alt=""><img class="sh" src="${IMG(shipImg())}" alt=""><div class="cap"><div class="smallcaps" style="color:#ffd9a0">Ton navire · ${SHIPS[shipLv()][2]}</div><div class="disp" style="font-size:26px">Le Fier Calcul</div>${SHIPS[shipLv() + 1] ? `<div style="font-size:12.5px;margin-top:2px">Encore ${SHIPS[shipLv() + 1][0] - S.wins} victoire${SHIPS[shipLv() + 1][0] - S.wins > 1 ? 's' : ''} pour le ${SHIPS[shipLv() + 1][2]}</div>` : ''}</div></div>
-    <h1>Équipage</h1><p class="sub">${S.crew.length} équipiers sur 12. Chacun apporte un pouvoir pendant les escales.</p>
+    <div class="showship"><img class="bg" src="${IMG('bg-sea-golden')}" alt=""><img class="sh" src="${IMG(shipImg())}" alt=""></div>
+    <div class="shipcap"><div class="smallcaps" style="color:#ffd9a0">Ton navire · ${SHIPS[shipLv()][2]}</div><div class="disp">Le Fier Calcul</div>${(() => { const nx = SHIPS[shipLv() + 1]; if (!nx) return '<div class="nx">Le plus grand navire de l’archipel !</div>'; const from = SHIPS[shipLv()][0], left = nx[0] - S.wins; return `<div class="nx">Encore ${left} victoire${left > 1 ? 's' : ''} pour le ${nx[2]}</div><div class="bar"><i style="width:${Math.round((S.wins - from) / (nx[0] - from) * 100)}%"></i></div>`; })()}</div>
+    <h1>Équipage</h1><p class="sub">${S.crew.length} équipier${S.crew.length > 1 ? 's' : ''} sur 12. Chacun apporte un pouvoir pendant les escales.</p>
     <div class="crew-grid">${CREW.map(c => S.crew.includes(c.id)
       ? `<div class="crew-card paper"><span class="rar">${c.r}</span><img src="${IMG('crew-' + c.id)}" alt=""><b>${c.n}</b><span>${c.p}</span></div>`
       : `<div class="crew-card lock"><span class="rar" style="background:rgba(255,255,255,.08);color:var(--mist)">${c.r}</span><img src="${IMG('crew-' + c.id)}" alt=""><b>???</b><span>${c.how}</span></div>`).join('')}</div>
@@ -971,16 +1068,16 @@ function renderPrime() {
       <div class="photo"><img src="${IMG('capt-a')}" alt="Portrait du capitaine"></div>
       <div class="nm">${esc((S.name || 'Capitaine').toUpperCase())}</div><div class="ep">${S.epithet ? `« ${esc(S.epithet)} »` : '&nbsp;'}</div>
       <div class="bounty"><img src="${IMG('coin-doublon')}" alt=""><b class="num">${fmt(S.gold)}</b></div>
-      <div class="foot"><span>Capitainerie de l’Archipel<br><span class="smallcaps" style="font-size:9px">${RANKS[ri][1]}</span></span><span class="waxs">N° ${String(S.rounds).padStart(4, '0')}</span></div></div>
-    <div class="rank glass"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><span class="disp" style="font-size:17px">${next ? `Prochain titre : ${next[1]}` : 'Tu es une légende !'}</span><span style="font-size:12px;color:var(--mist);white-space:nowrap">${next ? `encore ${fmt(next[0] - S.gold)}` : ''}</span></div>
+      <div class="foot"><span class="rkt">${RANKS[ri][1]}</span><span class="waxs">N° ${String(S.rounds).padStart(4, '0')}</span></div></div>
+    <div class="rank glass"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><span class="disp" style="font-size:17px">${next ? `Prochain titre : ${next[1]}` : 'Tu es une légende !'}</span><span style="font-size:14px;color:var(--mist);white-space:nowrap">${next ? `encore ${fmt(next[0] - S.gold)}` : ''}</span></div>
       <div class="bar"><i style="width:${pct}%"></i></div>
       <div class="smallcaps" style="color:var(--mist);margin-bottom:8px">Tes surnoms</div>
       <div class="eps">${EPITHETS.map(([n, how]) => S.eps.includes(n) ? `<button class="have" data-a="ep" data-e="${esc(n)}" aria-pressed="${S.epithet === n}">${n}</button>` : `<button data-a="eptip" data-h="${esc(how)}">${ico('iLock')} ${n}</button>`).join('')}</div></div>
     <button class="ghost-btn" data-a="rename" style="margin-top:14px">Changer de nom</button></div>${dockHTML()}</div>`;
   bindCog();
-  $$('.eps svg').forEach(s => { s.style.width = '12px'; s.style.height = '12px'; s.style.verticalAlign = '-1px'; });
+  $$('.eps svg').forEach(s => { s.style.width = '14px'; s.style.height = '14px'; s.style.verticalAlign = '-1px'; });
 }
-function show(t) { tab = t; R = null; ({ map: renderMap, crew: renderCrew, prime: renderPrime })[t](); }
+function show(t) { tab = t; R = null; music('carte'); ({ map: renderMap, crew: renderCrew, prime: renderPrime })[t](); }
 
 /* ================= Parents ================= */
 let parentSample = false;
@@ -1003,6 +1100,8 @@ function openParents() {
       <div style="margin-bottom:12px"><div style="font-size:13px;color:var(--mist);margin-bottom:6px">Durée d’une session</div><div class="seg">${[5, 10, 15, 0].map(m => `<button data-a="limit" data-v="${m}" aria-pressed="${S.limit === m}">${m ? m + ' min' : 'Sans limite'}</button>`).join('')}</div>
         ${S.limit ? `<div style="font-size:12.5px;color:var(--mist);margin-top:6px">Utilisé : ${Math.floor(sessionMs / 60000)} min ${Math.floor(sessionMs / 1000) % 60} s</div><button class="ghost-btn" data-a="extend" style="margin-top:8px">Accorder 5 minutes de plus</button>` : ''}</div>
       <div style="margin-bottom:12px"><div style="font-size:13px;color:var(--mist);margin-bottom:6px">Son</div><div class="seg"><button data-a="snd" data-v="1" aria-pressed="${S.sound}">Activé</button><button data-a="snd" data-v="0" aria-pressed="${!S.sound}">Coupé</button></div></div>
+      <div style="margin-bottom:12px"><div style="font-size:13px;color:var(--mist);margin-bottom:6px">Musique</div><div class="seg"><button data-a="mus" data-v="1" aria-pressed="${S.music}">Oui</button><button data-a="mus" data-v="0" aria-pressed="${!S.music}">Non</button></div></div>
+      <div style="margin-bottom:12px"><div style="font-size:13px;color:var(--mist);margin-bottom:6px">Voix des personnages</div><div class="seg"><button data-a="vox" data-v="1" aria-pressed="${S.voice}">Oui</button><button data-a="vox" data-v="0" aria-pressed="${!S.voice}">Non</button></div></div>
       <div id="resetbox"><button class="ghost-btn" data-a="reset1" style="color:#ffb9ad">Tout effacer…</button></div>
       <p style="font-size:12.5px;color:var(--mist);margin:10px 0 0">Les données restent dans le navigateur de cet appareil. Aucune publicité, aucun compte.</p></div>
     <div class="vers">L’Archipel des Nombres · version ${VERSION}</div>`;
@@ -1010,7 +1109,7 @@ function openParents() {
 }
 
 const FB = {};
-const FBQ = [['note', 'Note globale', ['1', '2', '3', '4', '5']], ['envie', 'Votre enfant a-t-il envie d’y rejouer ?', ['Oui, beaucoup', 'Un peu', 'Pas vraiment']], ['niveau', 'La difficulté', ['Trop facile', 'Juste bien', 'Trop difficile']]];
+const FBQ = [['note', 'Note globale', ['1', '2', '3', '4', '5']], ['envie', 'Votre enfant a-t-il envie d’y rejouer ?', ['Oui, beaucoup', 'Un peu', 'Pas vraiment']], ['niveau', 'La difficulté', ['Trop facile', 'Juste bien', 'Trop difficile']]];
 function openFeedback() {
   const el = document.createElement('div'); el.className = 'parents fbwrap'; el.style.zIndex = 95; el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', 'Donner mon avis');
   el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><div><div class="smallcaps" style="color:var(--brass-hi)">Bêta-test</div><div class="disp" style="font-size:28px">Votre avis</div></div><button class="round glass" data-a="fbclose" aria-label="Fermer">${ico('iClose')}</button></div>
@@ -1041,7 +1140,7 @@ function feedbackText() {
 function sendFeedback() {
   const text = feedbackText(), out = $('#fbout');
   const showText = msg => { out.innerHTML = `<p class="note" style="margin:14px 0 6px">${msg}</p><textarea class="fld" readonly style="min-height:160px">${esc(text)}</textarea>`; };
-  if (navigator.share) navigator.share({ title: 'Avis sur l’Archipel des Nombres', text }).then(() => { toast('Merci pour votre avis !'); showText('Merci ! Voici le texte envoyé :'); }, () => showText('Partage annulé. Vous pouvez aussi copier ce texte :'));
+  if (navigator.share) navigator.share({ title: 'Avis sur l’Archipel des Nombres', text }).then(() => { toast('Merci pour votre avis !'); showText('Merci ! Voici le texte envoyé :'); }, () => showText('Partage annulé. Vous pouvez aussi copier ce texte :'));
   else copyText(text).then(ok => { toast(ok ? 'Avis copié : collez-le dans un message' : 'Copiez le texte ci-dessous'); showText(ok ? 'Le texte est copié. Collez-le dans un message ou un e-mail :' : 'Copiez ce texte et envoyez-le par message ou e-mail :'); });
 }
 const BKP = 'ARCHIPEL1:';
@@ -1055,12 +1154,12 @@ function restoreFrom(code) {
 function onboarding() {
   const m = document.createElement('div'); m.className = 'modal';
   m.innerHTML = `<form class="box paper" id="ob" autocomplete="off"><img src="${IMG('capt-a')}" alt="" style="width:150px;margin:-70px auto 0;filter:drop-shadow(0 10px 10px rgba(0,0,0,.3))">
-    <div class="disp" style="font-size:28px">Bienvenue à bord !</div><p style="margin:0;color:var(--ink-2)">Le Perroquet Pi va t’accompagner dans l’Archipel des Nombres. Comment s’appelle le capitaine ?</p>
+    <div class="disp" style="font-size:28px">Bienvenue à bord !</div><p style="margin:0;color:var(--ink-2)">Le Perroquet Pi va t’accompagner dans l’Archipel des Nombres. Comment s’appelle le capitaine ?</p>
     <label for="nm" class="smallcaps" style="color:var(--ink-2)">Ton nom de pirate</label><input id="nm" maxlength="14" placeholder="Ex. : Léo" value="${esc(S.name)}">
-    <button class="brass-btn" type="submit">Hisser les voiles !</button>
+    <button class="brass-btn" type="submit">Hisser les voiles !</button>
     ${isIOS && !standalone ? '<div class="a2hs"><b>Conseil aux parents :</b> dans Safari, touchez Partager puis « Sur l’écran d’accueil ». L’Archipel s’ouvrira en plein écran et gardera mieux la progression.</div>' : ''}</form>`;
   app.appendChild(m);
-  $('#ob').addEventListener('submit', e => { e.preventDefault(); S.name = $('#nm').value.trim().slice(0, 14) || 'Capitaine'; S.intro = true; save(); m.remove(); ac(); SND.fanfare(); show('map'); });
+  $('#ob').addEventListener('submit', e => { e.preventDefault(); S.name = $('#nm').value.trim().slice(0, 14) || 'Capitaine'; S.intro = true; save(); m.remove(); ac(); SND.fanfare(); show('map'); setTimeout(() => voice('accueil', true), 600); });
 }
 
 /* ================= Événements ================= */
@@ -1077,11 +1176,18 @@ app.addEventListener('click', e => {
     case 'isle': { const i = isleById(el.dataset.i); SND.tap(); if (!unlocked(i)) { toast(`Encore ${i.unlock - S.wins} escale${i.unlock - S.wins > 1 ? 's' : ''} à gagner pour découvrir cette île.`); break; } renderIsle(i.id); break; }
     case 'home': R = null; show('map'); break;
     case 'play': SND.tap(); startEscale(el.dataset.i, +el.dataset.n, false); break;
-    case 'tide': case 'tidenext': { const t = ensureTide(); const id = t.stops[t.i]; startEscale(id, Math.min(IS(id).node, NODES), true); break; }
+    case 'tide': case 'tidenext': { const t = ensureTide(); const id = t.stops[t.i]; ac(); if (a === 'tide' && !t.i) voice(S.days[today()] ? 'depart' : 'accueil', true); startEscale(id, Math.min(IS(id).node, NODES), true); break; }
     case 'free': toast('Choisis une île sur la carte.'); break;
-    case 'quit': R = null; show('map'); break;
+    case 'quit': { if ($('.quitm')) break; const m = document.createElement('div'); m.className = 'modal quitm';
+      m.innerHTML = `<div class="box paper" role="alertdialog" aria-label="Quitter l’escale ?"><img src="${IMG('crew-perroquet')}" alt="" style="width:96px;margin:-58px auto 0;filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))"><div class="disp" style="font-size:26px">Quitter l’escale ?</div><p style="margin:0;color:var(--ink-2);font-size:16px">Tes réponses de cette escale seront perdues.</p><button class="brass-btn" data-a="quitno">Continuer à jouer</button><button class="ghost-btn dark" data-a="quityes">Quitter</button></div>`;
+      app.appendChild(m); $('[data-a="quitno"]', m).focus(); break; }
+    case 'quitno': { const m = $('.quitm'); m && m.remove(); break; }
+    case 'quityes': { const m = $('.quitm'); m && m.remove(); R = null; show('map'); break; }
+    case 'tipclose': { const t = el.closest('.pi-tip'); t && t.remove(); break; }
     case 'key': key(el.dataset.k); break;
     case 'choice': { if (!R || R.locked) break; const c = R.q.choices[+el.dataset.i]; const [ok, g] = check(c); answer(ok, g, el); break; }
+    case 'digpick': R.dig = +el.dataset.k; SND.tap(); refreshBottom(); break;
+    case 'digset': R.counts[R.dig] = +el.dataset.d; R.dig = null; SND.tap(); refreshBottom(); break;
     case 'blk': { const k = +el.dataset.k; R.counts[k] = Math.max(0, Math.min(19, R.counts[k] + +el.dataset.d)); SND.tap(); refreshBottom(); break; }
     case 'pay': if (R.tray.length < 20) { R.tray.push(+el.dataset.c); SND.coin(); refreshBottom(); } break;
     case 'untray': R.tray.splice(+el.dataset.i, 1); SND.tap(); refreshBottom(); break;
@@ -1089,9 +1195,9 @@ app.addEventListener('click', e => {
     case 'validate': { if (!R || R.locked) break; const [ok, g] = check(); answer(ok, g); break; }
     case 'next': if (R) { $$('.sheet-err').forEach(x => x.remove()); R.k++; nextQ(); } break;
     case 'power': { const p = el.dataset.p; if (!R || R.locked || R.used[p]) break; R.used[p] = true; SND.tap();
-      if (p === 'perroquet') { const h = document.createElement('div'); h.className = 'toast paper'; h.style.color = 'var(--ink)'; h.innerHTML = `<b>Pi :</b> ${R.q.hint}`; app.appendChild(h); setTimeout(() => h.remove(), 5200); el.disabled = true; }
+      if (p === 'perroquet') { const sc = $('#scene'); const h = document.createElement('div'); h.className = 'pi-tip paper'; h.setAttribute('role', 'note'); h.innerHTML = `<img src="${IMG('crew-perroquet')}" alt=""><div><b>Pi :</b> ${R.q.hint}</div><button class="x" data-a="tipclose" aria-label="Fermer l’indice">${ico('iClose')}</button>`; sc && sc.appendChild(h); el.disabled = true; voice('indice'); }
       if (p === 'crabe') { R.seen.add(R.q.log); nextQ(); toast('Le Crabe Compteur te donne une autre question.'); }
-      if (p === 'calmar') { el.disabled = true; toast('Le Calmar Calcul doublera ton butin à la fin de l’escale !'); }
+      if (p === 'calmar') { el.disabled = true; toast('Le Calmar Calcul doublera ton butin à la fin de l’escale !'); }
       break; }
     case 'openchest': openChest(); break;
     case 'port': renderPort(); break;
@@ -1109,7 +1215,9 @@ app.addEventListener('click', e => {
     case 'closeparents': { const p = $('.parents'); p && p.remove(); show(tab); break; }
     case 'limit': S.limit = +el.dataset.v; save(); $('.parents').remove(); openParents(); break;
     case 'extend': extraMs += 5 * 60000; $('.parents').remove(); openParents(); toast('5 minutes de plus accordées.'); break;
-    case 'snd': S.sound = el.dataset.v === '1'; save(); $('.parents').remove(); openParents(); break;
+    case 'snd': S.sound = el.dataset.v === '1'; save(); S.sound ? music(musWant || 'carte') : stopMusic(); $('.parents').remove(); openParents(); break;
+    case 'mus': S.music = el.dataset.v === '1'; save(); S.music ? music(musWant || 'carte') : stopMusic(); $('.parents').remove(); openParents(); break;
+    case 'vox': S.voice = el.dataset.v === '1'; save(); $('.parents').remove(); openParents(); break;
     case 'reset1': $('#resetbox').innerHTML = `<div class="seg"><button data-a="reset2" style="background:#5a2420;color:#ffb9ad">Oui, tout effacer</button><button data-a="reset0">Annuler</button></div>`; break;
     case 'reset0': $('.parents').remove(); openParents(); break;
     case 'reset2': S = DEF(); save(); sessionMs = 0; mapScroll = null; $('.parents').remove(); show('map'); onboarding(); break;
@@ -1121,6 +1229,7 @@ app.addEventListener('pointerup', e => {
 });
 document.addEventListener('keydown', e => {
   if (!R || R.done) { if (e.key === 'Enter' && $('#chest.shake')) openChest(); return; }
+  const qm = $('.quitm'); if (qm) { if (e.key === 'Escape') qm.remove(); return; }
   const sh = $('.sheet-err'); if (sh) { if (e.key === 'Enter') { e.preventDefault(); $('[data-a="next"]', sh).click(); } return; }
   const k = R.q.kind;
   if (k === 'keypad' || k === 'mineRead') { if (/^[0-9]$/.test(e.key)) key(e.key); else if (e.key === 'Backspace') key('del'); else if (e.key === 'Enter') { e.preventDefault(); key('ok'); } }

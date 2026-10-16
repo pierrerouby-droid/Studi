@@ -1,0 +1,262 @@
+<title>Bible audio de l'Archipel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..900&family=Lexend:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Mise en page : colonne de 780 px max, nuit marine comme l'appli. Haut : alerte sur les règles d'ElevenLabs, puis la fiche voix (prompt à copier), puis les répliques groupées par moment du jeu, puis musiques et bruitages. Parchemin = ce qu'on copie ; verre sombre = le reste. */
+:root{
+  --abyss:#0B2230; --glass:rgba(233,243,238,.05); --line:rgba(233,243,238,.13);
+  --foam:#E9F3EE; --soft:#cfe0df; --mist:#9db8ba; --parch:#F4E8CC; --ink:#2A1C12; --ink2:#5d4836;
+  --brass:#C9973F; --brass-hi:#f3d58c; --wax:#d0503f; --kelp:#5CBF86;
+  --f-d:Fraunces,Georgia,serif; --f-u:Lexend,system-ui,-apple-system,sans-serif; --f-m:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse 120% 50% at 50% -8%,#18465a 0%,var(--abyss) 62%) no-repeat,var(--abyss);color:var(--foam);font:400 16px/1.6 var(--f-u)}
+.wrap{max-width:780px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:36px 64px;display:flex;flex-direction:column;gap:20px}
+.kick{font:600 12px var(--f-u);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-hi)}
+h1{font:900 clamp(34px,7vw,48px)/1.02 var(--f-d);margin:6px 0 0;text-wrap:balance}
+h2{font:800 clamp(23px,4.4vw,28px)/1.15 var(--f-d);margin:0;text-wrap:balance}
+h3{font:700 18px/1.3 var(--f-d);margin:0}
+p{margin:0}
+.lead{color:var(--soft);max-width:62ch}
+.sec{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.sub{color:var(--mist);font-size:15px;max-width:62ch}
+.alert{border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;background:rgba(208,80,63,.1);box-shadow:inset 0 0 0 1px rgba(208,80,63,.4)}
+.alert h2{font-size:22px}
+.alert p,.alert li{color:var(--soft);font-size:15px}
+.alert ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.alert a{color:var(--brass-hi)}
+.paper{background:var(--parch);color:var(--ink);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 12px 30px rgba(0,0,0,.32);min-width:0}
+.paper .lbl{font:600 12px var(--f-u);letter-spacing:.1em;text-transform:uppercase;color:#8a5a14}
+.paper .note{color:var(--ink2);font-size:14.5px}
+.code{font:500 14px/1.55 var(--f-m);background:rgba(255,255,255,.6);border:1px dashed rgba(42,28,18,.28);border-radius:12px;padding:12px 14px;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{appearance:none;cursor:pointer;min-height:44px;padding:0 16px;border-radius:12px;font:600 14.5px var(--f-u);color:var(--ink);background:linear-gradient(180deg,#f7dc93,#d9a74a);border:0;box-shadow:0 3px 0 #7c561b}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #7c561b}
+.btn.ghost{background:rgba(42,28,18,.08);box-shadow:inset 0 0 0 1px rgba(42,28,18,.25)}
+.btn:focus-visible{outline:3px solid var(--foam);outline-offset:2px}
+.st{font-size:14px;color:#7a4f12;min-height:1.3em}
+.set{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.set div{background:rgba(42,28,18,.06);border-radius:12px;padding:10px 12px;font-size:14.5px;color:var(--ink2);min-width:0}
+.set b{display:block;color:var(--ink);font-weight:600}
+.ev{background:var(--glass);box-shadow:inset 0 0 0 1px var(--line);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.ev header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ev header span{font-size:13.5px;color:var(--mist)}
+.line{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.line:first-of-type{border-top:0}
+.line input{width:20px;height:20px;accent-color:var(--brass);margin:0}
+.line .t{min-width:0}
+.line .f{font:500 12.5px var(--f-m);color:var(--brass-hi)}
+.line .s{font-size:16px;color:var(--foam)}
+.line .s i{font-style:normal;color:var(--mist);font-size:14px}
+.line input:checked ~ .t .s{color:var(--mist);text-decoration:line-through;text-decoration-color:rgba(157,184,186,.5)}
+.cp{appearance:none;cursor:pointer;min-width:44px;min-height:44px;padding:0 12px;border-radius:12px;font:600 13.5px var(--f-u);color:var(--foam);background:rgba(255,255,255,.06);border:0;box-shadow:inset 0 0 0 1px var(--line)}
+.cp.ok{color:#a6e3bf}
+.cp:focus-visible{outline:3px solid var(--brass-hi);outline-offset:2px}
+.tbl{overflow-x:auto;border-radius:16px;box-shadow:inset 0 0 0 1px var(--line)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px var(--f-u);letter-spacing:.08em;text-transform:uppercase;color:var(--mist)}
+td{color:var(--soft)}
+td code{font:500 13px var(--f-m);color:var(--brass-hi);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;color:var(--soft)}
+.steps code{font:500 13.5px var(--f-m);color:var(--brass-hi)}
+.src{font-size:14px;color:var(--mist);display:flex;flex-direction:column;gap:6px}
+.src a{color:var(--brass-hi)}
+@media (max-width:560px){.set{grid-template-columns:minmax(0,1fr)}}
+</style>
+
+<div class="wrap">
+  <header><div class="kick">L’Archipel des Nombres · production audio</div><h1>Voix, musiques et bruitages</h1></header>
+  <p class="lead">Le moteur audio de l’appli est prêt : dès que tes fichiers portent les noms ci-dessous, je les dépose et ils jouent aux bons moments. Tant qu’un fichier manque, l’appli garde ses petits sons actuels.</p>
+
+  <section class="alert" aria-labelledby="t-al">
+    <h2 id="t-al">À lire avant de générer la voix</h2>
+    <p>La politique d’utilisation d’ElevenLabs (mise à jour le 9 octobre 2026) contient deux points qui concernent directement ce projet :</p>
+    <ul>
+      <li>Les applis, produits ou expériences <b>destinés aux moins de 18 ans</b> sont interdits <b>sauf accord écrit</b> d’ElevenLabs, et le développeur doit alors recueillir le consentement parental exigé par la loi.</li>
+      <li>Les voix d’enfant, ou de voix adultes qui imitent un enfant, ne peuvent pas être partagées dans leur bibliothèque de voix. On ne peut pas non plus leur envoyer d’enregistrement d’un mineur pour créer une voix.</li>
+    </ul>
+    <p>Je ne peux pas vérifier si des fichiers générés une fois puis intégrés à ton appli entrent dans « expérience destinée aux moins de 18 ans ». Pour une bêta envoyée à d’autres familles, le plus sûr est d’écrire à ElevenLabs pour obtenir un accord écrit avant de diffuser les voix. Autres options : enregistrer ton fils toi-même avec ton téléphone (sans passer par ElevenLabs), ou donner une voix de personnage adulte au perroquet Pi.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="t-v">
+    <h2 id="t-v">1. Créer la voix : « Le Mousse »</h2>
+    <p class="sub">Un jeune membre de l’équipage, enthousiaste et bienveillant, qui fête les victoires avec l’enfant. Il ne lit jamais les questions : il réagit seulement aux grands moments.</p>
+    <div class="paper">
+      <span class="lbl">Voice Design · description de la voix</span>
+      <div class="code" id="desc">Native French from France, standard Parisian French. Young boy, around 10 years old, child voice. Studio quality. Persona: cheerful pirate cabin boy. Emotion: enthusiastic, warm, playful. Bright, clear, slightly high-pitched voice with natural childlike energy, never shrill or nasal. Lively but easy-to-follow pacing, a big smile in the voice, quick genuine laughs, real excitement when celebrating. Friendly and encouraging, like a best friend sharing an adventure.</div>
+      <div class="row"><button class="btn" type="button" data-copy="desc">Copier la description</button><span class="st" role="status"></span></div>
+      <p class="note">Pour une fille : remplace « Young boy » par « Young girl » et « cabin boy » par « cabin girl ». Dans les répliques, « Content de te revoir » devient « Contente de te revoir » et « je suis sûr » devient « je suis sûre ».</p>
+    </div>
+    <div class="paper">
+      <span class="lbl">Voice Design · texte d’aperçu</span>
+      <div class="code" id="prev">Ohé, capitaine ! Bienvenue à bord ! Aujourd’hui, on part à l’aventure dans l’Archipel des Nombres. Regarde, le Requin Noir est juste là, derrière les vagues… Prêt ? Feu ! Ouais ! En plein dans le mille ! Trop fort ! Allez, on continue, je suis sûr qu’on peut trouver le trésor avant la nuit !</div>
+      <div class="row"><button class="btn" type="button" data-copy="prev">Copier le texte d’aperçu</button><span class="st" role="status"></span></div>
+    </div>
+    <div class="paper">
+      <span class="lbl">Réglages conseillés</span>
+      <div class="set">
+        <div><b>Guidance</b>Autour de 30 %. Plus haut si l’accent n’est pas assez français, plus bas si le son est dégradé.</div>
+        <div><b>Choix</b>Génère, écoute les 3 propositions, régénère si aucune n’est naturelle. Enregistre la meilleure sous « Le Mousse ».</div>
+        <div><b>Modèle pour les répliques</b>Eleven v3 : il comprend les indications entre crochets comme <code>[excited]</code> ou <code>[laughs]</code>.</div>
+        <div><b>Export</b>MP3, 44,1 kHz. Une réplique par fichier, sans silence au début ni à la fin.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-l">
+    <h2 id="t-l">2. Les 33 répliques</h2>
+    <p class="sub">Les indications entre crochets ([excited], [laughs]…) sont à garder telles quelles : elles dirigent le jeu de la voix et ne sont pas prononcées. Nomme chaque fichier exactement comme indiqué. Coche au fur et à mesure (mémorisé sur cet appareil).</p>
+    <div class="row"><button class="btn" type="button" id="copyall" style="background:linear-gradient(180deg,#f7dc93,#d9a74a)">Copier toutes les répliques</button><span class="st" id="copyall-st" role="status" style="color:var(--brass-hi)"></span><span class="sub" id="prog"></span></div>
+    <div id="lines"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-m">
+    <h2 id="t-m">3. Musiques</h2>
+    <p class="sub">Des boucles qui se raccordent sans coupure, jouées en fond à volume bas. Aucune parole.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Fichier</th><th>Moment</th><th>Ambiance</th><th>Durée</th></tr></thead>
+      <tbody>
+        <tr><td><code>mus-carte.mp3</code></td><td>Carte, équipage, avis de recherche</td><td>Aventure marine calme, curieuse, cordes et accordéon légers</td><td>Boucle 60 à 120 s</td></tr>
+        <tr><td><code>mus-escale.mp3</code></td><td>Pendant les mini-jeux</td><td>Rythmée mais discrète, ne doit pas gêner la concentration</td><td>Boucle 60 à 120 s</td></tr>
+        <tr><td><code>mus-boss.mp3</code></td><td>Combats de boss (niveau 10)</td><td>Tendue et épique, mais amusante, jamais effrayante</td><td>Boucle 45 à 90 s</td></tr>
+        <tr><td><code>mus-port.mp3</code></td><td>Retour au port (fin de session)</td><td>Douce, coucher de soleil, satisfaction</td><td>Boucle 30 à 60 s</td></tr>
+        <tr><td><code>mus-victoire.mp3</code></td><td>Escale gagnée</td><td>Petite fanfare triomphale de pirate</td><td>3 à 5 s, pas de boucle</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-s">
+    <h2 id="t-s">4. Bruitages</h2>
+    <p class="sub">Courts, nets, sans écho. Les bonnes réponses doivent être gratifiantes, les erreurs douces et jamais punitives.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Fichier</th><th>Quand</th><th>Son attendu</th></tr></thead>
+      <tbody>
+        <tr><td><code>sfx-tap.mp3</code></td><td>Chaque appui</td><td>Petit clic de bois, très court (0,1 s)</td></tr>
+        <tr><td><code>sfx-correct.mp3</code></td><td>Bonne réponse</td><td>Carillon joyeux montant (0,5 s)</td></tr>
+        <tr><td><code>sfx-wrong.mp3</code></td><td>Mauvaise réponse</td><td>« Bloup » doux et comique, pas de buzzer</td></tr>
+        <tr><td><code>sfx-cannon.mp3</code></td><td>Tir de canon</td><td>Coup de canon sourd, court</td></tr>
+        <tr><td><code>sfx-explosion.mp3</code></td><td>Boulet qui touche</td><td>Impact et éclats de bois, cartoon</td></tr>
+        <tr><td><code>sfx-splash.mp3</code></td><td>Boulet raté</td><td>Plouf dans l’eau</td></tr>
+        <tr><td><code>sfx-sink.mp3</code></td><td>Le navire ennemi coule</td><td>Craquements, glouglous, 1,5 à 2 s</td></tr>
+        <tr><td><code>sfx-boss-hit.mp3</code></td><td>Boss touché</td><td>Impact + petit cri comique de monstre</td></tr>
+        <tr><td><code>sfx-kick.mp3</code></td><td>Stade : bonne réponse</td><td>Frappe de ballon et filet qui tremble</td></tr>
+        <tr><td><code>sfx-block.mp3</code></td><td>Mine : bonne réponse</td><td>Blocs qui s’emboîtent</td></tr>
+        <tr><td><code>sfx-pop.mp3</code></td><td>Jungle : bonne réponse</td><td>« Pop » de créature qui sort des feuilles</td></tr>
+        <tr><td><code>sfx-cash.mp3</code></td><td>Marché : bonne réponse</td><td>Tiroir-caisse ancien</td></tr>
+        <tr><td><code>sfx-slice.mp3</code></td><td>Cuisine : bonne réponse</td><td>Coup de couteau sur planche + petit « miam »</td></tr>
+        <tr><td><code>sfx-coin.mp3</code></td><td>Pièce posée, doublon gagné</td><td>Tintement d’une pièce</td></tr>
+        <tr><td><code>sfx-coins.mp3</code></td><td>Coffre ouvert</td><td>Cascade de pièces (1 à 1,5 s)</td></tr>
+        <tr><td><code>sfx-chest-open.mp3</code></td><td>Coffre ouvert</td><td>Grincement de couvercle</td></tr>
+        <tr><td><code>sfx-fanfare.mp3</code></td><td>Bienvenue, récompense</td><td>Courte fanfare (si pas de mus-victoire)</td></tr>
+        <tr><td><code>sfx-unlock.mp3</code></td><td>Nouvelle île découverte</td><td>Brouillard qui se dissipe, carillon magique</td></tr>
+        <tr><td><code>sfx-crew-join.mp3</code></td><td>Nouvel équipier</td><td>Petit jingle d’accueil joyeux</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-d">
+    <h2 id="t-d">5. Livraison</h2>
+    <ol class="steps">
+      <li>Tous les fichiers en MP3, nommés exactement comme dans les tableaux (sans majuscule ni espace).</li>
+      <li>Niveaux : pas de saturation (crêtes à −1 dB maximum). La voix doit ressortir nettement au-dessus de la musique ; je règle l’équilibre dans l’appli.</li>
+      <li>Dépose-les dans un sous-dossier <code>archipel-audio</code> du Drive partagé et préviens-moi.</li>
+      <li>Je vérifie chaque fichier, je génère la liste que l’appli lit, puis je les intègre et je teste.</li>
+    </ol>
+    <p class="sub">Dans l’espace parents, trois réglages séparés sont déjà en place : son général, musique, voix des personnages.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="t-src">
+    <h2 id="t-src">Sources</h2>
+    <div class="src">
+      <a href="https://elevenlabs.io/use-policy" target="_blank" rel="noopener">ElevenLabs · Prohibited Use Policy (mise à jour du 9 octobre 2026)</a>
+      <a href="https://elevenlabs.io/docs/help-center/product/voices/voice-library/can-childrens-or-child-like-voices-be-added-to-the-voice-library" target="_blank" rel="noopener">ElevenLabs · voix d’enfant et bibliothèque de voix</a>
+      <a href="https://elevenlabs.io/docs/eleven-creative/voices/voice-design" target="_blank" rel="noopener">ElevenLabs · documentation Voice Design</a>
+      <a href="https://elevenlabs.io/blog/v3-audiotags" target="_blank" rel="noopener">ElevenLabs · indications de jeu entre crochets (Eleven v3)</a>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const EV = [
+    ['accueil', 'Arrivée dans l’appli', 'Première marée du jour, après la création du capitaine', [
+      '[excited] Ohé, capitaine ! Content de te revoir à bord !',
+      'Bienvenue à bord ! Le navire est prêt, on y va ?',
+      '[laughs] Ah, te voilà ! Tout l’équipage t’attendait !']],
+    ['depart', 'Départ de la marée', 'Les marées suivantes de la journée', [
+      'Larguez les amarres !',
+      '[excited] Cap sur l’aventure !',
+      'Hissez les voiles, moussaillon !']],
+    ['combo', 'Série de bonnes réponses', 'À 3 puis 5 bonnes réponses de suite', [
+      '[excited] Trop fort !',
+      'Waouh, quelle série !',
+      '[laughs] T’es en feu, capitaine !']],
+    ['victoire', 'Escale gagnée', 'Écran de victoire', [
+      '[excited] Ouaiiis ! Victoire !',
+      'On a gagné ! Hourra !',
+      '[laughs] Bravo, capitaine, escale réussie !']],
+    ['parfait', 'Escale parfaite', 'Toutes les réponses justes', [
+      '[excited] Parfait ! Zéro faute ! Incroyable !',
+      'Tout juste ! T’es une vraie légende !']],
+    ['boss', 'Boss vaincu', 'Victoire au niveau 10 d’une île', [
+      '[excited] On l’a battu ! Le boss est vaincu !',
+      'Hourra, hourra ! Le boss a pris la fuite !',
+      '[laughs] Il est reparti au fond de l’eau ! Quelle bataille !']],
+    ['coffre', 'Coffre ouvert', 'L’enfant touche le coffre', [
+      '[gasps] Waouh… un vrai trésor !',
+      'Regarde toutes ces pièces d’or !']],
+    ['equipier', 'Nouvel équipier', 'Un personnage rejoint l’équipage', [
+      'Un nouvel équipier ! Bienvenue dans l’équipage !',
+      '[excited] On a un nouveau copain à bord !']],
+    ['ile', 'Nouvelle île', 'Une île sort du brouillard', [
+      '[excited] Terre en vue ! Une nouvelle île !',
+      '[whispers] Le brouillard se lève… [excited] Une île inconnue !']],
+    ['navire', 'Navire amélioré', 'Passage au brigantin puis au galion', [
+      'Notre navire a grandi ! Trop la classe !',
+      '[gasps] Regarde notre nouveau bateau !']],
+    ['presque', 'Escale perdue', 'Encouragement, jamais de reproche', [
+      'Pas grave, on réessaie ensemble !',
+      'Presque ! La prochaine fois, c’est la bonne !',
+      'On n’abandonne jamais, capitaine !']],
+    ['indice', 'Indice demandé', 'Quand l’enfant appelle le perroquet', [
+      'Pi a une idée !',
+      'Écoute bien le perroquet, il est malin !']],
+    ['port', 'Retour au port', 'Fin de la session de 5 minutes', [
+      'Belle navigation, capitaine ! À demain !',
+      '[sighs] Quelle aventure… L’équipage va se reposer.',
+      'On rentre au port. À la prochaine marée !']],
+  ];
+  const KEY = 'archipel-audio-done';
+  let done = {}; try { done = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} };
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fmt = s => esc(s).replace(/\[([a-z ]+)\]/g, '<i>[$1]</i>');
+  const all = []; let html = '';
+  EV.forEach(([id, name, when, lines]) => {
+    html += `<section class="ev" aria-label="${esc(name)}"><header><h3>${esc(name)}</h3><span>${esc(when)}</span></header>`;
+    lines.forEach((t, k) => { const f = `vo-${id}-${k + 1}.mp3`; all.push([f, t]);
+      html += `<div class="line"><input type="checkbox" id="c-${id}-${k}" data-f="${f}" ${done[f] ? 'checked' : ''} aria-label="${f} fait"><label class="t" for="c-${id}-${k}"><div class="f">${f}</div><div class="s">${fmt(t)}</div></label><button class="cp" type="button" data-line="${all.length - 1}">Copier</button></div>`; });
+    html += '</section>';
+  });
+  document.getElementById('lines').innerHTML = html;
+  const prog = () => { document.getElementById('prog').textContent = `${Object.values(done).filter(Boolean).length} sur ${all.length} faites`; };
+  prog();
+  const copy = (text, ok, fail) => { try { navigator.clipboard.writeText(text).then(ok, fail); } catch (e) { fail(); } };
+  const selectNode = el => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-copy]'), l = e.target.closest('[data-line]');
+    if (b) { const el = document.getElementById(b.dataset.copy), st = b.parentElement.querySelector('.st');
+      copy(el.textContent, () => { st.textContent = 'Copié.'; }, () => { selectNode(el); st.textContent = 'Texte sélectionné : copie-le avec ⌘C ou Ctrl+C.'; }); }
+    if (l) { const [f, t] = all[+l.dataset.line];
+      copy(t, () => { l.textContent = 'Copié'; l.classList.add('ok'); setTimeout(() => { l.textContent = 'Copier'; l.classList.remove('ok'); }, 1500); }, () => { selectNode(l.parentElement.querySelector('.s')); }); }
+    if (e.target.id === 'copyall') { const txt = all.map(([f, t]) => `${f}\n${t}`).join('\n\n'), st = document.getElementById('copyall-st');
+      copy(txt, () => { st.textContent = 'Les 33 répliques sont copiées.'; }, () => { st.textContent = 'Copie refusée par le navigateur : copie les répliques une par une.'; }); }
+  });
+  document.addEventListener('change', e => { const f = e.target.dataset && e.target.dataset.f; if (!f) return; done[f] = e.target.checked; save(); prog(); });
+})();
+</script>

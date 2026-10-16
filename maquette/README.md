@@ -12,6 +12,14 @@ Appli de mathématiques pour un enfant de CE2, pensée pour l'iPhone (au doigt o
 - **Récompenses** : doublons, coffre à ouvrir, équipiers avec pouvoirs (indice, relance, double butin), surnoms, avis de recherche.
 - **Espace parents** : maintenir la roue crantée 2 secondes.
 
+## Version 0.4 bêta (octobre 2026)
+
+- **Lisibilité** : textes destinés à l'enfant à 14 px minimum, zones tactiles de 44 px minimum, espaces insécables avant « ! » et « ? ».
+- **Carte** : l'encadré de la marée est deux fois plus petit et l'île du jour reste visible au-dessus ; gros bouton « Jouer ».
+- **En jeu** : le ✕ demande confirmation, l'indice du perroquet s'affiche dans la scène sans cacher la question, le combo n'apparaît qu'à partir de ×2, « Raté de peu » seulement si la réponse est proche.
+- **Mine aux Blocs** : on touche le chiffre d'une colonne pour le choisir (un appui par chiffre au lieu d'un appui par bloc).
+- **Audio prêt à recevoir les fichiers** : musiques, bruitages et voix listés dans `assets/audio/manifest.json` ; tant qu'un fichier manque, les sons synthétiques prennent le relais. Réglages séparés son, musique et voix dans l'espace parents. Liste des fichiers attendus : `design/bible-audio.html`.
+
 ## Version 0.3 bêta (octobre 2026)
 
 - **Chaque île a son décor et son boss** : Kraken des Tables, Crabe Gardien, Golem des Blocs, Serpent Mesureur, Marchand Fantôme, Chef Pieuvre. Les boss ont une barre de vie.
