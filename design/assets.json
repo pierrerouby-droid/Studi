@@ -1,0 +1,1604 @@
+[
+ {
+  "id": "app-icon",
+  "file": "app-icon.png",
+  "categorie": "base",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Icône de l’appli",
+  "usage": "Icône sur l’écran d’accueil de l’iPhone.",
+  "fond": "scene",
+  "ratio": "1:1"
+ },
+ {
+  "id": "tex-parchment",
+  "file": "tex-parchment.png",
+  "categorie": "base",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Papier parchemin",
+  "usage": "Fond des cartes de mission, des questions, des avis de recherche.",
+  "fond": "tile",
+  "ratio": "1:1"
+ },
+ {
+  "id": "tex-wood",
+  "file": "tex-wood.png",
+  "categorie": "base",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Bois sombre",
+  "usage": "Mur de l’avis de recherche, pont du navire.",
+  "fond": "tile",
+  "ratio": "1:1"
+ },
+ {
+  "id": "bg-ocean-a",
+  "file": "bg-ocean-a.png",
+  "categorie": "base",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Océan de la carte (partie 1)",
+  "usage": "Fond peint de la carte du monde. Remplace l’océan dessiné en code.",
+  "fond": "scene",
+  "ratio": "2:3"
+ },
+ {
+  "id": "bg-ocean-b",
+  "file": "bg-ocean-b.png",
+  "categorie": "base",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Océan de la carte (partie 2)",
+  "usage": "Suite de la carte quand on fait défiler vers le haut.",
+  "fond": "scene",
+  "ratio": "2:3"
+ },
+ {
+  "id": "tex-ocean",
+  "file": "tex-ocean.png",
+  "categorie": "base",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Océan raccordable",
+  "usage": "Fond de la carte du monde (utilisé à la place de bg-ocean, plus calme).",
+  "fond": "tile",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fx-fog-a",
+  "file": "fx-fog-a.png",
+  "categorie": "base",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Banc de brouillard",
+  "usage": "Cache les îles pas encore découvertes.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "fx-fog-b",
+  "file": "fx-fog-b.png",
+  "categorie": "base",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [],
+  "nom": "Brume légère",
+  "usage": "Deuxième couche de brouillard pour la profondeur.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "deco-compass",
+  "file": "deco-compass.png",
+  "categorie": "base",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [],
+  "nom": "Rose des vents",
+  "usage": "Décor de la carte, chargement.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "lagoon-round",
+  "file": "lagoon-round.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Lagon rond",
+  "usage": "Posé sous une île : hauts-fonds turquoise et écume peints, qui se fondent dans l’océan.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "lagoon-oval",
+  "file": "lagoon-oval.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Lagon allongé",
+  "usage": "Variante pour les îles plus larges.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "lagoon-rocks",
+  "file": "lagoon-rocks.png",
+  "categorie": "map",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Lagon à récifs",
+  "usage": "Variante avec quelques rochers et coraux sous l’eau.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-canons",
+  "file": "isle-canons.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Île des Canons",
+  "usage": "Carte du monde. Tables de multiplication.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-horloge",
+  "file": "isle-horloge.png",
+  "categorie": "map",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "isle-canons"
+  ],
+  "nom": "Île de l’Horloge",
+  "usage": "Carte du monde. Heures et durées (la nouvelle île, déjà programmée).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-stade",
+  "file": "isle-stade.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Stade des Vagues",
+  "usage": "Carte du monde. Calcul mental.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-mine",
+  "file": "isle-mine.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Mine aux Blocs",
+  "usage": "Carte du monde. Nombres jusqu’à 10 000.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-jungle",
+  "file": "isle-jungle.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Jungle des Créatures",
+  "usage": "Carte du monde. Droite graduée.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-marche",
+  "file": "isle-marche.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Marché du Port",
+  "usage": "Carte du monde. Monnaie.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-cuisine",
+  "file": "isle-cuisine.png",
+  "categorie": "map",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Cuisine du Navire",
+  "usage": "Carte du monde. Fractions.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-port",
+  "file": "isle-port.png",
+  "categorie": "map",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "isle-canons"
+  ],
+  "nom": "Port d’attache",
+  "usage": "Point de départ et de retour sur la carte.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-kraken",
+  "file": "isle-kraken.png",
+  "categorie": "map",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "isle-canons"
+  ],
+  "nom": "Repaire du Kraken",
+  "usage": "Île du boss, cachée dans le brouillard au début.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-phare",
+  "file": "isle-phare.png",
+  "categorie": "map",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "isle-canons"
+  ],
+  "nom": "Phare des Énigmes",
+  "usage": "Future île : problèmes.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-horloge",
+  "file": "isle-horloge.png",
+  "categorie": "map",
+  "priorite": 3,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "isle-canons"
+  ],
+  "nom": "Tour de l’Horloge",
+  "usage": "Future île : heures et durées.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "isle-chantier",
+  "file": "isle-chantier.png",
+  "categorie": "map",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "isle-canons"
+  ],
+  "nom": "Chantier Naval",
+  "usage": "Future île : longueurs et masses.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "bg-sea-golden",
+  "file": "bg-sea-golden.png",
+  "categorie": "scene",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Mer à l’heure dorée",
+  "usage": "Fond des combats et de plusieurs écrans.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "fg-waves",
+  "file": "fg-waves.png",
+  "categorie": "scene",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Vagues de premier plan",
+  "usage": "Couche devant les navires, donne la profondeur.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-canons",
+  "file": "hero-canons.png",
+  "categorie": "scene",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "En-tête Île des Canons",
+  "usage": "Haut de l’écran de l’île.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-horloge",
+  "file": "hero-horloge.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "hero-canons"
+  ],
+  "nom": "En-tête Île de l’Horloge",
+  "usage": "Haut de l’écran de l’île et fond des combats de boss.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-stade",
+  "file": "hero-stade.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "En-tête Stade des Vagues",
+  "usage": "Haut de l’écran de l’île.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-mine",
+  "file": "hero-mine.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "En-tête Mine aux Blocs",
+  "usage": "Haut de l’écran de l’île.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-jungle",
+  "file": "hero-jungle.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "En-tête Jungle",
+  "usage": "Haut de l’écran de l’île.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-marche",
+  "file": "hero-marche.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "En-tête Marché du Port",
+  "usage": "Haut de l’écran de l’île.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "hero-cuisine",
+  "file": "hero-cuisine.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "En-tête Cuisine",
+  "usage": "Haut de l’écran de l’île.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "bg-storm",
+  "file": "bg-storm.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "bg-sea-golden"
+  ],
+  "nom": "Tempête (boss)",
+  "usage": "Fond des combats de boss.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "bg-port-dusk",
+  "file": "bg-port-dusk.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Retour au port",
+  "usage": "Écran de fin de session (après 5 minutes).",
+  "fond": "scene",
+  "ratio": "2:3"
+ },
+ {
+  "id": "bg-title",
+  "file": "bg-title.png",
+  "categorie": "scene",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "bg-sea-golden"
+  ],
+  "nom": "Écran titre",
+  "usage": "Ouverture de l’appli.",
+  "fond": "scene",
+  "ratio": "2:3"
+ },
+ {
+  "id": "hero-kraken",
+  "file": "hero-kraken.png",
+  "categorie": "scene",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "hero-canons"
+  ],
+  "nom": "En-tête Repaire du Kraken",
+  "usage": "Haut de l’écran de l’île boss.",
+  "fond": "scene",
+  "ratio": "3:2"
+ },
+ {
+  "id": "ship-player-3",
+  "file": "ship-player-3.png",
+  "categorie": "ships",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Galion du joueur",
+  "usage": "Navire du joueur au niveau 3 : combat, écran navire.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "ship-player-top",
+  "file": "ship-player-top.png",
+  "categorie": "ships",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Galion vu du dessus",
+  "usage": "Pion du joueur sur la carte.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "ship-player-1",
+  "file": "ship-player-1.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Petit sloop",
+  "usage": "Navire du joueur au début.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "ship-player-2",
+  "file": "ship-player-2.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Brigantin",
+  "usage": "Navire du joueur au niveau 2.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "ship-requin",
+  "file": "ship-requin.png",
+  "categorie": "ships",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Le Requin Noir",
+  "usage": "Premier ennemi des combats.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "ship-requin-hit",
+  "file": "ship-requin-hit.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Requin Noir touché",
+  "usage": "Fin de combat, le navire ennemi coule.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "ship-meduse",
+  "file": "ship-meduse.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "ship-player-3"
+  ],
+  "nom": "La Méduse",
+  "usage": "Deuxième ennemi.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "ship-fantome",
+  "file": "ship-fantome.png",
+  "categorie": "ships",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "ship-player-3"
+  ],
+  "nom": "Navire fantôme",
+  "usage": "Ennemi rare.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "fig-dragon",
+  "file": "fig-dragon.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "ship-player-3"
+  ],
+  "nom": "Proue dragon",
+  "usage": "Amélioration du navire.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fig-sirene",
+  "file": "fig-sirene.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "ship-player-3"
+  ],
+  "nom": "Proue sirène",
+  "usage": "Amélioration du navire.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fig-lion",
+  "file": "fig-lion.png",
+  "categorie": "ships",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "ship-player-3"
+  ],
+  "nom": "Proue lion de mer",
+  "usage": "Amélioration du navire.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "cannon-gold",
+  "file": "cannon-gold.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "ship-player-3"
+  ],
+  "nom": "Canon doré",
+  "usage": "Amélioration du navire.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "flag-blank",
+  "file": "flag-blank.png",
+  "categorie": "ships",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "ship-player-3"
+  ],
+  "nom": "Drapeau vierge",
+  "usage": "Pavillon personnalisé : je dessine le symbole par-dessus.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "capt-a",
+  "file": "capt-a.png",
+  "categorie": "chars",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Capitaine (portrait A)",
+  "usage": "Avatar et avis de recherche.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "capt-b",
+  "file": "capt-b.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "capt-a"
+  ],
+  "nom": "Capitaine (portrait B)",
+  "usage": "Autre avatar au choix.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "capt-c",
+  "file": "capt-c.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "capt-a"
+  ],
+  "nom": "Capitaine (portrait C)",
+  "usage": "Autre avatar au choix.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "capt-d",
+  "file": "capt-d.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "capt-a"
+  ],
+  "nom": "Capitaine (portrait D)",
+  "usage": "Autre avatar au choix.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "capt-victory",
+  "file": "capt-victory.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "capt-a"
+  ],
+  "nom": "Capitaine victorieux",
+  "usage": "Écran de victoire.",
+  "fond": "alpha",
+  "ratio": "2:3"
+ },
+ {
+  "id": "guide-capitaine",
+  "file": "guide-capitaine.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "crew-perroquet"
+  ],
+  "nom": "Capitaine Barbe-Grise",
+  "usage": "Le guide du jeu : tutoriels, encouragements, explications. Porte la grosse voix de pirate.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-perroquet",
+  "file": "crew-perroquet.png",
+  "categorie": "chars",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Perroquet Pi",
+  "usage": "Équipier (pouvoir : indice). Aussi le guide de l’appli.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-tortue",
+  "file": "crew-tortue.png",
+  "categorie": "chars",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Tortue Total",
+  "usage": "Équipier (pouvoir : +10 secondes).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-calmar",
+  "file": "crew-calmar.png",
+  "categorie": "chars",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Calmar Calcul",
+  "usage": "Équipier rare (pouvoir : double butin).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-crabe",
+  "file": "crew-crabe.png",
+  "categorie": "chars",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Crabe Compteur",
+  "usage": "Équipier (pouvoir : relance).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-poisson",
+  "file": "crew-poisson.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Poisson Fraction",
+  "usage": "Équipier.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-phoque",
+  "file": "crew-phoque.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Phoque Facteur",
+  "usage": "Équipier.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-grenouille",
+  "file": "crew-grenouille.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Grenouille Retenue",
+  "usage": "Équipier.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-pieuvre",
+  "file": "crew-pieuvre.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Pieuvre Produit",
+  "usage": "Équipier rare.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-requin",
+  "file": "crew-requin.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Requin Rapido",
+  "usage": "Équipier rare.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-croco",
+  "file": "crew-croco.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Croco Comparo",
+  "usage": "Équipier rare.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-baleine",
+  "file": "crew-baleine.png",
+  "categorie": "chars",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "crew-perroquet"
+  ],
+  "nom": "Baleine Dix-Mille",
+  "usage": "Équipier légendaire.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "crew-dragon",
+  "file": "crew-dragon.png",
+  "categorie": "chars",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "crew-perroquet"
+  ],
+  "nom": "Dragon des Dizaines",
+  "usage": "Équipier légendaire.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-kraken",
+  "file": "boss-kraken.png",
+  "categorie": "chars",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Le Kraken des Tables",
+  "usage": "Boss de l’Île des Canons, teaser dans le brouillard.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-horloge",
+  "file": "boss-horloge.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "boss-kraken",
+   "crew-perroquet"
+  ],
+  "nom": "Le Maître des Heures",
+  "usage": "Boss de l’Île de l’Horloge.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-crabe",
+  "file": "boss-crabe.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Le Crabe Gardien",
+  "usage": "Boss du Stade des Vagues.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-golem",
+  "file": "boss-golem.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Le Golem des Blocs",
+  "usage": "Boss de la Mine aux Blocs.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-serpent",
+  "file": "boss-serpent.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Le Serpent Mesureur",
+  "usage": "Boss de la Jungle (droite graduée).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-marchand",
+  "file": "boss-marchand.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Le Marchand Fantôme",
+  "usage": "Boss du Marché (monnaie).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "boss-chef",
+  "file": "boss-chef.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Le Chef Pieuvre",
+  "usage": "Boss de la Cuisine (fractions).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "guide-perroquet-bravo",
+  "file": "guide-perroquet-bravo.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "crew-perroquet"
+  ],
+  "nom": "Perroquet : bravo",
+  "usage": "Guide, après une réussite.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "guide-perroquet-hmm",
+  "file": "guide-perroquet-hmm.png",
+  "categorie": "chars",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "crew-perroquet"
+  ],
+  "nom": "Perroquet : réfléchit",
+  "usage": "Guide, quand il explique une erreur.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "chest-closed",
+  "file": "chest-closed.png",
+  "categorie": "loot",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Coffre fermé",
+  "usage": "Récompense avant ouverture.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "chest-open",
+  "file": "chest-open.png",
+  "categorie": "loot",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Coffre ouvert",
+  "usage": "Écran de victoire.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "chest-gold-closed",
+  "file": "chest-gold-closed.png",
+  "categorie": "loot",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Grand coffre fermé",
+  "usage": "Coffre de fin de marée ou de boss.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "chest-gold-open",
+  "file": "chest-gold-open.png",
+  "categorie": "loot",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Grand coffre ouvert",
+  "usage": "Coffre de fin de marée ou de boss.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "coin-doublon",
+  "file": "coin-doublon.png",
+  "categorie": "loot",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Doublon",
+  "usage": "Monnaie du jeu, compteur de prime.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "coin-pile",
+  "file": "coin-pile.png",
+  "categorie": "loot",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Tas de doublons",
+  "usage": "Boutique du navire, butin.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "poster-blank",
+  "file": "poster-blank.png",
+  "categorie": "loot",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Avis de recherche vierge",
+  "usage": "Je place la photo, le nom et la prime par-dessus.",
+  "fond": "alpha",
+  "ratio": "2:3"
+ },
+ {
+  "id": "wax-seal",
+  "file": "wax-seal.png",
+  "categorie": "loot",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Cachet de cire vierge",
+  "usage": "Tampons, badges de niveau.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "cannonball",
+  "file": "cannonball.png",
+  "categorie": "loot",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Boulet",
+  "usage": "Projectile des combats.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "foot-ball",
+  "file": "foot-ball.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Ballon",
+  "usage": "Tirs au but (calcul mental).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "foot-goal",
+  "file": "foot-goal.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "But de plage",
+  "usage": "Tirs au but.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "block-1000",
+  "file": "block-1000.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Bloc millier",
+  "usage": "Mine aux Blocs : vaut 1 000.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "block-100",
+  "file": "block-100.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Plaque centaine",
+  "usage": "Mine aux Blocs : vaut 100.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "block-10",
+  "file": "block-10.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Barre dizaine",
+  "usage": "Mine aux Blocs : vaut 10.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "block-1",
+  "file": "block-1.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Cube unité",
+  "usage": "Mine aux Blocs : vaut 1.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "jungle-frame",
+  "file": "jungle-frame.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Cadre de feuillage",
+  "usage": "Chasse sur la droite graduée.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "jungle-eyes",
+  "file": "jungle-eyes.png",
+  "categorie": "games",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Yeux dans les feuilles",
+  "usage": "Créature cachée sur la droite graduée.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "coin-copper",
+  "file": "coin-copper.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Pièce cuivre vierge",
+  "usage": "Marché : 1, 2 et 5 centimes (j’écris la valeur).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "coin-gold",
+  "file": "coin-gold.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Pièce dorée vierge",
+  "usage": "Marché : 10, 20 et 50 centimes.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "coin-bimetal",
+  "file": "coin-bimetal.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Pièce bimétal vierge",
+  "usage": "Marché : 1 et 2 euros.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "bill-green",
+  "file": "bill-green.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Billet vert vierge",
+  "usage": "Marché : 5 euros (j’écris la valeur).",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "bill-red",
+  "file": "bill-red.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Billet rouge vierge",
+  "usage": "Marché : 10 euros.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "bill-blue",
+  "file": "bill-blue.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Billet bleu vierge",
+  "usage": "Marché : 20 euros.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "market-items",
+  "file": "market-items.png",
+  "categorie": "games",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Planche d’objets du marché",
+  "usage": "Objets à acheter. Je découpe la planche en 10 images.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "market-stall",
+  "file": "market-stall.png",
+  "categorie": "games",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Étal du marchand",
+  "usage": "Décor du jeu de la monnaie.",
+  "fond": "alpha",
+  "ratio": "3:2"
+ },
+ {
+  "id": "food-pizza",
+  "file": "food-pizza.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Pizza vue du dessus",
+  "usage": "Fractions : je la découpe en parts en code.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "food-cake",
+  "file": "food-cake.png",
+  "categorie": "games",
+  "priorite": 2,
+  "recu": false,
+  "lot": 3,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Gâteau vu du dessus",
+  "usage": "Fractions.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "food-tart",
+  "file": "food-tart.png",
+  "categorie": "games",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Tarte vue du dessus",
+  "usage": "Fractions.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fx-explosion",
+  "file": "fx-explosion.png",
+  "categorie": "fx",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Impact de boulet",
+  "usage": "Bonne réponse au combat.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fx-smoke",
+  "file": "fx-smoke.png",
+  "categorie": "fx",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Fumée",
+  "usage": "Après chaque tir.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fx-splash",
+  "file": "fx-splash.png",
+  "categorie": "fx",
+  "priorite": 1,
+  "recu": true,
+  "lot": 1,
+  "references": [],
+  "nom": "Gerbe d’eau",
+  "usage": "Tir manqué (mauvaise réponse).",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fx-sparkle",
+  "file": "fx-sparkle.png",
+  "categorie": "fx",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Étincelle",
+  "usage": "Récompenses, étoiles.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "fx-coins",
+  "file": "fx-coins.png",
+  "categorie": "fx",
+  "priorite": 2,
+  "recu": false,
+  "lot": 4,
+  "references": [
+   "coin-doublon",
+   "chest-open"
+  ],
+  "nom": "Gerbe de doublons",
+  "usage": "Gain de butin.",
+  "fond": "alpha",
+  "ratio": "1:1"
+ },
+ {
+  "id": "loop-ocean",
+  "file": "loop-ocean.png",
+  "categorie": "video",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [],
+  "nom": "Boucle océan",
+  "usage": "Remplace la texture d’océan animée en code.",
+  "fond": "video",
+  "ratio": "1:1"
+ },
+ {
+  "id": "loop-sky",
+  "file": "loop-sky.png",
+  "categorie": "video",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [],
+  "nom": "Boucle ciel doré",
+  "usage": "Fond des combats.",
+  "fond": "video",
+  "ratio": "3:2"
+ },
+ {
+  "id": "loop-fog",
+  "file": "loop-fog.png",
+  "categorie": "video",
+  "priorite": 3,
+  "recu": false,
+  "lot": null,
+  "references": [],
+  "nom": "Boucle brouillard",
+  "usage": "Brouillard de la carte.",
+  "fond": "video",
+  "ratio": "3:2"
+ }
+]
