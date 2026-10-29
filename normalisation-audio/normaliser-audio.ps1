@@ -30,7 +30,7 @@ param(
     [Parameter(Mandatory = $true)][string]$Source,
     [string]$Destination,
     [double]$Lufs = -14,
-    [double]$TruePeak = -1,
+    [double]$TruePeak = -2,
     [double]$Lra = 11,
     [switch]$Compression
 )

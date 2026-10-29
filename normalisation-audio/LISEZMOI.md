@@ -1,7 +1,7 @@
 # Égaliser le volume sonore des vidéos (Windows)
 
 Le script mesure le volume de chaque vidéo, puis en crée une copie dont le son est
-ramené à **-14 LUFS** (crête max **-1 dBTP**), le niveau de référence couramment
+ramené à **-14 LUFS** (crêtes réglées à **-2 dBTP**, pour rester sous -1 dBTP après l'encodage AAC), le niveau de référence couramment
 utilisé pour YouTube. L'image est copiée sans réencodage : aucune perte de qualité vidéo.
 Les originaux ne sont jamais modifiés.
 
@@ -49,5 +49,5 @@ normaliser-audio.bat "G:\Mon Drive\dossier des vidéos" compression
 ## Réglages avancés
 
 En PowerShell, `.\normaliser-audio.ps1 -Source <dossier>` accepte aussi
-`-Destination`, `-Lufs` (défaut -14), `-TruePeak` (défaut -1), `-Lra` (défaut 11)
+`-Destination`, `-Lufs` (défaut -14), `-TruePeak` (défaut -2), `-Lra` (défaut 11)
 et `-Compression`.
